@@ -21,7 +21,7 @@ public class Character extends AbstractEntity {
 	@GeneratedValue
 	private Long id;
 
-	@Column(name = "name")
+	@Column(name = "name", nullable = false)
 	private String name;
 
 	@OneToMany(mappedBy = "character", cascade = CascadeType.ALL, fetch = FetchType.EAGER)

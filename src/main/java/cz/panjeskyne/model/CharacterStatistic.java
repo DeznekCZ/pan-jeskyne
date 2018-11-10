@@ -17,11 +17,11 @@ public class CharacterStatistic extends AbstractEntity {
 	private Long id;
 
 	@ManyToOne
-	@JoinColumn(name = "statistic_id")
+	@JoinColumn(name = "statistic_id", nullable = false)
 	private Statistic statistic;
 
 	@ManyToOne
-	@JoinColumn(name = "character_id")
+	@JoinColumn(name = "character_id", nullable = false)
 	private Character character;
 
 	@Column(name = "value")
