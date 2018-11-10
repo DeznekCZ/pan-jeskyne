@@ -5,18 +5,22 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name="statistic")
+@Table(name = "statistic", uniqueConstraints = { @UniqueConstraint(columnNames = { "codename" }) })
 public class Statistic extends AbstractEntity {
 
 	@Id
 	@GeneratedValue
 	private Long id;
-	
-	@Column(name = "name")
+
+	@Column(name = "name", nullable = false)
 	private String name;
-	
+
+	@Column(name = "codename", length = 10, nullable = false)
+	private String codename;
+
 	@Override
 	public Object getId() {
 		return id;
@@ -30,8 +34,16 @@ public class Statistic extends AbstractEntity {
 		this.name = name;
 	}
 
+	public String getCodename() {
+		return codename;
+	}
+
+	public void setCodename(String codename) {
+		this.codename = codename;
+	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
 }
