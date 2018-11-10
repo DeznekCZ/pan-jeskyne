@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
+<head>
+<script src="/pan-jeskyne/webjars/jquery/3.3.1-1/jquery.min.js"></script>
+<script src="/pan-jeskyne/webjars/Semantic-UI/2.4.0/semantic.min.js"></script>
+<script src="/pan-jeskyne/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<link rel="stylesheet"
+	href="/pan-jeskyne/webjars/Semantic-UI/2.4.0/semantic.min.css" />
+<meta charset="UTF-8">
+<title>Pán jeskyně</title>
+</head>
+<body>
+	<div class="ui menu">
+		<div class="ui dropdown item">
+			Administrace <i class="dropdown icon"></i>
+			<div class="menu">
+<!-- 				<a class="item" th:href="@{/game-administration}"><i class="cogs icon"></i>Nastavení hry</a> -->
+				<div class="ui dropdown item">
+					<i class="user icon"></i>&nbsp;Postavy <i class="dropdown icon"></i>
+					<div class="menu">
+						<a class="item" th:href="@{/character/create}"><i class="plus icon"></i>Vytvořit</a> 
+						<a class="item" th:href="@{/character/list}"><i class="list icon"></i>Seznam</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="content ui segment">
+		<div layout:fragment="page_content"></div>
+	</div>
+</body>
+</html>

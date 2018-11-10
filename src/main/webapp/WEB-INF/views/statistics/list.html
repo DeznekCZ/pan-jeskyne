@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<body>
+	<div th:fragment="list">
+		<h3 class="ui header">Druhy statistik</h3>
+		<table class="ui table">
+			<thead>
+				<tr>
+					<th>Název</th>
+					<th>Akce</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="stat,iter : ${statistics}">
+					<td th:text="${stat.name}">
+					</td>
+					<td>
+						<a th:href="@{/statistics/delete/{id}(id=${stat.id})}">smazat</a>
+						<a th:href="@{/statistics/update/{id}(id=${stat.id})}">změnit</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
