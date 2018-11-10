@@ -20,6 +20,9 @@ public class Statistic extends AbstractEntity {
 
 	@Column(name = "codename", length = 10, nullable = false)
 	private String codename;
+	
+	@Column(name = "formula", nullable = false)
+	private String formula;
 
 	@Override
 	public Object getId() {
@@ -40,6 +43,14 @@ public class Statistic extends AbstractEntity {
 
 	public void setCodename(String codename) {
 		this.codename = codename;
+	}
+
+	public String getFormula() {
+		return formula;
+	}
+
+	public void setFormula(String formula) {
+		this.formula = formula;
 	}
 
 	public void setId(Long id) {
