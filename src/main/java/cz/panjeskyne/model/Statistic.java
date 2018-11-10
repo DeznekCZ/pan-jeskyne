@@ -57,4 +57,8 @@ public class Statistic extends AbstractEntity {
 		this.id = id;
 	}
 
+	public boolean hasFormula() {
+		return getFormula() != null && getFormula().length() > 0;
+	}
+
 }
