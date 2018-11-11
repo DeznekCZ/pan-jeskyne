@@ -12,4 +12,10 @@ public interface StatisticService extends BaseService<Statistic, StatisticForm>{
 		return new ArrayList<>();
 	}
 
+	static Statistic getStatistic(String codename) {
+		Statistic statistic = new Statistic();
+		statistic.setCodename(codename);
+		return statistic;
+	}
+
 }
