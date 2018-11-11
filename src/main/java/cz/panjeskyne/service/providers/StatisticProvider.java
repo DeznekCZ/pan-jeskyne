@@ -4,7 +4,9 @@ import java.util.List;
 
 import cz.panjeskyne.model.Statistic;
 import cz.panjeskyne.service.KindService;
+import cz.panjeskyne.service.Result;
 import cz.panjeskyne.service.SkillService;
+import cz.panjeskyne.service.formula.Formula;
 import cz.panjeskyne.model.Character;
 
 public class StatisticProvider {
@@ -38,8 +40,6 @@ public class StatisticProvider {
 		
 		result.increase(KindService.getStatistic(character, statistic));
 		result.increase(SkillService.getStatistic(character, statistic));
-		
-		result.setSuccessful(true);
 		
 		return result;
 	}
