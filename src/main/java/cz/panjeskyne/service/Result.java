@@ -1,12 +1,16 @@
-package cz.panjeskyne.service.providers;
+package cz.panjeskyne.service;
 
 import cz.panjeskyne.model.Character;
+import cz.panjeskyne.service.formula.Formula;
+import cz.panjeskyne.service.formula.FormulaException;
+import cz.panjeskyne.service.providers.StatisticProvider;
 
 public class Result {
 
 	private boolean successful;
 	private Formula formula;
-	private Number value;
+	private Double value;
+	private FormulaException exception;
 
 	public Result() {
 		this.successful = true;
@@ -37,11 +41,20 @@ public class Result {
 		this.value = statistic.doubleValue() + this.value.doubleValue();
 	}
 
-	public Number getValue() {
+	public Double getValue() {
 		return value;
 	}
 	
-	public void setValue(Number value) {
+	public void setValue(Double value) {
 		this.value = value;
+	}
+
+	public void setException(FormulaException exception) {
+		this.exception = exception;
+		this.successful = exception == null;
+	}
+
+	public FormulaException getException() {
+		return exception;
 	}
 }
