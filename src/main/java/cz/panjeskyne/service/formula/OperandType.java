@@ -7,13 +7,14 @@ import java.util.function.Function;
 import cz.panjeskyne.i18n.I18N;
 
 public enum OperandType {
-	SUM('+', 2, 0, v -> v[0].doubleValue() + v[1].doubleValue(), (op,ot) -> ot.getOperand(op, 0) + ot.getOperator() + ot.getOperand(op, 1)),
-	SUB('-', 2, 1, v -> v[0].doubleValue() - v[1].doubleValue(), (op,ot) -> ot.getOperand(op, 0) + ot.getOperator() + ot.getOperand(op, 1)),
-	MUL('*', 2, 2, v -> v[0].doubleValue() * v[1].doubleValue(), (op,ot) -> ot.getOperand(op, 0) + ot.getOperator() + ot.getOperand(op, 1)),
-	DIV('/', 2, 3, v -> v[0].doubleValue() / v[1].doubleValue(), (op,ot) -> ot.getOperand(op, 0) + ot.getOperator() + ot.getOperand(op, 1)), 
-	BRACKET_END(')', 0, 4, v -> 0.0, (op,ot) -> ""), 
-	BRACKET_START('(', 1, 5, v -> 0.0, (op,ot) -> ""), 
-	NEXT(',', 1, 5, v -> 0.0, (op,ot) -> "");
+	BRACKET_END(')', 0, 0, v -> 0.0, (op,ot) -> ""), 
+	BRACKET_START('(', 1, 0, v -> 0.0, (op,ot) -> ""), 
+	NEXT(',', 1, 0, v -> 0.0, (op,ot) -> ""),
+	SUM('+', 2, 1, v -> v[0].doubleValue() + v[1].doubleValue(), (op,ot) -> ot.getOperand(op, 0) + ot.getOperator() + ot.getOperand(op, 1)),
+	SUB('-', 2, 2, v -> v[0].doubleValue() - v[1].doubleValue(), (op,ot) -> ot.getOperand(op, 0) + ot.getOperator() + ot.getOperand(op, 1)),
+	MUL('*', 2, 3, v -> v[0].doubleValue() * v[1].doubleValue(), (op,ot) -> ot.getOperand(op, 0) + ot.getOperator() + ot.getOperand(op, 1)),
+	DIV('/', 2, 4, v -> v[0].doubleValue() / v[1].doubleValue(), (op,ot) -> ot.getOperand(op, 0) + ot.getOperator() + ot.getOperand(op, 1));
+	
 	
 	private char operator;
 	private int operands;

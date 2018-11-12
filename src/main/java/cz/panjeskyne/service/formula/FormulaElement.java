@@ -113,14 +113,14 @@ public abstract class FormulaElement {
 
 		@Override
 		protected FormulaElement applyChild(FormulaElement child) throws FormulaException {
-			if (operandType.getOperands() > operands.size()) {
+			if (operandType.getOperands() > operands.size() && !child.isOperator()) {
 				child.parent = this;
 				operands.add(child);
 			} else if (child.isOperator()) {
 				if (operandType.getPriority() > cast(child).operandType.getPriority()) {
 					child.operands.add(this);
 					child.parent = this.parent;
-					this.parent = this;
+					this.parent = child;
 				} else {
 					child.parent = this;
 					child.operands.add(this.operands.get(1));
@@ -191,15 +191,12 @@ public abstract class FormulaElement {
 
 		@Override
 		protected FormulaElement applyChild(FormulaElement child) throws FormulaException {
-			if (child.isSimpleType()) {
+			if (child.isSimpleType() && !hasParent()) {
 				throw new FormulaException(I18N.argumented(I18N.CHILDREN_NOT_IMPLEMENTED, I18N.id(getClass().getName())));
 			} else if (!child.isSimpleType() && !hasParent()) {
-				child.applyChild(this);
-				this.parent = child;
-				return child;
+				return child.applyChild(this);
 			} else if (hasParent()) {
-				getParent().applyChild(child);
-				return child;
+				return getParent().applyChild(child);
 			} else {
 				throw new FormulaException(I18N.HAS_PARENT_ELEMENT);
 			}
@@ -237,16 +234,22 @@ public abstract class FormulaElement {
 
 		@Override
 		protected FormulaElement applyChild(FormulaElement child) throws FormulaException {
-			if (isClosed()) {
+			if (isClosed() && child.isSimpleType()) {
 				throw new FormulaException(I18N.BRACKET_IS_CLOSED);
-			} else if (operands.size() < 1) {
+			} else if (operands.size() < 1 && !isClosed()) {
 				this.operands.add(child);
 				child.parent = this;
-			} else if (operands.size() == 1 && !child.isSimpleType()) {
-				this.operands.get(0).parent = null;
-				child.applyChild(this.operands.get(0));
+			} else if (operands.size() == 1 && !child.isSimpleType() && !isClosed()) {
+				FormulaElement tmp = this.operands.get(0);
 				this.operands.set(0, child);
 				child.parent = this;
+				child.applyChild(tmp);
+			} else if (isClosed() && !child.isSimpleType()) {
+				if (hasParent()) {
+					return getParent().applyChild(child);
+				} else {
+					child.applyChild(this);
+				}
 			} else {
 				throw new FormulaException(I18N.argumented(I18N.TOO_MUCH_OPERANDS, I18N.id(getClass().getName())));
 			}
@@ -397,13 +400,17 @@ public abstract class FormulaElement {
 		return this instanceof BracketElement;
 	}
 
-	public boolean applyClose() {
+	public FormulaElement applyClose() throws FormulaException {
 		if (this.isCloseAble()) {
 			((BracketElement) this).setClosed(true);
-			return true;
+			return this;
 			
 		} else {
-			return hasParent() && getParent().applyClose();
+			if (hasParent()) {
+				return getParent().applyClose();
+			} else {
+				throw new FormulaException(I18N.MISSING_OPENING_BRACKET);
+			}
 		}
 	}
 

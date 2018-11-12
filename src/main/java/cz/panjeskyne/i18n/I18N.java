@@ -19,7 +19,7 @@ public enum I18N implements I18NA {
 	MISSING_OPENING_BRACKET("exception.formula.missing_opening_bracket"),
 	CHILDREN_NOT_IMPLEMENTED("exception.formula.child_elements_not_implemented"),
 	TOO_MUCH_OPERANDS("exception.formula.too_much_operands"),
-	BRACKET_IS_CLOSED("exception.formula.bracket_is_clodes"),
+	BRACKET_IS_CLOSED("exception.formula.bracket_is_closed"),
 	HAS_PARENT_ELEMENT("exception.formula.has_no_parent"),
 	DATA_NOT_FOUND("exception.data.not_found"),
 	

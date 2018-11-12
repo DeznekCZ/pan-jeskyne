@@ -57,8 +57,10 @@ public class Formula {
 				for (char operator : computingFormula.substring(start, end).toCharArray()) {
 					OperandType type = OperandType.getType(operator);
 					if (type == OperandType.BRACKET_END) {
-						if (fe == null || !fe.applyClose()) 
+						if (fe == null) 
 							throw new FormulaException(I18N.MISSING_OPENING_BRACKET);
+						else
+							fe = fe.applyClose();
 					} else if (type == OperandType.BRACKET_START) {
 						fe = FormulaElement.bracket().setParent(fe);
 					} else if (type == OperandType.NEXT) {
