@@ -13,6 +13,7 @@ public interface StatisticService extends BaseService<Statistic, StatisticForm>{
 	}
 
 	static Statistic getStatistic(String codename) {
+		// TODO vracet null pokud nic nenalezeno
 		Statistic statistic = new Statistic();
 		statistic.setCodename(codename);
 		return statistic;

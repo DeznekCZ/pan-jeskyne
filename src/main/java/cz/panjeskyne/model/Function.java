@@ -4,12 +4,16 @@ import cz.panjeskyne.service.formula.FunctionTypes;
 
 public class Function {
 
+	public String getCodename() {
+		return "function.abs";
+	}
+	
 	public FunctionTypes getType() {
-		return FunctionTypes.FORMULA;
+		return FunctionTypes.MATH;
 	}
 
 	public String getFormula() {
-		return "";
+		return "java.lang.Math.abs(java.lang.Double)";
 	}
 
 }

@@ -16,8 +16,14 @@ public enum I18N implements I18NA {
 	NOT_MATCH_FORMAT("exception.function.format_exception"),
 	METHOD_BAD_ARGUMENTS("exception.method.bad_arguments"), 
 	METHOD_NOT_INVOCATED("exception.method.bad_invocation"),
+	MISSING_OPENING_BRACKET("exception.formula.missing_opening_bracket"),
+	CHILDREN_NOT_IMPLEMENTED("exception.formula.child_elements_not_implemented"),
+	TOO_MUCH_OPERANDS("exception.formula.too_much_operands"),
+	BRACKET_IS_CLOSED("exception.formula.bracket_is_clodes"),
+	HAS_PARENT_ELEMENT("exception.formula.has_no_parent"),
+	DATA_NOT_FOUND("exception.data.not_found"),
 	
-	_VOID("void") 
+	_VOID("void"), 
 	;
 	
 	private static final String LOCALE = "cs_CZ";

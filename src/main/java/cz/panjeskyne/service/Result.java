@@ -34,7 +34,11 @@ public class Result {
 	}
 
 	public void applyFormula(Character character) {
-		this.value = StatisticProvider.getValue(character, formula.getStatistic()).value;
+		try {
+			this.value = formula.getRootElement().getValue(character);
+		} catch (FormulaException e) {
+			this.setException(e);
+		}
 	}
 
 	public void increase(Number statistic) {

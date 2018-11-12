@@ -18,6 +18,11 @@ public class I18NServiceImpl {
 		add("exception.function.format_exception", "Neodpovídá standartnímu formátu: %s");
 		add("exception.method.bad_arguments", "Chybné doruèení argumenty: oèekáváno %s"); 
 		add("exception.method.bad_invocation", "Nelze volat metodu: %s");
+		add("exception.formula.missing_opening_bracket", "Chybìjící otevírací závorka");
+		add("exception.formula.child_elements_not_implemented", "Aktuální element \"%s\" nepodporuje subelementy");
+		add("exception.formula.too_much_operands", "Aktuální element \"%s\" nepodporuje více operandù");
+		add("exception.formula.has_no_parent", "Chybìjící rodièovský element");
+		add("exception.data.not_found", "Nenalezena data pro id: %s");
 	}
 	
 	public static String getString(String codename) {
