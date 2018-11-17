@@ -3,6 +3,7 @@ package cz.panjeskyne.service.formula;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -16,86 +17,23 @@ import cz.panjeskyne.service.FunctionService;
 import cz.panjeskyne.service.Result;
 import cz.panjeskyne.service.StatisticService;
 import cz.panjeskyne.service.TableService;
+import cz.panjeskyne.service.formula.FormulaElement.NextElement;
 import cz.panjeskyne.service.providers.StatisticProvider;
 
 public abstract class FormulaElement {
 
-	public static class MathElement extends FormulaElement {
-		
-		private FunctionElement element;
-		private Method method;
-		private String fullQualifiedName;
-		private String arguments;
-		private String className;
+	public static class NextElement extends FormulaElement {
 
-		public MathElement(FunctionElement element) throws FormulaException {
-			this.element = element;
-			check();
-		}
-
-		private void check() throws FormulaException {
-			// java.lang.Math.abs(java.lang.Double)
-			fullQualifiedName = this.element.function.getFormula();
-			Matcher matcher = null;
-			List<Class<?>> classes = new ArrayList<>(2);
-			try {
-				className = fullQualifiedName.substring(0, fullQualifiedName.split("[(]")[0].lastIndexOf('.'));
-				
-			} catch (RuntimeException e) {
-				throw new FormulaException(I18N.argumented(I18N.NOT_MATCH_FORMAT, I18N.id(fullQualifiedName)));
-			}
-			try {
-				Class<?> clazz = ClassLoader.getSystemClassLoader().loadClass(className);
-				
-				matcher = Pattern.compile("[(]((\\w+([.]\\w+)*)(,\\s*(\\w+([.]\\w+)*))*)[)]").matcher(fullQualifiedName);
-				if (!matcher.find()) throw new RuntimeException();
-				
-				arguments = matcher.group();
-				matcher = Pattern.compile("\\w+([.]\\w+)*").matcher(arguments);
-				while (matcher.find()) {
-					classes.add(ClassLoader.getSystemClassLoader().loadClass(matcher.group()));
-				}
-				method = clazz.getMethod(
-						fullQualifiedName.substring(fullQualifiedName.split("[(]")[0].lastIndexOf('.')+1),
-						classes.toArray(new Class[classes.size()])
-						);
-				
-				
-			} catch (ClassNotFoundException e) {
-				throw new FormulaException(I18N.argumented(I18N.CLASS_NOT_FOUND, I18N.id(className)));
-			} catch (NoSuchMethodException e) {
-				throw new FormulaException(I18N.argumented(I18N.METHOD_NOT_FOUND, I18N.id(fullQualifiedName)));
-			} catch (SecurityException e) {
-				throw new FormulaException(I18N.argumented(I18N.METHOD_NOT_VISIBLE, I18N.id(fullQualifiedName)));
-			} catch (IllegalArgumentException e) {
-				throw new FormulaException(I18N.argumented(I18N.METHOD_BAD_ARGUMENTS, I18N.id(arguments)));
-			}
+		@Override
+		public double getValue(Character character) throws FormulaException {
+			return 0;
 		}
 
 		@Override
-		public Double getValue(Character character) throws FormulaException {
-			try {
-				return (Double) method.invoke(null, (Object[]) calculateOperands(character));
-			} catch (IllegalAccessException e) {
-				throw new FormulaException(I18N.argumented(I18N.METHOD_NOT_VISIBLE, I18N.id(fullQualifiedName)));
-			} catch (IllegalArgumentException e) {
-				throw new FormulaException(I18N.argumented(I18N.METHOD_BAD_ARGUMENTS, I18N.id(arguments)));
-			} catch (InvocationTargetException e) {
-				throw new FormulaException(I18N.argumented(I18N.METHOD_NOT_INVOCATED, I18N.id(fullQualifiedName)));
-			}
+		protected FormulaElement applyChild(FormulaElement child) throws FormulaException {
+			return null;
 		}
 
-		@Override
-		protected FormulaElement applyChild(FormulaElement child) {
-			child.parent = this;
-			this.operands.add(child);
-			return child;
-		}
-
-		@Override
-		public String toString() {
-			return className + ".(" + toStringOperands() + ")";
-		}
 	}
 	
 	public static class OperatorElement extends FormulaElement {
@@ -107,7 +45,7 @@ public abstract class FormulaElement {
 		}
 
 		@Override
-		public Double getValue(Character character) throws FormulaException {
+		public double getValue(Character character) throws FormulaException {
 			return operandType.apply(calculateOperands(character));
 		}
 
@@ -152,7 +90,7 @@ public abstract class FormulaElement {
 		}
 
 		@Override
-		public Double getValue(Character character) throws FormulaException {
+		public double getValue(Character character) throws FormulaException {
 			return validate(StatisticProvider.getValue(character, statistic));
 		}
 
@@ -185,7 +123,7 @@ public abstract class FormulaElement {
 		}
 
 		@Override
-		public Double getValue(Character character) throws FormulaException {
+		public double getValue(Character character) throws FormulaException {
 			return number;
 		}
 
@@ -218,7 +156,7 @@ public abstract class FormulaElement {
 		}
 		
 		@Override
-		public Double getValue(Character character) throws FormulaException {
+		public double getValue(Character character) throws FormulaException {
 			if (operands.size() != 1)
 				throw new FormulaException(I18N.BRACKET_INVALID);
 			return operands.get(0).getValue(character);
@@ -267,7 +205,10 @@ public abstract class FormulaElement {
 		private String identifier;
 		private Function function;
 		private Table table;
-		private Result result;
+		private MathMethod math;
+		private BracketElement argument;
+		private int nextArgument;
+		private int argsCount;
 
 		public FunctionElement(String identifier) throws FormulaException {
 			this.identifier = identifier;
@@ -277,32 +218,48 @@ public abstract class FormulaElement {
 
 		private void check() throws FormulaException {
 			function = FunctionService.getFunction(identifier);
-			if (function.getType() == FunctionTypes.TABLE) {
+			if (function == null) {
+				throw new FormulaException(I18N.argumented(I18N.FUNCTION_NOT_FOUND, I18N.id(identifier)));
+			} else if (function.getType() == FunctionTypes.TABLE) {
 				table = TableService.getTable(identifier);
 				if (table == null) throw new FormulaException(I18N.argumented(I18N.TABLE_NOT_FOUND, I18N.id(identifier)));
+				for (int i = 0; i < table.getArgsCount(); i++) {
+					this.operands.add(FormulaElement.bracket());
+					this.operands.get(i).parent = this;
+				}
+				this.argument = (BracketElement) this.operands.get(0);
+				this.nextArgument = 1;
+				this.setArgsCount(table.getArgsCount());
+				
 			} else if (function.getType() == FunctionTypes.MATH) {
-				result = new Result();
-				result.setFormula(new Formula(function.getFormula()));
-				result.getFormula().setRootElement(new FormulaElement.MathElement(this));
+				this.math = new MathMethod(this.function.getFormula(), operands);
+				for (int i = 0; i < function.getArgsCount(); i++) {
+					this.operands.add(FormulaElement.bracket());
+					this.operands.get(i).parent = this;
+				}
+				this.argument = (BracketElement) this.operands.get(0);
+				this.nextArgument = 1;
+				this.setArgsCount(function.getArgsCount());
 			} else {
 				throw new FormulaException(I18N.argumented(I18N.FUNCTION_NOT_FOUND, I18N.id(identifier)));
 			}
 		}
 
+		public void setArgsCount(int argsCount) {
+			this.argsCount = argsCount;
+		}
+
+		public int getArgsCount() {
+			return argsCount;
+		}
+		
 		@Override
-		public Double getValue(Character character) throws FormulaException {
+		public double getValue(Character character) throws FormulaException {
 			if (function.getType() == FunctionTypes.TABLE) {
-				if (operands.size() != table.getArgsCount()) {
-					throw new FormulaException(I18N.argumented(I18N.TABLE_INVALID_ARGS_COUNT, 
-							I18N.string(table.getCodename()),
-							I18N.number(table.getArgsCount()), 
-							I18N.number(operands.size())));
-				}
 				return table.getValue(calculateOperands(character));
 			}
 			if (function.getType() == FunctionTypes.MATH) {
-				result.applyFormula(character);
-				return result.getValue();
+				return math.getValue(calculateOperands(character));
 			}
 			return 0.0;
 		}
@@ -311,27 +268,35 @@ public abstract class FormulaElement {
 		protected FormulaElement applyChild(FormulaElement child) throws FormulaException {
 			if (isClosed()) {
 				throw new FormulaException(I18N.BRACKET_IS_CLOSED);
-			} else if (function.getType() == FunctionTypes.MATH) {
-				return result.getFormula().getRootElement().applyChild(child);
-			} else if (function.getType() == FunctionTypes.TABLE) {
-				if (this.operands.size() < table.getArgsCount()) {
-					this.operands.add(child);
-					child.parent = this;
-					return child;
-				} else {
+			} else if (child instanceof NextElement) {
+				if (nextArgument == operands.size()) {
 					throw new FormulaException(I18N.argumented(I18N.TOO_MUCH_OPERANDS, I18N.id(getClass().getName())));
+				} else {
+					argument.applyClose();
+					argument = (BracketElement) operands.get(nextArgument);
+					nextArgument ++;
 				}
+				return this;
+			} else {
+				return argument.applyChild(child);
 			}
-			return child;
 		}
 
 		@Override
 		public String toString() {
-			if (function.getType() == FunctionTypes.MATH)
-				return result.getFormula().getRootElement().toString();
-			if (function.getType() == FunctionTypes.TABLE)
-				return operands.size() > 0 ? (identifier+"("+toStringOperands()+")") : (identifier+"([NOT_DEFINED])");
-			return "[NOT_DEFINED]";
+			return operands.size() > 0 ? (identifier+"("+toStringOperands()+")") : (identifier+"([NOT_DEFINED])");
+		}
+		
+		@Override
+		public FormulaElement applyClose() throws FormulaException {
+			if (nextArgument < operands.size()) {
+				throw new FormulaException(
+						I18N.argumented(I18N.INVALID_ARGS_COUNT, 
+								I18N.id(identifier), I18N.number(nextArgument), I18N.number(getArgsCount())));
+			} else {
+				argument.applyClose();
+			}
+			return super.applyClose();
 		}
 	}
 
@@ -347,7 +312,7 @@ public abstract class FormulaElement {
 			sb.append(formulaElement.toString());
 		}
 		
-		return sb.toString().substring(2);
+		return sb.toString().substring(1);
 	}
 
 	public static FormulaElement variable(String codename) throws FormulaException {
@@ -371,15 +336,15 @@ public abstract class FormulaElement {
 		return this instanceof NumberElement || this instanceof StatisticElement;
 	}
 
-	public abstract Double getValue(Character character) throws FormulaException;
+	public abstract double getValue(Character character) throws FormulaException;
 	
 	public Double validate(Result result) throws FormulaException {
 		if (!result.isSuccessful()) throw result.getException();
 		return result.getValue();
 	}
 
-	protected Double[] calculateOperands(Character character) throws FormulaException {
-		Double[] numbers = new Double[operands.size()];
+	protected double[] calculateOperands(Character character) throws FormulaException {
+		double[] numbers = new double[operands.size()];
 		int i = 0;
 		for (FormulaElement operand : operands) {
 			numbers[i] = operand.getValue(character);
@@ -438,5 +403,9 @@ public abstract class FormulaElement {
 
 	public static FormulaElement operator(OperandType type) {
 		return new OperatorElement(type);
+	}
+
+	public static FormulaElement next() {
+		return new NextElement();
 	}
 }

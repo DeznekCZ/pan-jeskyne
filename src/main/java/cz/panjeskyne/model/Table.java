@@ -2,7 +2,7 @@ package cz.panjeskyne.model;
 
 public class Table {
 
-	public Double getValue(Double[] numbers) {
+	public double getValue(double[] numbers) {
 		// gets value from table with count of arguments
 		return 0.0;
 	}

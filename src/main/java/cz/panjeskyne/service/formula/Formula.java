@@ -12,8 +12,6 @@ import cz.panjeskyne.service.StatisticService;
 
 public class Formula {
 	
-	private static final Pattern WHITESPACES = Pattern.compile("\\s+");
-	
 	private Statistic statistic;
 
 	private FormulaElement rootElement;
@@ -33,6 +31,7 @@ public class Formula {
 		result.setFormula(formula);
 		
 		formula.clearWhiteSpaces();
+		formula.normalizeOperators();
 		try {
 			formula.start(result);
 		} catch (FormulaException e) {
@@ -42,7 +41,40 @@ public class Formula {
 		return result;
 	}
 	
-	private static final Pattern SEARCH = Pattern.compile("([0-9]+([.][0-9]+)?)|((\\w+(.\\w+)+)([(])?)");
+	private static final Pattern WHITESPACES = Pattern.compile("\\s+");
+
+	private void clearWhiteSpaces() {
+		Matcher matcher = WHITESPACES.matcher(getFormulaString());
+		StringBuffer buffer = new StringBuffer(getFormulaString().length());
+		while (matcher.find()) {
+			matcher.appendReplacement(buffer, "");
+		}
+		matcher.appendTail(buffer);
+		computingFormula = buffer.toString();
+	}
+	
+	private static final Pattern INVERT = Pattern.compile("([^)*/0-9a-zA-Z]|^)(-|[+])");
+	
+	private void normalizeOperators() {
+		Matcher matcher = INVERT.matcher(computingFormula
+				.replace("+-", "-")
+				.replace("--", "+")
+				.replace("*-", "*(0-1)*")
+				.replace("/-", "*(0-1)/")
+				.replace("*+", "*")
+				.replace("/+", "/")
+				);
+		StringBuffer buffer = new StringBuffer(getFormulaString().length());
+		while (matcher.find()) {
+			matcher.appendReplacement(buffer, matcher.group(1));
+			buffer.append("0");
+			buffer.append(matcher.group(2));
+		}
+		matcher.appendTail(buffer);
+		computingFormula = buffer.toString();
+	}
+
+	private static final Pattern SEARCH = Pattern.compile("([0-9]+([.][0-9]+)?)|((\\w+([.]\\w+)+)([(])?)");
 	
 	protected void start(Result result) throws FormulaException {
 		Matcher matcher = SEARCH.matcher(computingFormula);
@@ -64,7 +96,7 @@ public class Formula {
 					} else if (type == OperandType.BRACKET_START) {
 						fe = FormulaElement.bracket().setParent(fe);
 					} else if (type == OperandType.NEXT) {
-						// skip, handled by adding operands
+						fe = FormulaElement.next().setParent(fe);
 					} else {
 						fe = FormulaElement.operator(type).setParent(fe);
 					}
@@ -72,7 +104,7 @@ public class Formula {
 			}
 			if (matcher.group(5) != null) {
 				// READ FUNCTION
-				String identifier = matcher.group(5);
+				String identifier = matcher.group(4);
 				fe = FormulaElement.function(identifier).setParent(fe);
 			} else if (matcher.group().matches("[0-9]+([.][0-9]+)?")) {
 				// READ NUMBER
@@ -91,16 +123,6 @@ public class Formula {
 		}
 		
 		setRootElement(fe);
-	}
-
-	protected void clearWhiteSpaces() {
-		Matcher matcher = WHITESPACES.matcher(getFormulaString());
-		StringBuffer buffer = new StringBuffer(getFormulaString().length());
-		while (matcher.find()) {
-			matcher.appendReplacement(buffer, "");
-		}
-		matcher.appendTail(buffer);
-		computingFormula = buffer.toString();
 	}
 
 	public String getFormulaString() {

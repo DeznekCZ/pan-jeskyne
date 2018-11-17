@@ -36,10 +36,13 @@ public class StatisticProvider {
 			
 			inMiddle.applyFormula(character);
 			result.setValue(inMiddle.getValue());
+			result.setException(inMiddle.getException());
 		}
 		
-		result.increase(KindService.getStatistic(character, statistic));
-		result.increase(SkillService.getStatistic(character, statistic));
+		if (result.isSuccessful()) {
+			result.increase(KindService.getStatistic(character, statistic));
+			result.increase(SkillService.getStatistic(character, statistic));
+		}
 		
 		return result;
 	}

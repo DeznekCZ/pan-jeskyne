@@ -9,7 +9,7 @@ public class Result {
 
 	private boolean successful;
 	private Formula formula;
-	private Double value;
+	private double value;
 	private FormulaException exception;
 
 	public Result() {
@@ -41,15 +41,16 @@ public class Result {
 		}
 	}
 
-	public void increase(Number statistic) {
-		this.value = statistic.doubleValue() + this.value.doubleValue();
+	public void increase(double statistic) {
+		if (this.successful)
+			this.value = statistic + this.value;
 	}
 
-	public Double getValue() {
+	public double getValue() {
 		return value;
 	}
 	
-	public void setValue(Double value) {
+	public void setValue(double value) {
 		this.value = value;
 	}
 

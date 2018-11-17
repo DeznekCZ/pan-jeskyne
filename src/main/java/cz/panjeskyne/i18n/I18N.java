@@ -22,6 +22,7 @@ public enum I18N implements I18NA {
 	BRACKET_IS_CLOSED("exception.formula.bracket_is_closed"),
 	HAS_PARENT_ELEMENT("exception.formula.has_no_parent"),
 	DATA_NOT_FOUND("exception.data.not_found"),
+	INVALID_ARGS_COUNT("exception.function.invalid_count_arguments"),
 	
 	_VOID("void"), 
 	;
