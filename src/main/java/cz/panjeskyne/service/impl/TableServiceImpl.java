@@ -1,5 +1,7 @@
 package cz.panjeskyne.service.impl;
 
+import static java.lang.Math.*;
+
 public class TableServiceImpl {
 	private static int[][] ZZvalue = new int[][] {
 		{-4,-3,-3,-2,-2,-1, 0, 0, 1, 2, 2, 3, 4, 5, 6, 6, 7, 8, 9,10,11,12,13,14,15,15},
@@ -32,7 +34,11 @@ public class TableServiceImpl {
 	
 	public static int ZZ(int zz, int sila)
 	{
-		return ZZvalue[(zz + 5)][(sila + 5)];
+		if (zz > 15 || sila > 15) {
+			return (int) round((log10(pow(2, zz / 6.0) + pow(2, sila / 6.0)) / log10(2)) * 6) - 5;
+		} else {
+			return ZZvalue[(zz + 5)][(sila + 5)];
+		}
 	}
 	
 	static int[] LIFEroot = v(
