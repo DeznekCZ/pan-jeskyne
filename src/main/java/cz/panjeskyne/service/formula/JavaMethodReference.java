@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 
 import cz.panjeskyne.i18n.I18N;
 
-public class MathMethod {
+public class JavaMethodReference {
 	
 	private Method method;
 	private String fullQualifiedName;
@@ -19,7 +19,7 @@ public class MathMethod {
 	private List<Class<?>> classes;
 	private String methodName;
 
-	public MathMethod(String fullQualifiedName, List<FormulaElement> parentOperands) throws FormulaException {
+	public JavaMethodReference(String fullQualifiedName, List<FormulaElement> parentOperands) throws FormulaException {
 		this.fullQualifiedName = fullQualifiedName;
 		
 		check();

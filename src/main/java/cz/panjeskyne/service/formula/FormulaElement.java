@@ -205,7 +205,7 @@ public abstract class FormulaElement {
 		private String identifier;
 		private Function function;
 		private Table table;
-		private MathMethod math;
+		private JavaMethodReference math;
 		private BracketElement argument;
 		private int nextArgument;
 		private int argsCount;
@@ -232,7 +232,7 @@ public abstract class FormulaElement {
 				this.setArgsCount(table.getArgsCount());
 				
 			} else if (function.getType() == FunctionTypes.MATH) {
-				this.math = new MathMethod(this.function.getFormula(), operands);
+				this.math = new JavaMethodReference(this.function.getFormula(), operands);
 				for (int i = 0; i < function.getArgsCount(); i++) {
 					this.operands.add(FormulaElement.bracket());
 					this.operands.get(i).parent = this;
