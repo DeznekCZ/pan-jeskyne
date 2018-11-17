@@ -8,6 +8,8 @@ public class CharacterForm implements Form {
 	
 	private String name;
 	
+	private Long kindId;
+	
 	private List<CharacterStatisticForm> statistics;
 
 	public Long getId() {
@@ -24,6 +26,14 @@ public class CharacterForm implements Form {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public Long getRaceId() {
+		return kindId;
+	}
+
+	public void setRaceId(Long raceId) {
+		this.kindId = raceId;
 	}
 
 	public List<CharacterStatisticForm> getStatistics() {

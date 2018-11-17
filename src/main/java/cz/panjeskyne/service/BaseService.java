@@ -4,12 +4,11 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
-import cz.panjeskyne.form.Form;
 import cz.panjeskyne.form.PaginatedResult;
 import cz.panjeskyne.model.AbstractEntity;
 
 @Transactional
-public interface BaseService<T extends AbstractEntity, F extends Form> {
+public interface BaseService<T extends AbstractEntity> {
 
 	T find(Object id);
 	
@@ -20,9 +19,5 @@ public interface BaseService<T extends AbstractEntity, F extends Form> {
 	List<T> getAll();
 
 	PaginatedResult<T> getAllPaginated(int page, int limit);
-	
-	void fillModelFromForm(F form, T model);
-
-	void fillFormFromModel(F form, T model);
 
 }

@@ -15,6 +15,17 @@
 			<div class="field">
 				<label>Jméno</label> <input th:field="*{name}" />
 			</div>
+			
+			<h3 class="ui dividing header">Rasa</h3>
+			<div class="field">
+				<select class="ui search dropdown" th:field="*{raceId}">
+					<option value="">Rasa</option>
+					<th:block th:each="race : ${races}">
+						<option th:value="${race.id}" th:text="${race.name}"></option>
+					</th:block>
+				</select>
+			</div>
+
 			<h3 class="ui dividing header">Statistiky</h3>
 			<th:block th:each="stat,iter : *{statistics}">
 				<div class="one wide field">

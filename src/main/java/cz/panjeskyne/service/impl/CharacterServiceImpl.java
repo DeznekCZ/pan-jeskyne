@@ -19,7 +19,7 @@ import cz.panjeskyne.service.CharacterStatisticService;
 import cz.panjeskyne.service.StatisticService;
 
 @Service
-public class CharacterServiceImpl extends AbstractBaseService<Character, CharacterForm> implements CharacterService {
+public class CharacterServiceImpl extends AbstractBaseService<Character> implements CharacterService {
 
 	@Autowired
 	private CharacterStatisticService characterStatisticService;

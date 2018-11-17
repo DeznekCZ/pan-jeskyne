@@ -2,11 +2,13 @@ package cz.panjeskyne.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cz.panjeskyne.form.CharacterForm;
 import cz.panjeskyne.model.Character;
 import cz.panjeskyne.service.CharacterService;
+import cz.panjeskyne.service.RaceService;
 
 @Controller
 @RequestMapping(CharacterController.BASE_PATH)
@@ -23,6 +25,9 @@ public class CharacterController extends AbstractCrudController<Character, Chara
 	@Autowired
 	private CharacterService characterService;
 	
+	@Autowired
+	private RaceService raceService;
+	
 	public CharacterController() {
 		super(DISPLAY_TEMPLATE, FORM_TEMPLATE, LIST_TEMPLATE, BASE_PATH, Character.class);
 	}
@@ -32,5 +37,10 @@ public class CharacterController extends AbstractCrudController<Character, Chara
 		CharacterForm form = new CharacterForm();
 		characterService.fillFormFromModel(form, new Character());
 		return form;
+	}
+	
+	@Override
+	protected void initFormModel(Model model) {
+		model.addAttribute("races", raceService.getAll());
 	}
 }

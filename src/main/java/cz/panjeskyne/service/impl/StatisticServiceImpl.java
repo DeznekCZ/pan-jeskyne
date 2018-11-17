@@ -8,7 +8,7 @@ import cz.panjeskyne.service.AbstractBaseService;
 import cz.panjeskyne.service.StatisticService;
 
 @Service
-public class StatisticServiceImpl extends AbstractBaseService<Statistic, StatisticForm>
+public class StatisticServiceImpl extends AbstractBaseService<Statistic>
 		implements StatisticService {
 
 	@Override

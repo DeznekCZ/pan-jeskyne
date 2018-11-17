@@ -11,7 +11,7 @@ import cz.panjeskyne.service.AbstractBaseService;
 import cz.panjeskyne.service.CharacterStatisticService;
 
 @Service
-public class CharacterStatisticServiceImpl extends AbstractBaseService<CharacterStatistic, CharacterStatisticForm> implements CharacterStatisticService {
+public class CharacterStatisticServiceImpl extends AbstractBaseService<CharacterStatistic> implements CharacterStatisticService {
 
 	@Autowired
 	private CharacterDAO characterDao;

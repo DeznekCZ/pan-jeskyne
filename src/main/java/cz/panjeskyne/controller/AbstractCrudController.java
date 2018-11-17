@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import cz.panjeskyne.form.Form;
 import cz.panjeskyne.form.PaginatedResult;
 import cz.panjeskyne.model.AbstractEntity;
+import cz.panjeskyne.service.BaseFormService;
 import cz.panjeskyne.service.BaseService;
 
 public abstract class AbstractCrudController<M extends AbstractEntity, F extends Form> {
@@ -20,7 +21,7 @@ public abstract class AbstractCrudController<M extends AbstractEntity, F extends
 	private static final String FORM_ATTR = "form";
 
 	@Autowired
-	private BaseService<M, F> service;
+	private BaseFormService<M, F> service;
 
 	private String displayTemplate;
 
@@ -54,12 +55,14 @@ public abstract class AbstractCrudController<M extends AbstractEntity, F extends
 	@RequestMapping("/create")
 	public String create(Model model, @ModelAttribute(name = FORM_ATTR) F form,
 			@PathVariable(name = ID_ATTR, required = false) Long id) {
+		initFormModel(model);
 		return formTemplate;
 	}
 
 	@RequestMapping("/update/{id}")
 	public String update(Model model, @ModelAttribute(name = FORM_ATTR) F form,
 			@PathVariable(name = ID_ATTR, required = true) long id) {
+		initFormModel(model);
 		M entity = service.find(id);
 		service.fillFormFromModel(form, entity);
 		return formTemplate;
@@ -109,6 +112,10 @@ public abstract class AbstractCrudController<M extends AbstractEntity, F extends
 		PaginatedResult<M> result = service.getAllPaginated(page, limit);
 		model.addAttribute("result", result);
 		return listTemplate;
+	}
+	
+	protected void initFormModel(Model model) {
+		
 	}
 
 	public int getDefaultLimit() {

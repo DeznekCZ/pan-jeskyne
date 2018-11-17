@@ -6,7 +6,7 @@ import java.util.List;
 import cz.panjeskyne.form.StatisticForm;
 import cz.panjeskyne.model.Statistic;
 
-public interface StatisticService extends BaseService<Statistic, StatisticForm>{
+public interface StatisticService extends BaseFormService<Statistic, StatisticForm>{
 
 	static List<Statistic> getStatisticsWhereFormulaContains(String codename) {
 		return new ArrayList<>();

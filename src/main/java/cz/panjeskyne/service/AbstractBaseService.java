@@ -7,11 +7,10 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import cz.panjeskyne.dao.BaseDAO;
-import cz.panjeskyne.form.Form;
 import cz.panjeskyne.form.PaginatedResult;
 import cz.panjeskyne.model.AbstractEntity;
 
-public abstract class AbstractBaseService<T extends AbstractEntity, F extends Form> implements BaseService<T, F> {
+public abstract class AbstractBaseService<T extends AbstractEntity> implements BaseService<T> {
 	
 	@Autowired
 	protected BaseDAO<T> dao;

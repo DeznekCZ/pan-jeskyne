@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -23,6 +25,10 @@ public class Character extends AbstractEntity {
 
 	@Column(name = "name", nullable = false)
 	private String name;
+	
+	@ManyToOne
+	@JoinColumn(name = "kind_id")
+	private Kind kind;
 
 	@OneToMany(mappedBy = "character", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<CharacterStatistic> statistics;
@@ -48,6 +54,14 @@ public class Character extends AbstractEntity {
 
 	public void setStatistics(List<CharacterStatistic> statistics) {
 		this.statistics = statistics;
+	}
+
+	public Kind getKind() {
+		return kind;
+	}
+
+	public void setKind(Kind kind) {
+		this.kind = kind;
 	}
 
 	@Transient
