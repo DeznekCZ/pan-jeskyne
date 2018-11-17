@@ -2,66 +2,66 @@
 <module id="drd+2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:noNamespaceSchemaLocation="database.xsd">
   <stats>
-    <stat id="statistic.sil" name="síla" desc="Vyjadřuje sílu hrdiny" />
-    <stat id="statistic.obr" name="obratnost" desc="Vyjadřuje obratnost hrdiny" />
-    <stat id="statistic.zrc" name="zručnost" desc="Vyjadřuje zručnost hrdiny" />
-    <stat id="statistic.vol" name="vůle" desc="Vyjadřuje vůli hrdiny" />
-    <stat id="statistic.int" name="inteligence" desc="Vyjadřuje inteligenci hrdiny" />
-    <stat id="statistic.chr" name="charisma" desc="Vyjadřuje charismu hrdiny" />
-    <stat id="statistic.odl" name="odolnost" desc="Vyjadřuje odolnost hrdiny vůči okolním vlivům (př. počasí)">
+    <statistic id="statistic.sil" name="síla" desc="Vyjadřuje sílu hrdiny" />
+    <statistic id="statistic.obr" name="obratnost" desc="Vyjadřuje obratnost hrdiny" />
+    <statistic id="statistic.zrc" name="zručnost" desc="Vyjadřuje zručnost hrdiny" />
+    <statistic id="statistic.vol" name="vůle" desc="Vyjadřuje vůli hrdiny" />
+    <statistic id="statistic.int" name="inteligence" desc="Vyjadřuje inteligenci hrdiny" />
+    <statistic id="statistic.chr" name="charisma" desc="Vyjadřuje charismu hrdiny" />
+    <statistic id="statistic.odl" name="odolnost" desc="Vyjadřuje odolnost hrdiny vůči okolním vlivům (př. počasí)">
       statistic.sil
-    </stat>
-    <stat id="statistic.kon" name="kondice"
+    </statistic>
+    <statistic id="statistic.kon" name="kondice"
       desc="Kondice vyjadřuje hrdinovu schonost vydržet vyšší silové či magické vypětí.">
       function.min(10, 6 + statistic.odl)
-    </stat>
-    <stat id="statistic.moc" name="moc" desc="Vyjadřuje moc hrdiny\nPoužívá se pro určení síly kouzla.">
+    </statistic>
+    <statistic id="statistic.moc" name="moc" desc="Vyjadřuje moc hrdiny\nPoužívá se pro určení síly kouzla.">
       statistic.vol
-    </stat>
-    <stat id="statistic.sms.zrak" name="zrak" desc="Smysly vyjadřují shopnost vnímat okolí">
+    </statistic>
+    <statistic id="statistic.sms.zrak" name="zrak" desc="Smysly vyjadřují shopnost vnímat okolí">
       statistic.zrc
-    </stat>
-    <stat id="statistic.sms.cich" name="čich" desc="Smysly vyjadřují shopnost vnímat okolí">
+    </statistic>
+    <statistic id="statistic.sms.cich" name="čich" desc="Smysly vyjadřují shopnost vnímat okolí">
       statistic.zrc
-    </stat>
-    <stat id="statistic.sms.chut" name="chuť" desc="Smysly vyjadřují shopnost vnímat okolí">
+    </statistic>
+    <statistic id="statistic.sms.chut" name="chuť" desc="Smysly vyjadřují shopnost vnímat okolí">
       statistic.zrc
-    </stat>
-    <stat id="statistic.sms.hmat" name="hamt" desc="Smysly vyjadřují shopnost vnímat okolí">
+    </statistic>
+    <statistic id="statistic.sms.hmat" name="hamt" desc="Smysly vyjadřují shopnost vnímat okolí">
       statistic.zrc
-    </stat>
-    <stat id="statistic.sms.sluch" name="sluch" desc="Smysly vyjadřují shopnost vnímat okolí">
+    </statistic>
+    <statistic id="statistic.sms.sluch" name="sluch" desc="Smysly vyjadřují shopnost vnímat okolí">
       statistic.zrc
-    </stat>
-    <stat id="statistic.krs" name="krása" desc="">
+    </statistic>
+    <statistic id="statistic.krs" name="krása" desc="">
       function.roundup((statistic.zrc + statistic.obr) / 2) + function.roundup(statistic.chr / 2)
-    </stat>
-    <stat id="statistic.dst" name="důstojnost" desc="">
+    </statistic>
+    <statistic id="statistic.dst" name="důstojnost" desc="">
       function.roundup((statistic.int + statistic.vol) / 2) + function.roundup(statistic.chr / 2)
-    </stat>
-    <stat id="statistic.neb" name="nebezpečnost" desc="">
+    </statistic>
+    <statistic id="statistic.neb" name="nebezpečnost" desc="">
       function.roundup((statistic.sil + statistic.vol) / 2) + function.roundup(statistic.chr / 2)
-    </stat>
-    <stat id="statistic.f2f" name="útok z blízka" desc="">
+    </statistic>
+    <statistic id="statistic.f2f" name="útok z blízka" desc="">
       statistic.obr
-    </stat>
-    <stat id="statistic.ranged" name="střelba" desc="">
+    </statistic>
+    <statistic id="statistic.ranged" name="střelba" desc="">
       function.roundup((statistic.obr + statistic.zrc) / 2)
-    </stat>
-    <stat id="statistic.magic" name="kouzlení" desc="">
+    </statistic>
+    <statistic id="statistic.magic" name="kouzlení" desc="">
       function.roundup((statistic.obr + statistic.int) / 2)
-    </stat>
-    <stat id="statistic.f2f" name="útok z blízka" desc="">
+    </statistic>
+    <statistic id="statistic.f2f" name="útok z blízka" desc="">
       function.roundup(statistic.obr / 2)
-    </stat>
-    <stat id="statistic.ranged" name="střelba" desc="">
+    </statistic>
+    <statistic id="statistic.ranged" name="střelba" desc="">
       function.roundup(statistic.zrc / 2)
-    </stat>
-    <stat id="statistic.magic" name="kouzlení" desc="">
+    </statistic>
+    <statistic id="statistic.magic" name="kouzlení" desc="">
       statistic.int
-    </stat>
-    <stat id="statistic.def" name="obrana" desc="" >
+    </statistic>
+    <statistic id="statistic.def" name="obrana" desc="" >
       5 + function.roundup(statistic.obr)
-    </stat>
+    </statistic>
   </stats>
 </module>
