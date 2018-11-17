@@ -70,4 +70,9 @@ public class Kind extends AbstractEntity {
 		this.id = id;
 	}
 
+	public int getStatistic(String codename) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

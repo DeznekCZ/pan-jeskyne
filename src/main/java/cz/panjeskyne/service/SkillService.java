@@ -1,12 +1,11 @@
 package cz.panjeskyne.service;
 
-import cz.panjeskyne.model.Character;
-import cz.panjeskyne.model.Statistic;
+import cz.panjeskyne.model.CharacterSkill;
 
 public interface SkillService {
 
-	static double getStatistic(Character character, Statistic statistic) {
-		return 0.0; // TODO
+	static CharacterSkill getSkill(Object characterId) {
+		return new CharacterSkill();
 	}
 
 }

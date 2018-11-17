@@ -40,8 +40,7 @@ public class StatisticProvider {
 		}
 		
 		if (result.isSuccessful()) {
-			result.increase(KindService.getStatistic(character, statistic));
-			result.increase(SkillService.getStatistic(character, statistic));
+			result.increase(character.getKind().getStatistic(statistic.getCodename()));
 		}
 		
 		return result;
