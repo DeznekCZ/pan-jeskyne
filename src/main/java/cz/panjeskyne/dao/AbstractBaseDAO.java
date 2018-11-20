@@ -10,7 +10,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
 import cz.panjeskyne.form.PaginatedResult;
-import cz.panjeskyne.model.AbstractEntity;
+import cz.panjeskyne.model.db.AbstractEntity;
 
 
 public class AbstractBaseDAO<T extends AbstractEntity> implements BaseDAO<T> {

@@ -1,14 +1,13 @@
 package cz.panjeskyne.service.formula;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import cz.panjeskyne.i18n.I18N;
-import cz.panjeskyne.model.Statistic;
+import cz.panjeskyne.model.xml.Statistic;
 import cz.panjeskyne.service.Result;
-import cz.panjeskyne.service.StatisticService;
 
 public class Formula {
 	
@@ -134,7 +133,7 @@ public class Formula {
 	}
 
 	public static List<Statistic> getReferencedStatistics(Statistic statistic) {
-		return StatisticService.getStatisticsWhereFormulaContains(statistic.getCodename());
+		return new ArrayList<>();// StatisticService.getStatisticsWhereFormulaContains(statistic.getCodename());
 	}
 
 	public FormulaElement getRootElement() {

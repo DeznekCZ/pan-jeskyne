@@ -2,7 +2,7 @@ package cz.panjeskyne.service.impl;
 
 import java.util.HashMap;
 
-import cz.panjeskyne.model.Function;
+import cz.panjeskyne.model.db.Function;
 import cz.panjeskyne.service.FunctionService;
 import cz.panjeskyne.service.formula.FunctionTypes;
 

@@ -6,7 +6,7 @@ public class CharacterStatisticForm implements Form {
 	
 	private Long characterId;
 
-	private long statisticId;
+	private Object statisticId;
 	
 	private String name;
 	
@@ -28,11 +28,11 @@ public class CharacterStatisticForm implements Form {
 		this.characterId = characterId;
 	}
 
-	public long getStatisticId() {
+	public Object getStatisticId() {
 		return statisticId;
 	}
 
-	public void setStatisticId(long statisticId) {
+	public void setStatisticId(Object statisticId) {
 		this.statisticId = statisticId;
 	}
 

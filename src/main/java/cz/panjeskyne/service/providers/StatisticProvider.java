@@ -2,12 +2,12 @@ package cz.panjeskyne.service.providers;
 
 import java.util.List;
 
-import cz.panjeskyne.model.Statistic;
+import cz.panjeskyne.model.db.Character;
+import cz.panjeskyne.model.xml.Statistic;
 import cz.panjeskyne.service.KindService;
 import cz.panjeskyne.service.Result;
 import cz.panjeskyne.service.SkillService;
 import cz.panjeskyne.service.formula.Formula;
-import cz.panjeskyne.model.Character;
 
 public class StatisticProvider {
 

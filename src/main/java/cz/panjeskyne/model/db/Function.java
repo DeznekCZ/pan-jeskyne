@@ -1,4 +1,4 @@
-package cz.panjeskyne.model;
+package cz.panjeskyne.model.db;
 
 import cz.panjeskyne.service.formula.FunctionTypes;
 

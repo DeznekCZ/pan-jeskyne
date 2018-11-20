@@ -1,22 +1,16 @@
 package cz.panjeskyne.service;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
-import cz.panjeskyne.form.StatisticForm;
-import cz.panjeskyne.model.Statistic;
+import cz.panjeskyne.model.xml.Statistic;
 
-public interface StatisticService extends BaseFormService<Statistic, StatisticForm>{
+public interface StatisticService {
 
-	static List<Statistic> getStatisticsWhereFormulaContains(String codename) {
-		return new ArrayList<>();
-	}
+	Statistic getByCodename(String codename);
 
-	static Statistic getStatistic(String codename) {
-		// TODO vracet null pokud nic nenalezeno
-		Statistic statistic = new Statistic();
-		statistic.setCodename(codename);
-		return statistic;
-	}
+	List<Statistic> getDependentStatistics(String codename);
+
+	Collection<Statistic> getAll();
 
 }

@@ -1,6 +1,6 @@
 package cz.panjeskyne.service;
 
-import cz.panjeskyne.model.Character;
+import cz.panjeskyne.model.db.Character;
 import cz.panjeskyne.service.formula.Formula;
 import cz.panjeskyne.service.formula.FormulaException;
 import cz.panjeskyne.service.providers.StatisticProvider;

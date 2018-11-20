@@ -1,13 +1,19 @@
 package cz.panjeskyne.service;
 
-import cz.panjeskyne.model.Character;
-import cz.panjeskyne.model.Race;
-import cz.panjeskyne.model.Statistic;
+import java.util.Collection;
 
-public interface RaceService extends BaseService<Race>{
+import cz.panjeskyne.model.db.Character;
+import cz.panjeskyne.model.xml.Race;
+import cz.panjeskyne.model.xml.Statistic;
+
+public interface RaceService {
 
 	static Number getStatistic(Character character, Statistic statistic) {
 		return 0; // TODO
 	}
+
+	Race getByCodename(String codename);
+
+	Collection<Race> getAll();
 
 }

@@ -1,6 +1,6 @@
 package cz.panjeskyne.service;
 
-import cz.panjeskyne.model.Table;
+import cz.panjeskyne.model.db.Table;
 
 public interface TableService {
 

@@ -1,4 +1,4 @@
-package cz.panjeskyne.model;
+package cz.panjeskyne.model.db;
 
 public class Table {
 

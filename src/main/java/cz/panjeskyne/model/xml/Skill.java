@@ -1,4 +1,4 @@
-package cz.panjeskyne.model;
+package cz.panjeskyne.model.xml;
 
 import cz.panjeskyne.service.I18NService;
 
