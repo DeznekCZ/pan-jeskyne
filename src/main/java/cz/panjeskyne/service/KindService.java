@@ -16,4 +16,5 @@ public interface KindService {
 
 	Collection<Kind> getAll();
 
+	Kind getCharactersKind(Character character);
 }

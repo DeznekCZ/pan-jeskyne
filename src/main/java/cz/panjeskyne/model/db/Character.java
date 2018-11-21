@@ -5,9 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Transient;
-
-import cz.panjeskyne.model.xml.Kind;
 
 @Entity
 @Table(name = "character")
@@ -20,8 +17,8 @@ public class Character extends AbstractEntity {
 	@Column(name = "name", nullable = false)
 	private String name;
 	
-	@Transient
-	private Kind kind;
+	@Column(name = "kind_codename")
+	private String kindCodename;
 
 	public String getName() {
 		return name;
@@ -35,13 +32,12 @@ public class Character extends AbstractEntity {
 		this.id = id;
 	}
 
-
-	public Kind getKind() {
-		return kind;
+	public String getKindCodename() {
+		return kindCodename;
 	}
 
-	public void setKind(Kind kind) {
-		this.kind = kind;
+	public void setKindCodename(String kindCodename) {
+		this.kindCodename = kindCodename;
 	}
 
 	@Override

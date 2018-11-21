@@ -2,31 +2,37 @@ package cz.panjeskyne.service.providers;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import cz.panjeskyne.model.db.Character;
 import cz.panjeskyne.model.xml.Statistic;
 import cz.panjeskyne.service.KindService;
 import cz.panjeskyne.service.Result;
-import cz.panjeskyne.service.SkillService;
 import cz.panjeskyne.service.formula.Formula;
 
+@Component
 public class StatisticProvider {
+
+	@Autowired
+	private KindService kindService;
 
 	/**
 	 * table.main.zivot_a_unava((statistic.main.sila+statistic.main.obratnost)/2
 	 * @param statistic
 	 * @return
 	 */
-	public static Result validateFormula(String formula) {
+	public Result validateFormula(String formula) {
 		Statistic statistic = new Statistic();
 		statistic.setFormula(formula);
 		return parseFormula(statistic);
 	}
 	
-	private static Result parseFormula(Statistic statistic) {
+	private Result parseFormula(Statistic statistic) {
 		return Formula.parse(statistic);
 	}
 
-	public static Result getValue(Character character, Statistic statistic) {
+	public Result getValue(Character character, Statistic statistic) {
 		Result result = new Result(); 
 		
 		if (statistic.hasFormula()) {
@@ -40,13 +46,13 @@ public class StatisticProvider {
 		}
 		
 		if (result.isSuccessful()) {
-			result.increase(character.getKind().getStatistic(statistic.getCodename()));
+			result.increase(kindService.getCharactersKind(character).getStatistic(statistic.getCodename()));
 		}
 		
 		return result;
 	}
 
-	public static List<Statistic> updateByStatistic(Statistic statistic) {
+	public List<Statistic> updateByStatistic(Statistic statistic) {
 		return Formula.getReferencedStatistics(statistic);
 	}
 }

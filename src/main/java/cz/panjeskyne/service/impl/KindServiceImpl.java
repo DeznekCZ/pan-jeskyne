@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.google.common.collect.ImmutableMap;
 
+import cz.panjeskyne.model.db.Character;
 import cz.panjeskyne.model.xml.Kind;
 import cz.panjeskyne.model.xml.Race;
 import cz.panjeskyne.service.KindService;
@@ -39,5 +40,10 @@ public class KindServiceImpl implements KindService {
 	@Override
 	public Collection<Kind> getAll() {
 		return kinds.values();
+	}
+
+	@Override
+	public Kind getCharactersKind(Character character) {
+		return getByCodename(character.getKindCodename());
 	}
 }

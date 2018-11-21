@@ -16,4 +16,5 @@ public interface RaceService {
 
 	Collection<Race> getAll();
 
+	Race getCharactersRace(Character character);
 }
