@@ -1,10 +1,12 @@
 package cz.panjeskyne.service.impl;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.*;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Test;
@@ -48,5 +50,34 @@ public class StatisticServiceImplTest extends AbstractSpringTest {
 		} else {
 			result.getException().printStackTrace(System.err);
 		}
+	}
+	
+	@Test
+	public void formulaComputing() throws Exception {
+		Character character = new Character();
+		character.setKindCodename("dwarf.dwarf");
+
+		Result result;
+		
+		DecimalFormat formatter = (DecimalFormat) NumberFormat.getNumberInstance();
+		formatter.applyPattern("0.####");
+		
+		for (String string : Arrays.asList(
+				"table.zz(5,5)", "table.life(0)",
+				"function.roundup(1+2)", "-1", "(function.abs_i((((-1.1)))))", "((1+(1))+((1)+1))", "(1+2)/3", "1+2/3", "1/(2+3)*3", 
+				"(1/2)+(3*+3)", "((1/2)+(3*3))", "function.roundup((1/2)+(3*3))"
+			)) {
+			result = service.getValue(character, formula(string));
+			if (result.isSuccessful())
+				System.out.format("%s=%s%n", string, formatter.format(result.getValue()));
+			else
+				System.err.println(string + "=" + result.getException().getLocalizedMessage());
+		}
+	}
+
+	private static Statistic formula(String string) {
+		Statistic statistic = new Statistic();
+		statistic.setFormula(string);
+		return statistic;
 	}
 }
