@@ -177,12 +177,12 @@ public abstract class FormulaElement {
 			} else if (operands.size() < 1 && !isClosed()) {
 				this.operands.add(child);
 				child.parent = this;
-			} else if (operands.size() == 1 && !child.isSimpleType() && !isClosed()) {
+			} else if (operands.size() == 1 && !child.isSimpleType() && !isClosed() && !child.isNext()) {
 				FormulaElement tmp = this.operands.get(0);
 				this.operands.set(0, child);
 				child.parent = this;
 				child.applyChild(tmp);
-			} else if (isClosed() && !child.isSimpleType()) {
+			} else if ((isClosed() || child.isNext()) && !child.isSimpleType()) {
 				if (hasParent()) {
 					return getParent().applyChild(child);
 				} else {
@@ -302,6 +302,10 @@ public abstract class FormulaElement {
 
 	public static FormulaElement function(String codename) throws FormulaException {
 		return new FunctionElement(codename);
+	}
+
+	public boolean isNext() {
+		return this instanceof NextElement;
 	}
 
 	public String toStringOperands() {

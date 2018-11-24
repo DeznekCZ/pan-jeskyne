@@ -16,6 +16,9 @@ public class FunctionServiceImpl implements FunctionService {
 		buildFunction("function.roundup", 1, "java.lang.Math.ceil(double)");
 		buildFunction("function.round", 1, "java.lang.Math.round(double)");
 		buildFunction("function.abs_i", 1, "java.lang.Math.abs(int)");
+
+		buildTable("table.zz");
+		buildTable("table.life");
 	}
 
 	static void buildFunction(String codename, int args, String formula) {
@@ -24,6 +27,13 @@ public class FunctionServiceImpl implements FunctionService {
 		f.setType(FunctionTypes.MATH);
 		f.setFormula(formula);
 		f.setArgsCount(args);
+		map.put(codename, f);
+	}
+
+	private static void buildTable(String codename) {
+		Function f = new Function();
+		f.setCodename(codename);
+		f.setType(FunctionTypes.TABLE);
 		map.put(codename, f);
 	}
 

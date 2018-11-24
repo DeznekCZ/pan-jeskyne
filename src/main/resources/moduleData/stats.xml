@@ -51,5 +51,11 @@
    </statistic>
    <statistic id="statistic.def" name="obrana" desc="" >
      5 + function.roundup(statistic.obr)
-   </statistic>
+   </statistic><statistic id="character.experience" name="zkušenosti" desc="" />
+    <statistic id="character.level" name="úroveň" desc="" >
+      table.exp_to_level(character.experience)
+    </statistic>
+    <statistic id="skills.known">
+      character.level * 3
+    </statistic>
  </stats>

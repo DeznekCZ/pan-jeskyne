@@ -28,6 +28,7 @@
         <bonus ref="statictic.int" increase="+1"/>
         <bonus ref="statictic.chr" increase="+1"/>
         <bonus ref="statictic.odl"  increase="-1"/>
+        <bonus ref="statistic.sms.zrak" increase="1"/>
       </kind>
       <kind id="she-elven" name="elfka">
         <bonus ref="statictic.sil" increase="-2"/>
@@ -36,10 +37,12 @@
         <bonus ref="statictic.vol" increase="-2"/>
         <bonus ref="statictic.chr" increase="+2"/>
         <bonus ref="statictic.odl"  increase="-1"/>
+        <bonus ref="statistic.sms.zrak" increase="1"/>
       </kind>
       <kind id="dark-elven" name="temný elf">
         <bonus ref="statictic.int" increase="+1"/>
         <bonus ref="statictic.odl"  increase="-1"/>
+        <bonus ref="statistic.sms.zrak" increase="1"/>
         <skill ref="skill.race.infravideni" lvl="1"/>
       </kind>
       <kind id="she-dark-elven" name="temná elfka">
@@ -47,6 +50,7 @@
         <bonus ref="statictic.zrc" increase="+1"/>
         <bonus ref="statictic.chr" increase="+1"/>
         <bonus ref="statictic.odl"  increase="-1"/>
+        <bonus ref="statistic.sms.zrak" increase="1"/>
         <skill ref="skill.race.infravideni" lvl="1"/>
       </kind>
       <kind id="forest-elven" name="zelený elf">
@@ -56,6 +60,7 @@
         <bonus ref="statictic.int" increase="+1"/>
         <bonus ref="statictic.chr" increase="+1"/>
         <bonus ref="statictic.odl"  increase="-1"/>
+        <bonus ref="statistic.sms.zrak" increase="1"/>
       </kind>
       <kind id="she-forest-elven" name="zelená elfka">
         <bonus ref="statictic.sil" increase="-2"/>
@@ -64,6 +69,7 @@
         <bonus ref="statictic.vol" increase="-1"/>
         <bonus ref="statictic.chr" increase="+2"/>
         <bonus ref="statictic.odl"  increase="-1"/>
+        <bonus ref="statistic.sms.zrak" increase="1"/>
       </kind>
     </race>
     <race id="dwarf" name="trpaslík">
