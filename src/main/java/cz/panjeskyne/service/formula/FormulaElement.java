@@ -1,23 +1,16 @@
 package cz.panjeskyne.service.formula;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import cz.panjeskyne.i18n.I18N;
-import cz.panjeskyne.model.Function;
-import cz.panjeskyne.model.Statistic;
-import cz.panjeskyne.model.Table;
-import cz.panjeskyne.model.Character;
+import cz.panjeskyne.model.db.Character;
+import cz.panjeskyne.model.db.Function;
+import cz.panjeskyne.model.db.Table;
+import cz.panjeskyne.model.xml.Statistic;
 import cz.panjeskyne.service.FunctionService;
 import cz.panjeskyne.service.Result;
-import cz.panjeskyne.service.StatisticService;
 import cz.panjeskyne.service.TableService;
-import cz.panjeskyne.service.formula.FormulaElement.NextElement;
 import cz.panjeskyne.service.providers.StatisticProvider;
 
 public abstract class FormulaElement {
@@ -320,7 +313,7 @@ public abstract class FormulaElement {
 	}
 
 	public static FormulaElement variable(String codename) throws FormulaException {
-		Statistic statistic = StatisticService.getStatistic(codename);
+		Statistic statistic = new Statistic();// .getStatistic(codename);
 		if (statistic == null) throw new FormulaException(I18N.argumented(I18N.DATA_NOT_FOUND, I18N.id(codename)));
 		return new StatisticElement(statistic);
 	}

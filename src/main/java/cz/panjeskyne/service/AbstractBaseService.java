@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import cz.panjeskyne.dao.BaseDAO;
 import cz.panjeskyne.form.PaginatedResult;
-import cz.panjeskyne.model.AbstractEntity;
+import cz.panjeskyne.model.db.AbstractEntity;
 
 public abstract class AbstractBaseService<T extends AbstractEntity> implements BaseService<T> {
 	

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import cz.panjeskyne.form.Form;
 import cz.panjeskyne.form.PaginatedResult;
-import cz.panjeskyne.model.AbstractEntity;
+import cz.panjeskyne.model.db.AbstractEntity;
 import cz.panjeskyne.service.BaseFormService;
 import cz.panjeskyne.service.BaseService;
 

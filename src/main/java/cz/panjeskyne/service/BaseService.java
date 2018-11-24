@@ -5,7 +5,7 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import cz.panjeskyne.form.PaginatedResult;
-import cz.panjeskyne.model.AbstractEntity;
+import cz.panjeskyne.model.db.AbstractEntity;
 
 @Transactional
 public interface BaseService<T extends AbstractEntity> {

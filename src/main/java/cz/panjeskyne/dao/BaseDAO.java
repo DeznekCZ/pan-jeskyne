@@ -3,7 +3,7 @@ package cz.panjeskyne.dao;
 import java.util.List;
 
 import cz.panjeskyne.form.PaginatedResult;
-import cz.panjeskyne.model.AbstractEntity;
+import cz.panjeskyne.model.db.AbstractEntity;
 
 public interface BaseDAO<T extends AbstractEntity> {
 

@@ -1,98 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module id="drd+2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="database.xsd">
-  <skills>
-    <skills_group id="race" name="Schopnosti ras" >
-      <skill id="infravideni" name="Infravidění" desc="" limit="1" hidden="true" />
-    </skills_group>
-    <skills_group id="weapon" name="Bojová dovednost" >
-      <skill id="palice_kyje"    name="Boj s palicemi a kyji" limit="3"desc="" >
-        <bonus ref="skills.known" increase="-1"/>
-        <leveled>
-          <level l="0" >
-            <bonus ref="weapon.remdihy_bijaky.att" increase="-3" />
-            <bonus ref="weapon.remdihy_bijaky.def" increase="-2" />
-            <bonus ref="weapon.remdihy_bijaky.zz"  increase="-1" />
-          </level>
-          <level l="1" >
-            <bonus ref="weapon.remdihy_bijaky.att" increase="-2" />
-            <bonus ref="weapon.remdihy_bijaky.def" increase="-1" />
-            <bonus ref="weapon.remdihy_bijaky.zz"  increase="-1" />
-          </level>
-          <level l="2" >
-            <bonus ref="weapon.remdihy_bijaky.att" increase="-1" />
-            <bonus ref="weapon.remdihy_bijaky.def" increase="-1" />
-          </level>
-        </leveled>
-      </skill>
-      <skill id="mece_dyky"      name="Boj s mečemi a dýkami" limit="3"  desc="" >
-        <bonus ref="skills.known" increase="-1"/>
-        <leveled>
-          <level l="0" >
-            <bonus ref="weapon.remdihy_bijaky.att" increase="-3" />
-            <bonus ref="weapon.remdihy_bijaky.def" increase="-2" />
-            <bonus ref="weapon.remdihy_bijaky.zz"  increase="-1" />
-          </level>
-          <level l="1" >
-            <bonus ref="weapon.remdihy_bijaky.att" increase="-2" />
-            <bonus ref="weapon.remdihy_bijaky.def" increase="-1" />
-            <bonus ref="weapon.remdihy_bijaky.zz"  increase="-1" />
-          </level>
-          <level l="2" >
-            <bonus ref="weapon.remdihy_bijaky.att" increase="-1" />
-            <bonus ref="weapon.remdihy_bijaky.def" increase="-1" />
-          </level>
-        </leveled>
-      </skill>
-      <skill id="remdihy_bijaky" name="Boj s řemdihy a bijáky" limit="3" desc="" >
-        <bonus ref="skills.known" increase="-1"/>
-        <leveled>
-          <level l="0" >
-            <bonus ref="weapon.remdihy_bijaky.att" increase="-3" />
-            <bonus ref="weapon.remdihy_bijaky.def" increase="-2" />
-            <bonus ref="weapon.remdihy_bijaky.zz"  increase="-1" />
-          </level>
-          <level l="1" >
-            <bonus ref="weapon.remdihy_bijaky.att" increase="-2" />
-            <bonus ref="weapon.remdihy_bijaky.def" increase="-1" />
-            <bonus ref="weapon.remdihy_bijaky.zz"  increase="-1" />
-          </level>
-          <level l="2" >
-            <bonus ref="weapon.remdihy_bijaky.att" increase="-1" />
-            <bonus ref="weapon.remdihy_bijaky.def" increase="-1" />
-          </level>
-        </leveled>
-      </skill>
-    </skills_group>
-    <skills_group id="stat" name="Tělesné dovednosti" >
-      <skill id="sil" name="Vzpěračství" limit="3" desc="" >
-        <bonus ref="statistic.sil" increase="+1"/>
-        <bonus ref="skills.known" increase="-1"/>
-      </skill>
-      <skill id="obr" name="Ohebnost" limit="3" desc="" >
-        <bonus ref="statistic.obr" increase="+1"/>
-        <bonus ref="skills.known" increase="-1"/>
-      </skill>
-      <skill id="zrc" name="Hbitost" limit="3" desc="" >
-        <bonus ref="statistic.zrc" increase="+1"/>
-        <bonus ref="skills.known" increase="-1"/>
-      </skill>
-      <skill id="vol" name="Ocelová vůle" limit="3" desc="" >
-        <bonus ref="statistic.vol" increase="+1"/>
-        <bonus ref="skills.known" increase="-1"/>
-      </skill>
-      <skill id="int" name="Hlavologie" limit="3"  desc="" >
-        <bonus ref="statistic.int" increase="+1"/>
-        <bonus ref="skills.known" increase="-1"/>
-      </skill>
-      <skill id="chr" name="Upravenost" limit="3" desc="" >
-        <bonus ref="statistic.chr" increase="+1"/>
-        <bonus ref="skills.known" increase="-1"/>
-      </skill>
-      <skill id="moc" name="Talent na magii" limit="3" desc="" >
-        <bonus ref="statistic.moc" increase="+1"/>
-        <bonus ref="skills.known" increase="-1"/>
-      </skill>
-    </skills_group>
-  </skills>
-</module>
+<skills>
+  <skills_group id="race" name="Schopnosti ras" >
+    <skill id="infravideni" name="Infravidění" desc="" limit="1" hidden="true" />
+  </skills_group>
+  <skills_group id="weapon" name="Bojová dovednost" >
+    <skill id="palice_kyje"    name="Boj s palicemi a kyji"  desc="" >
+      <bonus ref="skills.known" increase="-1"/>
+      <leveled>
+        <level l="0" >
+          <bonus ref="weapon.remdihy_bijaky.att" increase="-3" />
+          <bonus ref="weapon.remdihy_bijaky.def" increase="-2" />
+          <bonus ref="weapon.remdihy_bijaky.zz"  increase="-1" />
+        </level>
+        <level l="1" >
+          <bonus ref="weapon.remdihy_bijaky.att" increase="-2" />
+          <bonus ref="weapon.remdihy_bijaky.def" increase="-1" />
+          <bonus ref="weapon.remdihy_bijaky.zz"  increase="-1" />
+        </level>
+        <level l="2" >
+          <bonus ref="weapon.remdihy_bijaky.att" increase="-1" />
+          <bonus ref="weapon.remdihy_bijaky.def" increase="-1" />
+        </level>
+      </leveled>
+    </skill>
+    <skill id="mece_dyky"      name="Boj s mečemi a dýkami"  desc="" >
+      <bonus ref="skills.known" increase="-1"/>
+      <leveled>
+        <level l="0" >
+          <bonus ref="weapon.remdihy_bijaky.att" increase="-3" />
+          <bonus ref="weapon.remdihy_bijaky.def" increase="-2" />
+          <bonus ref="weapon.remdihy_bijaky.zz"  increase="-1" />
+        </level>
+        <level l="1" >
+          <bonus ref="weapon.remdihy_bijaky.att" increase="-2" />
+          <bonus ref="weapon.remdihy_bijaky.def" increase="-1" />
+          <bonus ref="weapon.remdihy_bijaky.zz"  increase="-1" />
+        </level>
+        <level l="2" >
+          <bonus ref="weapon.remdihy_bijaky.att" increase="-1" />
+          <bonus ref="weapon.remdihy_bijaky.def" increase="-1" />
+        </level>
+      </leveled>
+    </skill>
+    <skill id="remdihy_bijaky" name="Boj s řemdihy a bijáky" desc="" >
+      <bonus ref="skills.known" increase="-1"/>
+      <leveled>
+        <level l="0" >
+          <bonus ref="weapon.remdihy_bijaky.att" increase="-3" />
+          <bonus ref="weapon.remdihy_bijaky.def" increase="-2" />
+          <bonus ref="weapon.remdihy_bijaky.zz"  increase="-1" />
+        </level>
+        <level l="1" >
+          <bonus ref="weapon.remdihy_bijaky.att" increase="-2" />
+          <bonus ref="weapon.remdihy_bijaky.def" increase="-1" />
+          <bonus ref="weapon.remdihy_bijaky.zz"  increase="-1" />
+        </level>
+        <level l="2" >
+          <bonus ref="weapon.remdihy_bijaky.att" increase="-1" />
+          <bonus ref="weapon.remdihy_bijaky.def" increase="-1" />
+        </level>
+      </leveled>
+    </skill>
+  </skills_group>
+  <skills_group id="stat" name="Tělesné dovednosti" >
+    <skill id="sil" name="Vzpěračství"  desc="" >
+      <bonus ref="main.sil" increase="+1"/>
+      <bonus ref="skills.known" increase="-1"/>
+    </skill>
+    <skill id="obr" name="Ohebnost"  desc="" >
+      <bonus ref="main.obr" increase="+1"/>
+      <bonus ref="skills.known" increase="-1"/>
+    </skill>
+    <skill id="zrc" name="Hbitost" desc="" >
+      <bonus ref="main.zrc" increase="+1"/>
+      <bonus ref="skills.known" increase="-1"/>
+    </skill>
+    <skill id="vol" name="Ocelová vůle"  desc="" >
+      <bonus ref="main.vol" increase="+1"/>
+      <bonus ref="skills.known" increase="-1"/>
+    </skill>
+    <skill id="int" name="Hlavologie"  desc="" >
+      <bonus ref="main.int" increase="+1"/>
+      <bonus ref="skills.known" increase="-1"/>
+    </skill>
+    <skill id="chr" name="Upravenost" desc="" >
+      <bonus ref="main.chr" increase="+1"/>
+      <bonus ref="skills.known" increase="-1"/>
+    </skill>
+    <skill id="moc" name="Talent na magii"  desc="" >
+      <bonus ref="ext.moc" increase="+1"/>
+      <bonus ref="skills.known" increase="-1"/>
+    </skill>
+  </skills_group>
+</skills>

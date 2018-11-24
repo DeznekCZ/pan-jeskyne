@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cz.panjeskyne.form.CharacterForm;
-import cz.panjeskyne.model.Character;
+import cz.panjeskyne.model.db.Character;
 import cz.panjeskyne.service.CharacterService;
 import cz.panjeskyne.service.RaceService;
 

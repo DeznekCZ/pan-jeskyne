@@ -1,6 +1,6 @@
 package cz.panjeskyne.service;
 
-import cz.panjeskyne.model.CharacterSkill;
+import cz.panjeskyne.model.db.CharacterSkill;
 
 public interface SkillService {
 

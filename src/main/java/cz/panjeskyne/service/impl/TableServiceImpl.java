@@ -6,7 +6,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import cz.panjeskyne.i18n.I18N;
-import cz.panjeskyne.model.Table;
+import cz.panjeskyne.model.db.Table;
 import cz.panjeskyne.service.formula.FormulaException;
 
 public class TableServiceImpl {
