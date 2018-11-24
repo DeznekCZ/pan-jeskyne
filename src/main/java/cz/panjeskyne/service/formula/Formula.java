@@ -9,7 +9,6 @@ import cz.panjeskyne.i18n.I18N;
 import cz.panjeskyne.model.xml.Statistic;
 import cz.panjeskyne.service.Result;
 import cz.panjeskyne.service.StatisticService;
-import cz.panjeskyne.service.providers.StatisticProvider;
 
 public class Formula {
 	
