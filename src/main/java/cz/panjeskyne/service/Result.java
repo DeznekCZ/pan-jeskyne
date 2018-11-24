@@ -33,9 +33,9 @@ public class Result {
 		return formula;
 	}
 
-	public void applyFormula(Character character) {
+	public void applyFormula(StatisticService provider, Character character) {
 		try {
-			this.value = formula.getRootElement().getValue(character);
+			this.value = formula.getRootElement().getValue(provider, character);
 		} catch (FormulaException e) {
 			this.setException(e);
 		}

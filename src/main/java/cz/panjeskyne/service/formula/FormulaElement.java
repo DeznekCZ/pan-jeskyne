@@ -10,15 +10,15 @@ import cz.panjeskyne.model.db.Table;
 import cz.panjeskyne.model.xml.Statistic;
 import cz.panjeskyne.service.FunctionService;
 import cz.panjeskyne.service.Result;
+import cz.panjeskyne.service.StatisticService;
 import cz.panjeskyne.service.TableService;
-import cz.panjeskyne.service.providers.StatisticProvider;
 
 public abstract class FormulaElement {
 
 	public static class NextElement extends FormulaElement {
 
 		@Override
-		public double getValue(Character character) throws FormulaException {
+		public double getValue(StatisticService provider, Character character) throws FormulaException {
 			return 0;
 		}
 
@@ -38,8 +38,8 @@ public abstract class FormulaElement {
 		}
 
 		@Override
-		public double getValue(Character character) throws FormulaException {
-			return operandType.apply(calculateOperands(character));
+		public double getValue(StatisticService provider, Character character) throws FormulaException {
+			return operandType.apply(calculateOperands(provider, character));
 		}
 
 		@Override
@@ -83,8 +83,8 @@ public abstract class FormulaElement {
 		}
 
 		@Override
-		public double getValue(Character character) throws FormulaException {
-			return validate(StatisticProvider.getValue(character, statistic));
+		public double getValue(StatisticService provider, Character character) throws FormulaException {
+			return validate(provider.getValue(character, statistic));
 		}
 
 		@Override
@@ -116,7 +116,7 @@ public abstract class FormulaElement {
 		}
 
 		@Override
-		public double getValue(Character character) throws FormulaException {
+		public double getValue(StatisticService provider, Character character) throws FormulaException {
 			return number;
 		}
 
@@ -149,10 +149,10 @@ public abstract class FormulaElement {
 		}
 		
 		@Override
-		public double getValue(Character character) throws FormulaException {
+		public double getValue(StatisticService provider, Character character) throws FormulaException {
 			if (operands.size() != 1)
 				throw new FormulaException(I18N.BRACKET_INVALID);
-			return operands.get(0).getValue(character);
+			return operands.get(0).getValue(provider, character);
 		}
 		
 		public void setClosed(boolean closed) {
@@ -247,12 +247,12 @@ public abstract class FormulaElement {
 		}
 		
 		@Override
-		public double getValue(Character character) throws FormulaException {
+		public double getValue(StatisticService provider, Character character) throws FormulaException {
 			if (function.getType() == FunctionTypes.TABLE) {
-				return table.getValue(calculateOperands(character));
+				return table.getValue(calculateOperands(provider, character));
 			}
 			if (function.getType() == FunctionTypes.MATH) {
-				return math.getValue(calculateOperands(character));
+				return math.getValue(calculateOperands(provider, character));
 			}
 			return 0.0;
 		}
@@ -312,9 +312,7 @@ public abstract class FormulaElement {
 		return sb.toString().substring(1);
 	}
 
-	public static FormulaElement variable(String codename) throws FormulaException {
-		Statistic statistic = new Statistic();// .getStatistic(codename);
-		if (statistic == null) throw new FormulaException(I18N.argumented(I18N.DATA_NOT_FOUND, I18N.id(codename)));
+	public static FormulaElement variable(Statistic statistic) throws FormulaException {
 		return new StatisticElement(statistic);
 	}
 
@@ -333,18 +331,18 @@ public abstract class FormulaElement {
 		return this instanceof NumberElement || this instanceof StatisticElement;
 	}
 
-	public abstract double getValue(Character character) throws FormulaException;
+	public abstract double getValue(StatisticService provider, Character character) throws FormulaException;
 	
 	public Double validate(Result result) throws FormulaException {
 		if (!result.isSuccessful()) throw result.getException();
 		return result.getValue();
 	}
 
-	protected double[] calculateOperands(Character character) throws FormulaException {
+	protected double[] calculateOperands(StatisticService provider, Character character) throws FormulaException {
 		double[] numbers = new double[operands.size()];
 		int i = 0;
 		for (FormulaElement operand : operands) {
-			numbers[i] = operand.getValue(character);
+			numbers[i] = operand.getValue(provider, character);
 			i++;
 		}
 		return numbers;

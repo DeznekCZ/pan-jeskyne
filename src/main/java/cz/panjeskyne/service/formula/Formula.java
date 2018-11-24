@@ -8,6 +8,8 @@ import java.util.regex.Pattern;
 import cz.panjeskyne.i18n.I18N;
 import cz.panjeskyne.model.xml.Statistic;
 import cz.panjeskyne.service.Result;
+import cz.panjeskyne.service.StatisticService;
+import cz.panjeskyne.service.providers.StatisticProvider;
 
 public class Formula {
 	
@@ -24,7 +26,7 @@ public class Formula {
 		this.statistic = statistic;
 	}
 
-	public static Result parse(Statistic statistic) {
+	public static Result parse(StatisticService provider, Statistic statistic) {
 		Result result = new Result();
 		Formula formula = new Formula(statistic);
 		result.setFormula(formula);
@@ -32,14 +34,14 @@ public class Formula {
 		formula.clearWhiteSpaces();
 		formula.normalizeOperators();
 		try {
-			formula.start(result);
+			formula.start(provider, result);
 		} catch (FormulaException e) {
 			result.setException(e);
 		}
 		
 		return result;
 	}
-	
+
 	private static final Pattern WHITESPACES = Pattern.compile("\\s+");
 
 	private void clearWhiteSpaces() {
@@ -75,7 +77,7 @@ public class Formula {
 
 	private static final Pattern SEARCH = Pattern.compile("([0-9]+([.][0-9]+)?)|((\\w+([.]\\w+)+)([(])?)");
 	
-	protected void start(Result result) throws FormulaException {
+	protected void start(StatisticService provider, Result result) throws FormulaException {
 		Matcher matcher = SEARCH.matcher(computingFormula);
 		int end = 0;
 		int start = 0;
@@ -101,7 +103,7 @@ public class Formula {
 					}
 				}
 			}
-			if (matcher.group(5) != null) {
+			if (matcher.group(6) != null) {
 				// READ FUNCTION
 				String identifier = matcher.group(4);
 				fe = FormulaElement.function(identifier).setParent(fe);
@@ -112,7 +114,10 @@ public class Formula {
 			} else {
 				// READ IDENTIFIER
 				String identifier = matcher.group();
-				fe = FormulaElement.variable(identifier).setParent(fe); 
+				Statistic lStatistic = provider.getByCodename(identifier);
+				if (lStatistic == null)
+					throw new FormulaException(I18N.argumented(I18N.DATA_NOT_FOUND, I18N.id(identifier)));
+				fe = FormulaElement.variable(lStatistic).setParent(fe); 
 			}
 			start = matcher.end();
 		}

@@ -12,14 +12,19 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 
 import com.google.common.collect.ImmutableMap;
 
+import cz.panjeskyne.model.db.Character;
 import cz.panjeskyne.model.xml.Statistic;
 import cz.panjeskyne.model.xml.Statistics;
+import cz.panjeskyne.service.KindService;
+import cz.panjeskyne.service.Result;
 import cz.panjeskyne.service.StatisticService;
+import cz.panjeskyne.service.formula.Formula;
 
 @Service
 public class StatisticServiceImpl implements StatisticService {
@@ -29,6 +34,9 @@ public class StatisticServiceImpl implements StatisticService {
 	private ImmutableMap<String, Statistic> statistics;
 	
 	private ImmutableMap<String, List<Statistic>> dependents;
+
+	@Autowired
+	private KindService kindService;
 
 	@PostConstruct
 	private void init() {
@@ -60,6 +68,10 @@ public class StatisticServiceImpl implements StatisticService {
 		}
 		dependents = builderDep.build();
 	}
+	
+	public KindService getKindService() {
+		return kindService;
+	}
 
 	@Override
 	public Statistic getByCodename(String codename) {
@@ -74,5 +86,35 @@ public class StatisticServiceImpl implements StatisticService {
 	@Override
 	public Collection<Statistic> getAll() {
 		return statistics.values();
+	}
+
+	public Result getValue(Character character, Statistic statistic) {
+		Result result = new Result(); 
+		
+		if (statistic.hasFormula()) {
+			Result inMiddle = parseFormula(statistic);
+			if (!inMiddle.isSuccessful())
+				return inMiddle;
+			
+			inMiddle.applyFormula(this, character);
+			result.setValue(inMiddle.getValue());
+			result.setException(inMiddle.getException());
+		}
+		
+		if (result.isSuccessful()) {
+			result.increase(kindService.getCharactersKind(character).getStatistic(statistic.getCodename()));
+		}
+		
+		return result;
+	}
+
+	public Result validateFormula(String formula) {
+		Statistic statistic = new Statistic();
+		statistic.setFormula(formula);
+		return parseFormula(statistic);
+	}
+	
+	private Result parseFormula(Statistic statistic) {
+		return Formula.parse(this, statistic);
 	}
 }
