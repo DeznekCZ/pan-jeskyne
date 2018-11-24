@@ -7,7 +7,9 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +44,7 @@ public class StatisticServiceImplTest extends AbstractSpringTest {
 	@Test
 	public void getGetCharacterStatistic() {
 		Character character = new Character();
-		character.setKindCodename("dwarf.dwarf");
+		character.setKindCodename("dwarf");
 		
 		Result result = service.getValue(character, "statistic.odl");
 		if (result.isSuccessful()) {
@@ -55,23 +57,35 @@ public class StatisticServiceImplTest extends AbstractSpringTest {
 	@Test
 	public void formulaComputing() throws Exception {
 		Character character = new Character();
-		character.setKindCodename("dwarf.dwarf");
+		character.setKindCodename("dwarf");
 
 		Result result;
 		
 		DecimalFormat formatter = (DecimalFormat) NumberFormat.getNumberInstance();
 		formatter.applyPattern("0.####");
 		
-		for (String string : Arrays.asList(
-				"table.zz(5,5)", "table.life(0)",
-				"function.roundup(1+2)", "-1", "(function.abs_i((((-1.1)))))", "((1+(1))+((1)+1))", "(1+2)/3", "1+2/3", "1/(2+3)*3", 
-				"(1/2)+(3*+3)", "((1/2)+(3*3))", "function.roundup((1/2)+(3*3))"
-			)) {
+		Map<String, Double> results = new HashMap<>();
+		results.put("table.zz(5,5)",                  6.0);
+		results.put("table.life(0)",                  3.0);
+		results.put("function.roundup(1+2.5)",        4.0);
+		results.put("-1",                            -1.0);
+		results.put("(function.abs_i((((-1.1)))))",   1.0);
+		results.put("(function.abs((((-1.1)))))",     1.1);
+		results.put("((1+(1))+((1)+1))",              4.0);
+		results.put("(1+2)/3",                        1.0);
+		results.put("1+2/3",                          1.6667);
+		results.put("1/(2+3)*3",                      0.6);
+		results.put("(1/2)+(3*+3)",                   9.5);
+		results.put("(1/2)+(3*3)",                    9.5);
+		results.put("function.roundup((1/2)+(3*3))", 10.0);
+		
+		for (String string : results.keySet()) {
 			result = service.getValue(character, formula(string));
-			if (result.isSuccessful())
-				System.out.format("%s=%s%n", string, formatter.format(result.getValue()));
-			else
-				System.err.println(string + "=" + result.getException().getLocalizedMessage());
+			if (result.isSuccessful()) {
+				assertEquals(formatter.format(result.getValue()), formatter.format(results.get(string)));
+			} else {
+				throw result.getException();
+			}
 		}
 	}
 
