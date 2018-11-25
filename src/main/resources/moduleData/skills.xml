@@ -12,62 +12,62 @@
         <bonuses>
           <bonus ref="skills.known" increase="+1" />
         </bonuses>
-        <leveled>
+        <levels>
           <level l="0">
             <bonuses>
-              <bonus ref="weapon.remdihy_bijaky.att" increase="-3" />
-              <bonus ref="weapon.remdihy_bijaky.def" increase="-2" />
-              <bonus ref="weapon.remdihy_bijaky.zz" increase="-1" />
+              <bonus ref="weapon.palice_kyje.att" increase="-3" />
+              <bonus ref="weapon.palice_kyje.def" increase="-2" />
+              <bonus ref="weapon.palice_kyje.zz" increase="-1" />
             </bonuses>
           </level>
           <level l="1">
             <bonuses>
-              <bonus ref="weapon.remdihy_bijaky.att" increase="-2" />
-              <bonus ref="weapon.remdihy_bijaky.def" increase="-1" />
-              <bonus ref="weapon.remdihy_bijaky.zz" increase="-1" />
+              <bonus ref="weapon.palice_kyje.att" increase="-2" />
+              <bonus ref="weapon.palice_kyje.def" increase="-1" />
+              <bonus ref="weapon.palice_kyje.zz" increase="-1" />
             </bonuses>
           </level>
           <level l="2">
             <bonuses>
-              <bonus ref="weapon.remdihy_bijaky.att" increase="-1" />
-              <bonus ref="weapon.remdihy_bijaky.def" increase="-1" />
+              <bonus ref="weapon.palice_kyje.att" increase="-1" />
+              <bonus ref="weapon.palice_kyje.def" increase="-1" />
             </bonuses>
           </level>
-        </leveled>
+        </levels>
       </skill>
       <skill id="mece_dyky" name="Boj s mečemi a dýkami" desc="">
         <bonuses>
           <bonus ref="skills.known" increase="+1" />
         </bonuses>
-        <leveled>
+        <levels>
           <level l="0">
             <bonuses>
-              <bonus ref="weapon.remdihy_bijaky.att" increase="-3" />
-              <bonus ref="weapon.remdihy_bijaky.def" increase="-2" />
-              <bonus ref="weapon.remdihy_bijaky.zz" increase="-1" />
+              <bonus ref="weapon.mece_dyky.att" increase="-3" />
+              <bonus ref="weapon.mece_dyky.def" increase="-2" />
+              <bonus ref="weapon.mece_dyky.zz" increase="-1" />
             </bonuses>
           </level>
           <level l="1">
             <bonuses>
-              <bonus ref="weapon.remdihy_bijaky.att" increase="-2" />
-              <bonus ref="weapon.remdihy_bijaky.def" increase="-1" />
-              <bonus ref="weapon.remdihy_bijaky.zz" increase="-1" />
+              <bonus ref="weapon.mece_dyky.att" increase="-2" />
+              <bonus ref="weapon.mece_dyky.def" increase="-1" />
+              <bonus ref="weapon.mece_dyky.zz" increase="-1" />
             </bonuses>
           </level>
           <level l="2">
             <bonuses>
-              <bonus ref="weapon.remdihy_bijaky.att" increase="-1" />
-              <bonus ref="weapon.remdihy_bijaky.def" increase="-1" />
+              <bonus ref="weapon.mece_dyky.att" increase="-1" />
+              <bonus ref="weapon.mece_dyky.def" increase="-1" />
             </bonuses>
           </level>
-        </leveled>
+        </levels>
       </skill>
       <skill id="remdihy_bijaky" name="Boj s řemdihy a bijáky"
         desc="">
         <bonuses>
           <bonus ref="skills.known" increase="+1" />
         </bonuses>
-        <leveled>
+        <levels>
           <level l="0">
             <bonuses>
               <bonus ref="weapon.remdihy_bijaky.att" increase="-3" />
@@ -88,51 +88,51 @@
               <bonus ref="weapon.remdihy_bijaky.def" increase="-1" />
             </bonuses>
           </level>
-        </leveled>
+        </levels>
       </skill>
     </skills>
   </skillgroup>
-  <skillgroup id="stat" name="Tělesné dovednosti">
+  <skillgroup id="statistic" name="Tělesné dovednosti">
     <skills>
-      <skill id="sil" name="Vzpěračství" desc="">
+      <skill id="statistic.sil" name="Vzpěračství" desc="">
         <bonuses>
-          <bonus ref="main.sil" increase="+1" />
+          <bonus ref="statistic.sil" increase="+1" />
           <bonus ref="skills.known" increase="+1" />
         </bonuses>
       </skill>
-      <skill id="obr" name="Ohebnost" desc="">
+      <skill id="statistic.obr" name="Ohebnost" desc="">
         <bonuses>
-          <bonus ref="main.obr" increase="+1" />
+          <bonus ref="statistic.obr" increase="+1" />
           <bonus ref="skills.known" increase="+1" />
         </bonuses>
       </skill>
-      <skill id="zrc" name="Hbitost" desc="">
+      <skill id="statistic.zrc" name="Hbitost" desc="">
         <bonuses>
-          <bonus ref="main.zrc" increase="+1" />
+          <bonus ref="statistic.zrc" increase="+1" />
           <bonus ref="skills.known" increase="+1" />
         </bonuses>
       </skill>
-      <skill id="vol" name="Ocelová vůle" desc="">
+      <skill id="statistic.vol" name="Ocelová vůle" desc="">
         <bonuses>
-          <bonus ref="main.vol" increase="+1" />
+          <bonus ref="statistic.vol" increase="+1" />
           <bonus ref="skills.known" increase="+1" />
         </bonuses>
       </skill>
-      <skill id="int" name="Hlavologie" desc="">
+      <skill id="statistic.int" name="Hlavologie" desc="">
         <bonuses>
-          <bonus ref="main.int" increase="+1" />
+          <bonus ref="statistic.int" increase="+1" />
           <bonus ref="skills.known" increase="+1" />
         </bonuses>
       </skill>
-      <skill id="chr" name="Upravenost" desc="">
+      <skill id="statistic.chr" name="Upravenost" desc="">
         <bonuses>
-          <bonus ref="main.chr" increase="+1" />
+          <bonus ref="statistic.chr" increase="+1" />
           <bonus ref="skills.known" increase="+1" />
         </bonuses>
       </skill>
-      <skill id="moc" name="Talent na magii" desc="">
+      <skill id="statistic.moc" name="Talent na magii" desc="">
         <bonuses>
-          <bonus ref="ext.moc" increase="+1" />
+          <bonus ref="statistic.moc" increase="+1" />
           <bonus ref="skills.known" increase="+1" />
         </bonuses>
       </skill>
@@ -140,7 +140,7 @@
   </skillgroup>
   <skillgroup id="zazemi">
     <skills>
-      <skill id="zazemi.typ">
+      <skill id="zazemi.type" name="Zázemí" >
         <bonuses>
           <bonus ref="zazemi.body" increase="5" />
         </bonuses>
@@ -150,12 +150,12 @@
           <bonus ref="zazemi.body" increase="-1" limit="8" />
         </bonuses>
       </skill>
-      <skill id="zazemi.skills" limit="8" requirement="(zazemi.puvod + 3 - zazemi.skills)>0" >
+      <skill id="zazemi.skills" limit="8" name="Dovednosti postavy" requirement="(zazemi.puvod + 3 - zazemi.skills)>0" >
         <bonuses>
           <bonus ref="zazemi.body" increase="-1" />
         </bonuses>
       </skill>
-      <skill id="zazemi.majetek" limit="-1" requirement="(zazemi.puvod + 3 - zazemi.majetek)>0" >
+      <skill id="zazemi.majetek" limit="-1" name="Majetek postavy" requirement="(zazemi.puvod + 3 - zazemi.majetek)>0" >
         <bonuses>
           <bonus ref="zazemi.body" increase="-1" />
         </bonuses>

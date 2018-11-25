@@ -7,13 +7,14 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Kinds implements ListType<Kind> {
+public class Skills implements ListType<Skill> {
 	
-	@XmlElement(name = "kind")
-	private List<Kind> kinds;
+	@XmlElement(name = "skill")
+	private List<Skill> kinds;
 
 	@Override
-	public List<Kind> getList() {
+	public List<Skill> getList() {
 		return kinds;
 	}
+	
 }

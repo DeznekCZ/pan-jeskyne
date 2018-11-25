@@ -1,39 +1,42 @@
 package cz.panjeskyne.model.xml;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+
+import cz.panjeskyne.i18n.I18NTexts;
 import cz.panjeskyne.service.I18NService;
 
-public class Skill {
-	private static final String NAME = "%s.NAME";
-	private static final String DESCRIPTION = "%s.DESC.%d";
+@XmlRootElement(name = "skill")
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Skill implements XmlMappable<String, Skill>, I18NTexts {
 	
-	private String codename;
-	private int maxLevel;
+	@XmlAttribute(name = "id")
+	private String id;
+
+	@XmlAttribute(name = "name")
+	private String name;
+
+	@XmlAttribute(name = "desc")
+	private String desc;
+
+	@XmlAttribute(name = "hidden")
 	private boolean hidden;
+
+	@XmlAttribute(name = "limit")
+	private int limit;
 	
-	public String getDescription(String locale, int level) {
-		return I18NService.getString(locale, 
-				String.format(DESCRIPTION, codename, level));
+	@XmlTransient
+	private SkillGroup skillgroup;
+	
+	public String getDesc() {
+		return desc;
 	}
 	
-	public String getName(String locale) {
-		return I18NService.getString(locale, 
-				String.format(NAME, codename));
-	}
-	
-	public void setCodename(String codename) {
-		this.codename = codename;
-	}
-	
-	public String getCodename() {
-		return codename;
-	}
-	
-	public void setMaxLevel(int maxLevel) {
-		this.maxLevel = maxLevel;
-	}
-	
-	public int getMaxLevel() {
-		return maxLevel;
+	public String getName() {
+		return name;
 	}
 	
 	public void setHidden(boolean hidden) {
@@ -42,5 +45,39 @@ public class Skill {
 	
 	public boolean isHidden() {
 		return hidden;
+	}
+	
+	public int getLimit() {
+		return limit;
+	}
+	
+	public void setLimit(int limit) {
+		this.limit = limit;
+	}
+	
+	public String getId() {
+		return id;
+	}
+	
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	@Override
+	public String getKey() {
+		return id;
+	}
+
+	@Override
+	public Skill getValue() {
+		return this;
+	}
+
+	public void setSkillGroup(SkillGroup skillgroup) {
+		this.skillgroup = skillgroup;
+	}
+	
+	public SkillGroup getSkillgroup() {
+		return skillgroup;
 	}
 }

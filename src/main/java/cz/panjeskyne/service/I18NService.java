@@ -8,4 +8,8 @@ public interface I18NService {
 		return I18NServiceImpl.getString(codename); // musí vracet codename nebo to co tam je
 	}
 
+	static String getString(String locale, String codename, String defaultText) {
+		return I18NServiceImpl.getString(codename, defaultText); // musí vracet codename nebo to co tam je
+	}
+
 }

@@ -36,4 +36,8 @@ public class I18NServiceImpl {
 		map.put(codename, value);
 	}
 
+	public static String getString(String codename, String defaultText) {
+		return map.getOrDefault(codename, defaultText);
+	}
+
 }
