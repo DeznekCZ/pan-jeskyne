@@ -1,112 +1,145 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <races>
-	<race id="human" name="člověk">
-		<kinds>
-			<kind id="man" name="lidský muž" />
-			<kind id="woman" name="lidská žena" gender="FEMALE">
-				<bonus ref="statistic.sil" increase="-1" />
-				<bonus ref="statistic.chr" increase="+1" />
-			</kind>
-			<kind id="mountainer" name="horal" gender="MALE">
-				<bonus ref="statistic.sil" increase="+1" />
-				<bonus ref="statistic.vol" increase="+1" />
-				<bonus ref="statistic.int" increase="-1" />
-				<bonus ref="statistic.chr" increase="-1" />
-			</kind>
-			<kind id="she-mountainer" name="horalka" gender="FEMALE">
-				<bonus ref="statistic.vol" increase="+1" />
-				<bonus ref="statistic.int" increase="-1" />
-			</kind>
-		</kinds>
-	</race>
-	<race id="elven" name="elf">
-		<kinds>
-			<kind id="elven" name="elf" gender="MALE">
-				<bonuses>
-					<bonus ref="statistic.sil" increase="-1" />
-					<bonus ref="statistic.obr" increase="+1" />
-					<bonus ref="statistic.zrc" increase="+1" />
-					<bonus ref="statistic.vol" increase="-2" />
-					<bonus ref="statistic.int" increase="+1" />
-					<bonus ref="statistic.chr" increase="+1" />
-					<bonus ref="statistic.odl" increase="-1" />
-				</bonuses>
-			</kind>
-			<kind id="she-elven" name="elfka" gender="FEMALE">
-				<bonuses>
-					<bonus ref="statistic.sil" increase="-2" />
-					<bonus ref="statistic.obr" increase="+1" />
-					<bonus ref="statistic.zrc" increase="+2" />
-					<bonus ref="statistic.vol" increase="-2" />
-					<bonus ref="statistic.chr" increase="+2" />
-					<bonus ref="statistic.odl" increase="-1" />
-				</bonuses>
-			</kind>
-			<kind id="dark-elven" name="temný elf" gender="MALE">
-				<bonuses>
-					<bonus ref="statistic.int" increase="+1" />
-					<bonus ref="statistic.odl" increase="-1" />
-				</bonuses>
-				<skill ref="skill.race.infravideni" lvl="1" />
-			</kind>
-			<kind id="she-dark-elven" name="temná elfka" gender="FEMALE">
-				<bonuses>
-					<bonus ref="statistic.sil" increase="-1" />
-					<bonus ref="statistic.zrc" increase="+1" />
-					<bonus ref="statistic.chr" increase="+1" />
-					<bonus ref="statistic.odl" increase="-1" />
-				</bonuses>
-				<skill ref="skill.race.infravideni" lvl="1" />
-			</kind>
-			<kind id="forest-elven" name="zelený elf" gender="MALE">
-				<bonuses>
-					<bonus ref="statistic.sil" increase="-1" />
-					<bonus ref="statistic.obr" increase="+2" />
-					<bonus ref="statistic.vol" increase="-1" />
-					<bonus ref="statistic.int" increase="+1" />
-					<bonus ref="statistic.chr" increase="+1" />
-					<bonus ref="statistic.odl" increase="-1" />
-				</bonuses>
-			</kind>
-			<kind id="she-forest-elven" name="zelená elfka" gender="FEMALE">
-				<bonuses>
-					<bonus ref="statistic.sil" increase="-2" />
-					<bonus ref="statistic.obr" increase="+2" />
-					<bonus ref="statistic.zrc" increase="+1" />
-					<bonus ref="statistic.vol" increase="-1" />
-					<bonus ref="statistic.chr" increase="+2" />
-					<bonus ref="statistic.odl" increase="-1" />
-				</bonuses>
-			</kind>
-		</kinds>
-	</race>
-	<race id="dwarf" name="trpaslík">
-		<kinds>
-			<kind id="dwarf" name="trpaslík" gender="MALE">
-				<bonuses>
-					<bonus ref="statistic.sil" increase="+1" />
-					<bonus ref="statistic.obr" increase="-1" />
-					<bonus ref="statistic.vol" increase="+2" />
-					<bonus ref="statistic.int" increase="-1" />
-					<bonus ref="statistic.chr" increase="-2" />
-					<bonus ref="statistic.odl" increase="+1" />
-					<bonus ref="statistic.sms" increase="-1" />
-				</bonuses>
-				<skill ref="skill.race.infravideni" lvl="1" />
-			</kind>
-			<kind id="she-dwarf" name="trpaslice" gender="FEMALE">
-				<bonuses>
-					<bonus ref="statistic.sil" increase="+1" />
-					<bonus ref="statistic.obr" increase="-1" />
-					<bonus ref="statistic.zrc" increase="-1" />
-					<bonus ref="statistic.vol" increase="+2" />
-					<bonus ref="statistic.chr" increase="-2" />
-					<bonus ref="statistic.odl" increase="+1" />
-					<bonus ref="statistic.sms" increase="-1" />
-				</bonuses>
-				<skill ref="skill.race.infravideni" lvl="1" />
-			</kind>
-		</kinds>
-		<!-- je nutno dopsat -->
-	</race>
+  <race id="human" name="člověk">
+    <kinds>
+      <kind id="man" name="lidský muž" />
+      <kind id="woman" name="lidská žena" gender="FEMALE">
+        <bonuses>
+          <bonus ref="statistic.sil" increase="-1" />
+          <bonus ref="statistic.chr" increase="+1" />
+        </bonuses>
+      </kind>
+      <kind id="mountainer" name="horal" gender="MALE">
+        <bonuses>
+          <bonus ref="statistic.sil" increase="+1" />
+          <bonus ref="statistic.vol" increase="+1" />
+          <bonus ref="statistic.int" increase="-1" />
+          <bonus ref="statistic.chr" increase="-1" />
+        </bonuses>
+      </kind>
+      <kind id="she-mountainer" name="horalka" gender="FEMALE">
+        <bonuses>
+          <bonus ref="statistic.vol" increase="+1" />
+          <bonus ref="statistic.int" increase="-1" />
+        </bonuses>
+      </kind>
+      <kind id="nomad" name="kočovník" gender="MALE">
+        <bonuses>
+          <bonus ref="statistic.sil" increase="-1" />
+          <bonus ref="statistic.obr" increase="+1" />
+          <bonus ref="statistic.zrc" increase="+1" />
+          <bonus ref="statistic.vol" increase="-2" />
+          <bonus ref="statistic.int" increase="+1" />
+          <bonus ref="statistic.chr" increase="+1" />
+        </bonuses>
+      </kind>
+      <kind id="she-nomad" name="kočovnice" gender="FEMALE">
+        <bonuses>
+          <bonus ref="statistic.sil" increase="-2" />
+          <bonus ref="statistic.obr" increase="+1" />
+          <bonus ref="statistic.zrc" increase="+2" />
+          <bonus ref="statistic.vol" increase="-2" />
+          <bonus ref="statistic.chr" increase="+2" />
+        </bonuses>
+      </kind>
+    </kinds>
+  </race>
+  <race id="elven" name="elf">
+    <kinds>
+      <kind id="elven" name="elf" gender="MALE">
+        <bonuses>
+          <bonus ref="statistic.sil" increase="-1" />
+          <bonus ref="statistic.obr" increase="+1" />
+          <bonus ref="statistic.zrc" increase="+1" />
+          <bonus ref="statistic.vol" increase="-2" />
+          <bonus ref="statistic.int" increase="+1" />
+          <bonus ref="statistic.chr" increase="+1" />
+          <bonus ref="statistic.odl" increase="-1" />
+          <bonus ref="statistic.sms.zrak" increase="+1" />
+        </bonuses>
+      </kind>
+      <kind id="she-elven" name="elfka" gender="FEMALE">
+        <bonuses>
+          <bonus ref="statistic.sil" increase="-2" />
+          <bonus ref="statistic.obr" increase="+1" />
+          <bonus ref="statistic.zrc" increase="+2" />
+          <bonus ref="statistic.vol" increase="-2" />
+          <bonus ref="statistic.chr" increase="+2" />
+          <bonus ref="statistic.odl" increase="-1" />
+          <bonus ref="statistic.sms.zrak" increase="+1" />
+        </bonuses>
+      </kind>
+      <kind id="dark-elven" name="temný elf" gender="MALE">
+        <bonuses>
+          <bonus ref="statistic.int" increase="+1" />
+          <bonus ref="statistic.odl" increase="-1" />
+          <bonus ref="statistic.sms.zrak" increase="+1" />
+        </bonuses>
+        <skill ref="skill.race.infravideni" lvl="1" />
+      </kind>
+      <kind id="she-dark-elven" name="temná elfka" gender="FEMALE">
+        <bonuses>
+          <bonus ref="statistic.sil" increase="-1" />
+          <bonus ref="statistic.zrc" increase="+1" />
+          <bonus ref="statistic.chr" increase="+1" />
+          <bonus ref="statistic.odl" increase="-1" />
+          <bonus ref="statistic.sms.zrak" increase="+1" />
+        </bonuses>
+        <skill ref="skill.race.infravideni" lvl="1" />
+      </kind>
+      <kind id="forest-elven" name="zelený elf" gender="MALE">
+        <bonuses>
+          <bonus ref="statistic.sil" increase="-1" />
+          <bonus ref="statistic.obr" increase="+2" />
+          <bonus ref="statistic.vol" increase="-1" />
+          <bonus ref="statistic.int" increase="+1" />
+          <bonus ref="statistic.chr" increase="+1" />
+          <bonus ref="statistic.odl" increase="-1" />
+          <bonus ref="statistic.sms.zrak" increase="+1" />
+        </bonuses>
+      </kind>
+      <kind id="she-forest-elven" name="zelená elfka" gender="FEMALE">
+        <bonuses>
+          <bonus ref="statistic.sil" increase="-2" />
+          <bonus ref="statistic.obr" increase="+2" />
+          <bonus ref="statistic.zrc" increase="+1" />
+          <bonus ref="statistic.vol" increase="-1" />
+          <bonus ref="statistic.chr" increase="+2" />
+          <bonus ref="statistic.odl" increase="-1" />
+          <bonus ref="statistic.sms.zrak" increase="+1" />
+        </bonuses>
+      </kind>
+    </kinds>
+  </race>
+  <race id="dwarf" name="trpaslík">
+    <kinds>
+      <kind id="dwarf" name="trpaslík" gender="MALE">
+        <bonuses>
+          <bonus ref="statistic.sil" increase="+1" />
+          <bonus ref="statistic.obr" increase="-1" />
+          <bonus ref="statistic.vol" increase="+2" />
+          <bonus ref="statistic.int" increase="-1" />
+          <bonus ref="statistic.chr" increase="-2" />
+          <bonus ref="statistic.odl" increase="+1" />
+          <bonus ref="statistic.sms" increase="-1" />
+          <bonus ref="statistic.sms.hmat" increase="+1" />
+        </bonuses>
+        <skill ref="skill.race.infravideni" lvl="1" />
+      </kind>
+      <kind id="she-dwarf" name="trpaslice" gender="FEMALE">
+        <bonuses>
+          <bonus ref="statistic.sil" increase="+1" />
+          <bonus ref="statistic.obr" increase="-1" />
+          <bonus ref="statistic.zrc" increase="-1" />
+          <bonus ref="statistic.vol" increase="+2" />
+          <bonus ref="statistic.chr" increase="-2" />
+          <bonus ref="statistic.odl" increase="+1" />
+          <bonus ref="statistic.sms" increase="-1" />
+          <bonus ref="statistic.sms.hmat" increase="+1" />
+        </bonuses>
+        <skill ref="skill.race.infravideni" lvl="1" />
+      </kind>
+    </kinds>
+    <!-- je nutno dopsat -->
+  </race>
 </races>

@@ -47,9 +47,17 @@ public class StatisticServiceImplTest extends AbstractSpringTest {
 		Character character = new Character();
 		character.setKindCodename("dwarf");
 		
-		Result result = service.getValue(character, "statistic.odl");
+		Result result;
+		
+		result = service.getValue(character, "statistic.odl");
 		if (result.isSuccessful()) {
-			assertEquals((Double) 2.0, (Double) result.getValue());
+			assertEquals("špatná hodnota odolnosti", (Double) result.getValue(), (Double) 2.0);
+		} else {
+			throw result.getException();
+		}
+		result = service.getValue(character, "statistic.kon");
+		if (result.isSuccessful()) {
+			assertEquals("špatná hodnota kondice", (Double) result.getValue(), (Double) 8.0);
 		} else {
 			throw result.getException();
 		}
@@ -79,20 +87,18 @@ public class StatisticServiceImplTest extends AbstractSpringTest {
 		results.put("(1/2)+(3*+3)",                   9.5);
 		results.put("(1/2)+(3*3)",                    9.5);
 		results.put("function.roundup((1/2)+(3*3))", 10.0);
+		results.put("1>0",                            1.0);
+		results.put("1<0",                            0.0);
+		results.put("1>=0",                           1.0);
+		results.put("1<=0",                           0.0);
 		
 		for (String string : results.keySet()) {
-			result = service.getValue(character, formula(string));
+			result = service.getFormulaValue(character, string);
 			if (result.isSuccessful()) {
-				assertEquals(formatter.format(result.getValue()), formatter.format(results.get(string)));
+				assertEquals(string + "=", formatter.format(results.get(string)), formatter.format(result.getValue()));
 			} else {
 				throw result.getException();
 			}
 		}
-	}
-
-	private static Statistic formula(String string) {
-		Statistic statistic = new Statistic();
-		statistic.setFormula(string);
-		return statistic;
 	}
 }

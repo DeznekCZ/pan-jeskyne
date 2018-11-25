@@ -10,10 +10,15 @@ public enum OperandType {
 	BRACKET_END(')', 0, 0, v -> 0.0, (op,ot) -> ""), 
 	BRACKET_START('(', 1, 0, v -> 0.0, (op,ot) -> ""), 
 	NEXT(',', 1, 0, v -> 0.0, (op,ot) -> ""),
-	SUM('+', 2, 1, v -> v[0] + v[1], (op,ot) -> ot.getOperand(op, 0) + ot.getOperator() + ot.getOperand(op, 1)),
-	SUB('-', 2, 2, v -> v[0] - v[1], (op,ot) -> ot.getOperand(op, 0) + ot.getOperator() + ot.getOperand(op, 1)),
-	MUL('*', 2, 3, v -> v[0] * v[1], (op,ot) -> ot.getOperand(op, 0) + ot.getOperator() + ot.getOperand(op, 1)),
-	DIV('/', 2, 4, v -> v[0] / v[1], (op,ot) -> ot.getOperand(op, 0) + ot.getOperator() + ot.getOperand(op, 1));
+	GT('>', 2, 1, v -> v[0] > v[1] ? 1.0 : 0.0, standardToString()),
+	LT('<', 2, 1, v -> v[0] < v[1] ? 1.0 : 0.0, standardToString()),
+	EQ('=', 2, 1, v -> v[0] == v[1] ? 1.0 : 0.0, standardToString()),
+	GTE(']', 2, 1, v -> v[0] >= v[1] ? 1.0 : 0.0, (op,ot) -> ot.getOperand(op, 0) + ">=" + ot.getOperand(op, 1)),
+	LTE('[', 2, 1, v -> v[0] <= v[1] ? 1.0 : 0.0, (op,ot) -> ot.getOperand(op, 0) + "<=" + ot.getOperand(op, 1)),
+	SUM('+', 2, 2, v -> v[0] + v[1], standardToString()),
+	SUB('-', 2, 3, v -> v[0] - v[1], standardToString()),
+	MUL('*', 2, 4, v -> v[0] * v[1], standardToString()),
+	DIV('/', 2, 5, v -> v[0] / v[1], standardToString()); 
 	
 	
 	private char operator;
@@ -29,6 +34,10 @@ public enum OperandType {
 		this.priority = priority;
 		this.function = function;
 		this.toString = toString;
+	}
+
+	private static BiFunction<List<FormulaElement>,OperandType,String> standardToString() {
+		return (op,ot) -> ot.getOperand(op, 0) + ot.getOperator() + ot.getOperand(op, 1);
 	}
 
 	public int getOperands() {

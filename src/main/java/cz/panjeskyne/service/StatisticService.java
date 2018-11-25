@@ -14,6 +14,8 @@ public interface StatisticService {
 
 	Collection<Statistic> getAll();
 
+	Result getFormulaValue(Character character, String formula);
+
 	Result getValue(Character character, Statistic statistic);
 	
 	default Result getValue(Character character, String codename) {

@@ -88,6 +88,7 @@ public class StatisticServiceImpl implements StatisticService {
 		return statistics.values();
 	}
 
+	@Override
 	public Result getValue(Character character, Statistic statistic) {
 		Result result = new Result(); 
 		
@@ -108,13 +109,23 @@ public class StatisticServiceImpl implements StatisticService {
 		return result;
 	}
 
+	@Override
 	public Result validateFormula(String formula) {
 		Statistic statistic = new Statistic();
 		statistic.setFormula(formula);
 		return parseFormula(statistic);
 	}
-	
+
 	private Result parseFormula(Statistic statistic) {
 		return Formula.parse(this, statistic);
+	}
+
+	@Override
+	public Result getFormulaValue(Character character, String formula) {
+		Statistic statistic = new Statistic();
+		statistic.setId("void");
+		statistic.setFormula(formula);
+		
+		return getValue(character, statistic);
 	}
 }

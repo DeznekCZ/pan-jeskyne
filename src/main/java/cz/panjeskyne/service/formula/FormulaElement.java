@@ -48,15 +48,21 @@ public abstract class FormulaElement {
 				child.parent = this;
 				operands.add(child);
 			} else if (child.isOperator()) {
-				if (operandType.getPriority() > cast(child).operandType.getPriority()) {
+				boolean isEqualOperator = cast(child).operandType.equals(OperandType.EQ);
+				if (!isEqualOperator && operandType.getPriority() > cast(child).operandType.getPriority()) {
 					child.operands.add(this);
 					child.parent = this.parent;
 					this.parent = child;
-				} else {
+				} else if (!isEqualOperator) {
 					child.parent = this;
 					child.operands.add(this.operands.get(1));
 					this.operands.get(1).parent = child;
 					this.operands.set(1, child);
+				} else if(isEqualOperator) {
+					operandType = OperandType.valueOf(operandType.name() + "E");
+					return this;
+				} else {
+					throw new FormulaException(I18N.argumented(I18N.OPERATOR_INVALID, I18N.id(cast(child).operandType.getOperator())));
 				}
 			} else {
 				throw new FormulaException(I18N.argumented(I18N.TOO_MUCH_OPERANDS, I18N.id(getClass().getName())));

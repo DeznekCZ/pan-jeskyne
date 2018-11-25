@@ -46,7 +46,7 @@ public class TableServiceImpl {
 	{
 		int zz = (int) args[0];
 		int sila = (int) args[1];
-		if (zz > 15 || sila > 15) {
+		if (zz > 15 || sila > 15 || zz < -5 || sila < -5) {
 			return (int) round((log10(pow(2, zz / 6.0) + pow(2, sila / 6.0)) / log10(2)) * 6) - 5;
 		} else {
 			return ZZvalue[(zz + 5)][(sila + 5)];
@@ -77,7 +77,7 @@ public class TableServiceImpl {
 		return values;
 	}
 
-	public static Table getTable(String identifier) {
+	public static Table getTable(String identifier) throws FormulaException {
 		String tableName = identifier.substring("table.".length());
 		
 		for (Method method : TableServiceImpl.class.getMethods()) {
@@ -103,6 +103,6 @@ public class TableServiceImpl {
 				};
 			}
 		}
-		return null;
+		throw new FormulaException(I18N.argumented(I18N.TABLE_NOT_FOUND, I18N.id(identifier)));
 	}
 }

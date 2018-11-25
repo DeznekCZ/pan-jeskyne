@@ -16,6 +16,8 @@ public class FunctionServiceImpl implements FunctionService {
 		buildFunction("function.roundup", 1, "java.lang.Math.ceil(double)");
 		buildFunction("function.round", 1, "java.lang.Math.round(double)");
 		buildFunction("function.abs_i", 1, "java.lang.Math.abs(int)");
+		buildFunction("function.min", 2, "java.lang.Math.min(double,double)");
+		buildFunction("function.max", 2, "java.lang.Math.max(double,double)");
 
 		buildTable("table.zz");
 		buildTable("table.life");

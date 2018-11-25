@@ -44,8 +44,17 @@ public enum I18N implements I18NA {
 	 * @param identifier
 	 * @return
 	 */
-	public static I18NA id(String identifier) {
-		return (args) -> identifier;
+	public static I18NA id(CharSequence identifier) {
+		return (args) -> identifier.toString();
+	}
+
+	/**
+	 * Returns identifier like it is
+	 * @param identifier
+	 * @return
+	 */
+	public static I18NA id(char identifier) {
+		return id(String.valueOf(identifier));
 	}
 
 	/**

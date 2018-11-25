@@ -45,6 +45,10 @@ public class Result {
 			this.value = statistic + this.value;
 	}
 
+	public boolean getBoolean() {
+		return value != 0.0;
+	}
+
 	public double getValue() {
 		return value;
 	}

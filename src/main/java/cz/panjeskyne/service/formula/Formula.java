@@ -63,6 +63,14 @@ public class Formula {
 				.replace("/-", "*(0-1)/")
 				.replace("*+", "*")
 				.replace("/+", "/")
+				.replace(">+", ">")
+				.replace("<+", "<")
+				.replace(">-", ">0-")
+				.replace("<-", "<0-")
+				.replace(">=+", ">=")
+				.replace("<=+", "<=")
+				.replace(">=-", ">=0-")
+				.replace("<=-", "<=0-")
 				);
 		StringBuffer buffer = new StringBuffer(getFormulaString().length());
 		while (matcher.find()) {
