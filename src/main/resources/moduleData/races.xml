@@ -4,18 +4,18 @@
 		<kinds>
 			<kind id="man" name="lidský muž" />
 			<kind id="woman" name="lidská žena" gender="FEMALE">
-				<bonus ref="statictic.sil" increase="-1" />
-				<bonus ref="statictic.chr" increase="+1" />
+				<bonus ref="statistic.sil" increase="-1" />
+				<bonus ref="statistic.chr" increase="+1" />
 			</kind>
 			<kind id="mountainer" name="horal" gender="MALE">
-				<bonus ref="statictic.sil" increase="+1" />
-				<bonus ref="statictic.vol" increase="+1" />
-				<bonus ref="statictic.int" increase="-1" />
-				<bonus ref="statictic.chr" increase="-1" />
+				<bonus ref="statistic.sil" increase="+1" />
+				<bonus ref="statistic.vol" increase="+1" />
+				<bonus ref="statistic.int" increase="-1" />
+				<bonus ref="statistic.chr" increase="-1" />
 			</kind>
 			<kind id="she-mountainer" name="horalka" gender="FEMALE">
-				<bonus ref="statictic.vol" increase="+1" />
-				<bonus ref="statictic.int" increase="-1" />
+				<bonus ref="statistic.vol" increase="+1" />
+				<bonus ref="statistic.int" increase="-1" />
 			</kind>
 		</kinds>
 	</race>
@@ -23,59 +23,59 @@
 		<kinds>
 			<kind id="elven" name="elf" gender="MALE">
 				<bonuses>
-					<bonus ref="statictic.sil" increase="-1" />
-					<bonus ref="statictic.obr" increase="+1" />
-					<bonus ref="statictic.zrc" increase="+1" />
-					<bonus ref="statictic.vol" increase="-2" />
-					<bonus ref="statictic.int" increase="+1" />
-					<bonus ref="statictic.chr" increase="+1" />
-					<bonus ref="statictic.odl" increase="-1" />
+					<bonus ref="statistic.sil" increase="-1" />
+					<bonus ref="statistic.obr" increase="+1" />
+					<bonus ref="statistic.zrc" increase="+1" />
+					<bonus ref="statistic.vol" increase="-2" />
+					<bonus ref="statistic.int" increase="+1" />
+					<bonus ref="statistic.chr" increase="+1" />
+					<bonus ref="statistic.odl" increase="-1" />
 				</bonuses>
 			</kind>
 			<kind id="she-elven" name="elfka" gender="FEMALE">
 				<bonuses>
-					<bonus ref="statictic.sil" increase="-2" />
-					<bonus ref="statictic.obr" increase="+1" />
-					<bonus ref="statictic.zrc" increase="+2" />
-					<bonus ref="statictic.vol" increase="-2" />
-					<bonus ref="statictic.chr" increase="+2" />
-					<bonus ref="statictic.odl" increase="-1" />
+					<bonus ref="statistic.sil" increase="-2" />
+					<bonus ref="statistic.obr" increase="+1" />
+					<bonus ref="statistic.zrc" increase="+2" />
+					<bonus ref="statistic.vol" increase="-2" />
+					<bonus ref="statistic.chr" increase="+2" />
+					<bonus ref="statistic.odl" increase="-1" />
 				</bonuses>
 			</kind>
 			<kind id="dark-elven" name="temný elf" gender="MALE">
 				<bonuses>
-					<bonus ref="statictic.int" increase="+1" />
-					<bonus ref="statictic.odl" increase="-1" />
+					<bonus ref="statistic.int" increase="+1" />
+					<bonus ref="statistic.odl" increase="-1" />
 				</bonuses>
 				<skill ref="skill.race.infravideni" lvl="1" />
 			</kind>
 			<kind id="she-dark-elven" name="temná elfka" gender="FEMALE">
 				<bonuses>
-					<bonus ref="statictic.sil" increase="-1" />
-					<bonus ref="statictic.zrc" increase="+1" />
-					<bonus ref="statictic.chr" increase="+1" />
-					<bonus ref="statictic.odl" increase="-1" />
+					<bonus ref="statistic.sil" increase="-1" />
+					<bonus ref="statistic.zrc" increase="+1" />
+					<bonus ref="statistic.chr" increase="+1" />
+					<bonus ref="statistic.odl" increase="-1" />
 				</bonuses>
 				<skill ref="skill.race.infravideni" lvl="1" />
 			</kind>
 			<kind id="forest-elven" name="zelený elf" gender="MALE">
 				<bonuses>
-					<bonus ref="statictic.sil" increase="-1" />
-					<bonus ref="statictic.obr" increase="+2" />
-					<bonus ref="statictic.vol" increase="-1" />
-					<bonus ref="statictic.int" increase="+1" />
-					<bonus ref="statictic.chr" increase="+1" />
-					<bonus ref="statictic.odl" increase="-1" />
+					<bonus ref="statistic.sil" increase="-1" />
+					<bonus ref="statistic.obr" increase="+2" />
+					<bonus ref="statistic.vol" increase="-1" />
+					<bonus ref="statistic.int" increase="+1" />
+					<bonus ref="statistic.chr" increase="+1" />
+					<bonus ref="statistic.odl" increase="-1" />
 				</bonuses>
 			</kind>
 			<kind id="she-forest-elven" name="zelená elfka" gender="FEMALE">
 				<bonuses>
-					<bonus ref="statictic.sil" increase="-2" />
-					<bonus ref="statictic.obr" increase="+2" />
-					<bonus ref="statictic.zrc" increase="+1" />
-					<bonus ref="statictic.vol" increase="-1" />
-					<bonus ref="statictic.chr" increase="+2" />
-					<bonus ref="statictic.odl" increase="-1" />
+					<bonus ref="statistic.sil" increase="-2" />
+					<bonus ref="statistic.obr" increase="+2" />
+					<bonus ref="statistic.zrc" increase="+1" />
+					<bonus ref="statistic.vol" increase="-1" />
+					<bonus ref="statistic.chr" increase="+2" />
+					<bonus ref="statistic.odl" increase="-1" />
 				</bonuses>
 			</kind>
 		</kinds>
@@ -84,25 +84,25 @@
 		<kinds>
 			<kind id="dwarf" name="trpaslík" gender="MALE">
 				<bonuses>
-					<bonus ref="statictic.sil" increase="+1" />
-					<bonus ref="statictic.obr" increase="-1" />
-					<bonus ref="statictic.vol" increase="+2" />
-					<bonus ref="statictic.int" increase="-1" />
-					<bonus ref="statictic.chr" increase="-2" />
-					<bonus ref="statictic.odl" increase="+1" />
-					<bonus ref="statictic.sms" increase="-1" />
+					<bonus ref="statistic.sil" increase="+1" />
+					<bonus ref="statistic.obr" increase="-1" />
+					<bonus ref="statistic.vol" increase="+2" />
+					<bonus ref="statistic.int" increase="-1" />
+					<bonus ref="statistic.chr" increase="-2" />
+					<bonus ref="statistic.odl" increase="+1" />
+					<bonus ref="statistic.sms" increase="-1" />
 				</bonuses>
 				<skill ref="skill.race.infravideni" lvl="1" />
 			</kind>
 			<kind id="she-dwarf" name="trpaslice" gender="FEMALE">
 				<bonuses>
-					<bonus ref="statictic.sil" increase="+1" />
-					<bonus ref="statictic.obr" increase="-1" />
-					<bonus ref="statictic.zrc" increase="-1" />
-					<bonus ref="statictic.vol" increase="+2" />
-					<bonus ref="statictic.chr" increase="-2" />
-					<bonus ref="statictic.odl" increase="+1" />
-					<bonus ref="statictic.sms" increase="-1" />
+					<bonus ref="statistic.sil" increase="+1" />
+					<bonus ref="statistic.obr" increase="-1" />
+					<bonus ref="statistic.zrc" increase="-1" />
+					<bonus ref="statistic.vol" increase="+2" />
+					<bonus ref="statistic.chr" increase="-2" />
+					<bonus ref="statistic.odl" increase="+1" />
+					<bonus ref="statistic.sms" increase="-1" />
 				</bonuses>
 				<skill ref="skill.race.infravideni" lvl="1" />
 			</kind>

@@ -8,28 +8,16 @@ import javax.xml.bind.annotation.XmlTransient;
 
 @XmlRootElement(name = "bonus")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class KindStatisticBonus {
+public class KindStatisticBonus implements XmlMappable<String, KindStatisticBonus> {
 
 	@XmlAttribute(name= "ref")
 	private String statisticCodename;
 
 	@XmlTransient
-	private Statistic statistic;
-
-	@XmlTransient
 	private Kind kind;
 
-	@XmlAttribute(name= "transient")
+	@XmlAttribute(name= "increase")
 	private int bonusValue;
-
-
-	public Statistic getStatistic() {
-		return statistic;
-	}
-
-	public void setStatistic(Statistic statistic) {
-		this.statistic = statistic;
-	}
 
 	public Kind getKind() {
 		return kind;
@@ -45,6 +33,16 @@ public class KindStatisticBonus {
 
 	public void setBonusValue(int value) {
 		this.bonusValue = value;
+	}
+
+	@Override
+	public String getKey() {
+		return statisticCodename;
+	}
+
+	@Override
+	public KindStatisticBonus getValue() {
+		return this;
 	}
 
 }

@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import cz.panjeskyne.model.db.Character;
 import cz.panjeskyne.model.xml.Statistic;
 import cz.panjeskyne.service.Result;
+import cz.panjeskyne.service.formula.FormulaException;
 import cz.panjeskyne.test.AbstractSpringTest;
 
 public class StatisticServiceImplTest extends AbstractSpringTest {
@@ -42,20 +43,20 @@ public class StatisticServiceImplTest extends AbstractSpringTest {
 	}
 	
 	@Test
-	public void getGetCharacterStatistic() {
+	public void getGetCharacterStatistic() throws FormulaException {
 		Character character = new Character();
 		character.setKindCodename("dwarf");
 		
 		Result result = service.getValue(character, "statistic.odl");
 		if (result.isSuccessful()) {
-			System.out.println(result.getValue());
+			assertEquals((Double) 2.0, (Double) result.getValue());
 		} else {
-			result.getException().printStackTrace(System.err);
+			throw result.getException();
 		}
 	}
 	
 	@Test
-	public void formulaComputing() throws Exception {
+	public void formulaComputing() throws FormulaException {
 		Character character = new Character();
 		character.setKindCodename("dwarf");
 

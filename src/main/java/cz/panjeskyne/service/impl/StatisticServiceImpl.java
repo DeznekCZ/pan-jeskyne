@@ -102,7 +102,7 @@ public class StatisticServiceImpl implements StatisticService {
 		}
 		
 		if (result.isSuccessful()) {
-			result.increase(kindService.getCharactersKind(character).getStatistic(statistic.getCodename()));
+			result.increase(kindService.getCharactersKind(character).getStatisticBonus(statistic.getCodename()));
 		}
 		
 		return result;

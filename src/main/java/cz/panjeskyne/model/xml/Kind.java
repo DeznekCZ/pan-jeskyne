@@ -1,12 +1,18 @@
 package cz.panjeskyne.model.xml;
 
+import java.util.HashMap;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import cz.panjeskyne.model.enums.Gender;
+import cz.panjeskyne.model.xml.adapter.KindStatisticBonusMapAdapter;
+import cz.panjeskyne.model.xml.adapter.KindMapAdapter;
 
 @XmlRootElement(name = "kind")
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -26,6 +32,10 @@ public class Kind implements XmlMappable<String, Kind> {
 
 //	@XmlElement(name="bonus")
 //	private List<KindStatisticBonus> bonuses;
+
+	@XmlJavaTypeAdapter(value = KindStatisticBonusMapAdapter.class)
+	@XmlElement(name = "bonuses")
+	private HashMap<String, KindStatisticBonus> bonuses;
 
 	public String getId() {
 		return id;
@@ -63,9 +73,8 @@ public class Kind implements XmlMappable<String, Kind> {
 		return id;
 	}
 
-	public int getStatistic(String codename) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int getStatisticBonus(String codename) {
+		return bonuses.getOrDefault(codename, new KindStatisticBonus()).getBonusValue();
 	}
 
 	@Override
