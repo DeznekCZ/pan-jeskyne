@@ -35,7 +35,7 @@
           </level>
         </levels>
       </skill>
-      <skill id="mece_dyky" name="Boj s mečemi a dýkami" desc="">
+      <skill id="mece_dyky" name="Boj s meči a dýkami" desc="">
         <bonuses>
           <bonus ref="skills.known" increase="+1" />
         </bonuses>

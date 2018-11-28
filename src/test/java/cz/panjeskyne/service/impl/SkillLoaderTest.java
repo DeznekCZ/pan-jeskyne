@@ -5,7 +5,6 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import cz.panjeskyne.model.xml.Skill;
 import cz.panjeskyne.test.AbstractSpringTest;
 
 public class SkillLoaderTest extends AbstractSpringTest {
@@ -21,7 +20,7 @@ public class SkillLoaderTest extends AbstractSpringTest {
 		System.out.println(skillService.getAll());
 		System.out.println(groupService.getAll());
 
-		assertEquals("Zázemí", skillService.getByCodename("zazemi.type").getNameI18N(""));
+		assertEquals("ZÃ¡zemÃ­", skillService.getByCodename("zazemi.type").getNameI18N(""));
 		assertEquals("Dovednosti postavy", skillService.getByCodename("zazemi.skills").getNameI18N(""));
 	}
 }

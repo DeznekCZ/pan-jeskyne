@@ -8,24 +8,23 @@ public class I18NServiceImpl {
 
 	static {
 		add("exception.table.not_found", "Tabulka s id: \"%s\" nenalezena");
-		add("exception.table.invalid_args_count", "Tabulka \"%s\" oèekává tento poèet argumentù: %s obdrela však %s");
-		add("exception.formula.bracket_too_much_arguments", "V zavorkách nesmí bıt znak ','");
-		add("exception.formula.operator_invalid_count_operands", "Není zadán správnı poèet operandù pro operátor '%s', oèekáváno: %s obdreno: %s");
-		add("exception.function.not_found", "Zadaná funkce neexistuje (není znám typ): %s");
-		add("exception.class.not_found", "Zadaná tøída nenalezena: %s");
-		add("exception.method.not_found", "Zadaná metoda nenalezena: %s");
-		add("exception.method.not_visible", "Zadaná metoda není pøístupná: %s");
-		add("exception.function.format_exception", "Neodpovídá standartnímu formátu: %s");
-		add("exception.method.bad_arguments", "Chybné doruèení argumentù: oèekáváno %s"); 
+		add("exception.table.invalid_args_count", "Tabulka \"%s\" oÄekÃ¡vÃ¡ tento poÄet argumentÅ¯: %s obdrÅ¾ela vÅ¡ak %s");
+		add("exception.formula.bracket_too_much_arguments", "V zavorkÃ¡ch nesmÃ­ bÃ½t znak ','");
+		add("exception.formula.operator_invalid_count_operands", "NenÃ­ zadÃ¡n sprÃ¡vnÃ½ poÄet operandÅ¯ pro operÃ¡tor '%s', oÄekÃ¡vÃ¡no: %s obdrÅ¾eno: %s");
+		add("exception.function.not_found", "ZadanÃ¡ funkce neexistuje (nenÃ­ znÃ¡m typ): %s");
+		add("exception.class.not_found", "ZadanÃ¡ tÅ™Ã­da nenalezena: %s");
+		add("exception.method.not_found", "ZadanÃ¡ metoda nenalezena: %s");
+		add("exception.method.not_visible", "ZadanÃ¡ metoda nenÃ­ pÅ™Ã­stupnÃ¡: %s");
+		add("exception.function.format_exception", "NeodpovÃ­dÃ¡ standartnÃ­mu formÃ¡tu: %s");
+		add("exception.method.bad_arguments", "ChybnÄ› doruÄenÃ© argumenty: oÄekÃ¡vÃ¡no %s"); 
 		add("exception.method.bad_invocation", "Nelze volat metodu: %s");
-		add("exception.formula.missing_opening_bracket", "Chybìjící otevírací závorka");
-		add("exception.formula.child_elements_not_implemented", "Aktuální element \"%s\" nepodporuje subelementy");
-		add("exception.formula.bracket_is_closed", "Závorka je ji uzavøena.");
-		add("exception.formula.too_much_operands", "Aktuální element \"%s\" nepodporuje více operandù");
-		add("exception.formula.has_no_parent", "Chybìjící rodièovskı element");
+		add("exception.formula.missing_opening_bracket", "ChybÄ›jÃ­cÃ­ otevÃ­racÃ­ zÃ¡vorka");
+		add("exception.formula.child_elements_not_implemented", "AktuÃ¡lnÄ› element \"%s\" nepodporuje subelementy");
+		add("exception.formula.bracket_is_closed", "ZÃ¡vorka je jiÅ¾ uzavÅ™ena.");
+		add("exception.formula.too_much_operands", "AktuÃ¡lnÄ› element \"%s\" nepodporuje vÃ­ce operandÅ¯");
+		add("exception.formula.has_no_parent", "ChybÄ›jÃ­cÃ­ rodiÄovskÃ½ element");
 		add("exception.data.not_found", "Nenalezena data pro id: %s");
-		add("exception.function.invalid_count_arguments", "Funkce \"%s\" oèekává tento poèet argumentù: %s obdrela však %s");
-		
+		add("exception.function.invalid_count_arguments", "Funkce \"%s\" oÄekÃ¡vÃ½ tento poÄet argumentÅ¯: %s obdrÅ¾ela vÅ¡ak %s");	
 	}
 	
 	public static String getString(String codename) {
