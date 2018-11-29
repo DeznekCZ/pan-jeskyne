@@ -1,5 +1,6 @@
 package cz.panjeskyne.service.impl;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.annotation.PostConstruct;
@@ -45,5 +46,14 @@ public class KindServiceImpl implements KindService {
 	@Override
 	public Kind getCharactersKind(Character character) {
 		return getByCodename(character.getKindCodename());
+	}
+
+	@Override
+	public Collection<Kind> getKindsForRace(String raceCodename) {
+		Race race = raceService.getByCodename(raceCodename);
+		if (race == null) {
+			return new ArrayList<>();
+		}
+		return race.getKinds().values();
 	}
 }

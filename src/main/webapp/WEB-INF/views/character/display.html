@@ -13,21 +13,21 @@
 	<div>
 		<span th:text="${model.name}"></span>
 	</div>
-	<h2 class="ui header">statistics</h2>
-	<table class="ui basic table">
-		<thead>
-			<tr>
-				<th>Název</th>
-				<th>value</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="stat : ${model.statistics}">
-				<td th:text="${stat.statistic.name}"></td>
-				<td th:text="${stat.value > 0 ? '+'+stat.value : stat.value}"></td>
-			</tr>
-		</tbody>
-	</table>
+<!-- 	<h2 class="ui header">statistics</h2> -->
+<!-- 	<table class="ui basic table"> -->
+<!-- 		<thead> -->
+<!-- 			<tr> -->
+<!-- 				<th>Název</th> -->
+<!-- 				<th>value</th> -->
+<!-- 			</tr> -->
+<!-- 		</thead> -->
+<!-- 		<tbody> -->
+<!-- 			<tr th:each="stat : ${model.statistics}"> -->
+<!-- 				<td th:text="${stat.statistic.name}"></td> -->
+<!-- 				<td th:text="${stat.value > 0 ? '+'+stat.value : stat.value}"></td> -->
+<!-- 			</tr> -->
+<!-- 		</tbody> -->
+<!-- 	</table> -->
 	
 	<a class="ui button" th:href="@{/character/update/{id}(id=${model.id})}">Editovat</a>
 </th:block>

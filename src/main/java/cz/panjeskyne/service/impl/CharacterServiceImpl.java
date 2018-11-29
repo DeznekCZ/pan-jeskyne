@@ -27,6 +27,7 @@ public class CharacterServiceImpl extends AbstractBaseService<Character> impleme
 	public void fillModelFromForm(CharacterForm form, Character model) {
 		model.setId(form.getId());
 		model.setName(form.getName());
+		model.setKindCodename(form.getKind());
 		/*
 		 * List<CharacterStatistic> statisticsModel = model.getStatistics();
 		 * for(CharacterStatisticForm characterStatForm : form.getStatistics()) { Long

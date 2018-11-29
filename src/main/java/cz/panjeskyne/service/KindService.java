@@ -12,4 +12,6 @@ public interface KindService {
 	Collection<Kind> getAll();
 	
 	Kind getCharactersKind(Character character);
+
+	Collection<Kind> getKindsForRace(String raceCodename);
 }
