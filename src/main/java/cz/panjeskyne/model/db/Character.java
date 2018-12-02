@@ -1,9 +1,12 @@
 package cz.panjeskyne.model.db;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +22,9 @@ public class Character extends AbstractEntity {
 	
 	@Column(name = "kind_codename")
 	private String kindCodename;
+
+	@OneToMany(mappedBy = "character")
+	private List<CharacterSkill> skills;
 
 	public String getName() {
 		return name;
@@ -38,6 +44,14 @@ public class Character extends AbstractEntity {
 
 	public void setKindCodename(String kindCodename) {
 		this.kindCodename = kindCodename;
+	}
+
+	public List<CharacterSkill> getSkills() {
+		return skills;
+	}
+
+	public void setSkills(List<CharacterSkill> skills) {
+		this.skills = skills;
 	}
 
 	@Override
