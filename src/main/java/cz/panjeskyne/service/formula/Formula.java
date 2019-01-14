@@ -71,6 +71,8 @@ public class Formula {
 				.replace("<=+", "<=")
 				.replace(">=-", ">=0-")
 				.replace("<=-", "<=0-")
+				.replace("=+", "=")
+				.replace("=-", "=0-")
 				);
 		StringBuffer buffer = new StringBuffer(getFormulaString().length());
 		while (matcher.find()) {
