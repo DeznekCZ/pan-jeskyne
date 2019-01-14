@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -32,6 +33,8 @@ public class StatisticServiceImpl implements StatisticService {
 	private static final String STATS_XML = "classpath:moduleData/stats.xml";
 
 	private ImmutableMap<String, Statistic> statistics;
+
+	private ImmutableMap<String, List<Statistic>> groups;
 	
 	private ImmutableMap<String, List<Statistic>> dependents;
 
@@ -60,13 +63,28 @@ public class StatisticServiceImpl implements StatisticService {
 			List<Statistic> dependents = new ArrayList<>();
 			for(Statistic dependent : statistics.values()) {
 				String forumula = dependent.getFormula();
-				if(StringUtils.containsIgnoreCase(forumula, statistic.getCodename())) {
+				if(StringUtils.contains(forumula, statistic.getCodename())) {
 					dependents.add(dependent);
 				}
 			}
 			builderDep.put(statistic.getCodename(), dependents);
 		}
 		dependents = builderDep.build();
+		
+		HashMap<String, List<Statistic>> builderGrp = new HashMap<>();
+		for(Statistic statistic : statistics.values()) {
+			if (statistic.hasGroups()) {
+				for (String groupCode : statistic.getGroups().split(";")) {
+					List<Statistic> group = builderGrp.get(groupCode);
+					if (group == null) {
+						group = new ArrayList<>(2);
+						builderGrp.put(groupCode, group);
+					}
+					group.add(statistic);
+				}
+			}
+		}
+		groups = ImmutableMap.copyOf(builderGrp);
 	}
 	
 	public KindService getKindService() {
@@ -127,5 +145,10 @@ public class StatisticServiceImpl implements StatisticService {
 		statistic.setFormula(formula);
 		
 		return getValue(character, statistic);
+	}
+
+	@Override
+	public List<Statistic> getStatisticsByGroup(String group) {
+		return groups.getOrDefault(group, new ArrayList<>(0));
 	}
 }

@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <stats>
-  <statistic id="statistic.sil" name="síla" desc="Vyjadřuje sílu hrdiny" />
-  <statistic id="statistic.obr" name="obratnost"
+  <statistic id="statistic.sil" name="síla" groups="main;body"
+    desc="Vyjadřuje sílu hrdiny" />
+  <statistic id="statistic.obr" name="obratnost" groups="main;body"
     desc="Vyjadřuje obratnost hrdiny" />
-  <statistic id="statistic.zrc" name="zručnost"
+  <statistic id="statistic.zrc" name="zručnost" groups="main;body"
     desc="Vyjadřuje zručnost hrdiny" />
-  <statistic id="statistic.vol" name="vůle" desc="Vyjadřuje vůli hrdiny" />
-  <statistic id="statistic.int" name="inteligence"
+  <statistic id="statistic.vol" name="vůle" groups="main;psychic"
+    desc="Vyjadřuje vůli hrdiny" />
+  <statistic id="statistic.int" name="inteligence" groups="main;psychic"
     desc="Vyjadřuje inteligenci hrdiny" />
-  <statistic id="statistic.chr" name="charisma"
+  <statistic id="statistic.chr" name="charisma" groups="main;psychic"
     desc="Vyjadřuje charismu hrdiny" />
   <statistic id="statistic.odl" name="odolnost"
     desc="Vyjadřuje odolnost hrdiny vůči okolním vlivům (př. počasí)">

@@ -15,6 +15,9 @@ public class Statistic {
 
 	@XmlAttribute(name = "name")
 	private String name;
+	
+	@XmlAttribute(name = "groups", required = false)
+	private String groups;
 
 	@XmlValue
 	private String formula;
@@ -51,6 +54,18 @@ public class Statistic {
 		this.id = id;
 	}
 
+	public String getGroups() {
+		return groups;
+	}
+	
+	public void setGroups(String groups) {
+		this.groups = groups;
+	}
+	
+	public boolean hasGroups() {
+		return getGroups() != null && getGroups().length() > 0;
+	}
+	
 	public boolean hasFormula() {
 		return getFormula() != null && getFormula().length() > 0;
 	}

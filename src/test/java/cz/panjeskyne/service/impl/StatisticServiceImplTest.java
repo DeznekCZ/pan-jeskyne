@@ -7,6 +7,7 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -51,16 +52,19 @@ public class StatisticServiceImplTest extends AbstractSpringTest {
 		
 		result = service.getValue(character, "statistic.odl");
 		if (result.isSuccessful()) {
-			assertEquals("�patn� hodnota odolnosti", (Double) result.getValue(), (Double) 2.0);
+			assertEquals("špatná hodnota odolnosti", (Double) result.getValue(), (Double) 2.0);
 		} else {
 			throw result.getException();
 		}
 		result = service.getValue(character, "statistic.kon");
 		if (result.isSuccessful()) {
-			assertEquals("�patn� hodnota kondice", (Double) result.getValue(), (Double) 8.0);
+			assertEquals("špatná hodnota kondice", (Double) result.getValue(), (Double) 8.0);
 		} else {
 			throw result.getException();
 		}
+		
+		List<Statistic> statistics = service.getStatisticsByGroup("main");
+		assertEquals("špatný počet prvků skupiny statistik", 6, statistics.size());
 	}
 	
 	@Test
@@ -90,7 +94,12 @@ public class StatisticServiceImplTest extends AbstractSpringTest {
 		results.put("1>0",                            1.0);
 		results.put("1<0",                            0.0);
 		results.put("1>=0",                           1.0);
+		results.put("1>=1",                           1.0);
+		results.put("1>=3/3",                         1.0);
 		results.put("1<=0",                           0.0);
+		results.put("1>=-1",                          1.0);
+		results.put("1=-1",                           0.0);
+		results.put("1=1",                            1.0);
 		
 		for (String string : results.keySet()) {
 			result = service.getFormulaValue(character, string);

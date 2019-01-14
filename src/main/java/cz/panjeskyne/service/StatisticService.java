@@ -23,4 +23,6 @@ public interface StatisticService {
 	}
 	
 	Result validateFormula(String formula);
+
+	Collection<Statistic> getStatisticsByGroup(String string);
 }
