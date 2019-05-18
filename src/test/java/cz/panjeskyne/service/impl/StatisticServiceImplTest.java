@@ -16,15 +16,20 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import cz.panjeskyne.model.db.Character;
+import cz.panjeskyne.model.db.CharacterSkill;
+import cz.panjeskyne.model.xml.Skill;
 import cz.panjeskyne.model.xml.Statistic;
 import cz.panjeskyne.service.Result;
 import cz.panjeskyne.service.formula.FormulaException;
 import cz.panjeskyne.test.AbstractSpringTest;
 
 public class StatisticServiceImplTest extends AbstractSpringTest {
-	
+
 	@Autowired
 	private StatisticServiceImpl service;
+	
+	@Autowired
+	private SkillServiceImpl skills;
 	
 	@Test
 	public void getByCodeName() {
@@ -71,6 +76,9 @@ public class StatisticServiceImplTest extends AbstractSpringTest {
 	public void formulaComputing() throws FormulaException {
 		Character character = new Character();
 		character.setKindCodename("dwarf");
+		
+		character.setSkills(new ArrayList<>()); // not loaded by default
+	    skills.getByCodename("skill.sil").learnSkill(character, 1);
 
 		Result result;
 		
@@ -100,6 +108,9 @@ public class StatisticServiceImplTest extends AbstractSpringTest {
 		results.put("1>=-1",                          1.0);
 		results.put("1=-1",                           0.0);
 		results.put("1=1",                            1.0);
+	    
+		// Statistic referenced value
+		results.put("statistic.sil",                  2.0);
 		
 		for (String string : results.keySet()) {
 			result = service.getFormulaValue(character, string);

@@ -2,7 +2,7 @@ package cz.panjeskyne.service;
 
 import java.util.Collection;
 
-import cz.panjeskyne.model.xml.SkillGroup;
+import cz.panjeskyne.model.xml.skill.SkillGroup;
 
 public interface SkillGroupService {
 

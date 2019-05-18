@@ -1,13 +1,22 @@
 package cz.panjeskyne.model.xml;
 
+import java.util.HashMap;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import cz.panjeskyne.i18n.I18NTexts;
-import cz.panjeskyne.service.I18NService;
+import cz.panjeskyne.model.db.Character;
+import cz.panjeskyne.model.db.CharacterSkill;
+import cz.panjeskyne.model.xml.adapter.BonusMapAdapter;
+import cz.panjeskyne.model.xml.adapter.SkillLevelMapAdapter;
+import cz.panjeskyne.model.xml.skill.SkillGroup;
+import cz.panjeskyne.model.xml.skill.SkillLevel;
 
 @XmlRootElement(name = "skill")
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -30,6 +39,14 @@ public class Skill implements XmlMappable<String, Skill>, I18NTexts {
 	
 	@XmlTransient
 	private SkillGroup skillgroup;
+
+	@XmlJavaTypeAdapter(value = BonusMapAdapter.class)
+	@XmlElement(name = "bonuses")
+	private HashMap<String, Bonus> bonuses;
+
+	@XmlJavaTypeAdapter(value = SkillLevelMapAdapter.class)
+	@XmlElement(name = "levels")
+	private HashMap<String, SkillLevel> levels;
 	
 	public String getDesc() {
 		return desc;
@@ -79,5 +96,38 @@ public class Skill implements XmlMappable<String, Skill>, I18NTexts {
 	
 	public SkillGroup getSkillgroup() {
 		return skillgroup;
+	}
+
+	public void learnSkill(Character character, int level) {
+		for (CharacterSkill skill : character.getSkills()) {
+			if (skill.getSkillCodename().endsWith(getId())) {
+				skill.setSkillLevel(level);
+				return;
+			}
+		}
+		
+		CharacterSkill cs = new CharacterSkill();
+		cs.setSkillCodename(getId());
+		cs.setCharacter(character);
+		cs.setSkillLevel(level);
+		character.getSkills().add(cs);
+	}
+
+	public HashMap<String, Bonus> getBonuses() {
+		return bonuses;
+	}
+	
+	public Bonus getSkillBonus(String statistic) {
+		return getBonuses().containsKey(statistic) ? getBonuses().get(statistic) : Bonus.NONE;
+	}
+	
+	public Bonus getLevelSkillBonus(int level, String statistic) {
+		if (levels.isEmpty()) {
+			return Bonus.NONE;
+		} else if (levels.containsKey(level)) {
+			return levels.get(level).getSkillBonus(statistic);
+		} else {
+			return Bonus.NONE;
+		}
 	}
 }

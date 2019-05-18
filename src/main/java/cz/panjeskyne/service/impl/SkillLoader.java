@@ -12,8 +12,8 @@ import org.springframework.util.ResourceUtils;
 import com.google.common.collect.ImmutableMap;
 
 import cz.panjeskyne.model.xml.Skill;
-import cz.panjeskyne.model.xml.SkillGroup;
-import cz.panjeskyne.model.xml.SkillGroups;
+import cz.panjeskyne.model.xml.skill.SkillGroup;
+import cz.panjeskyne.model.xml.skill.SkillGroups;
 
 public class SkillLoader {
 	

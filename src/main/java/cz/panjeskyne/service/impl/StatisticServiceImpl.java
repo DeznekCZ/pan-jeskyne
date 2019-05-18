@@ -20,10 +20,13 @@ import org.springframework.util.ResourceUtils;
 import com.google.common.collect.ImmutableMap;
 
 import cz.panjeskyne.model.db.Character;
+import cz.panjeskyne.model.db.CharacterSkill;
 import cz.panjeskyne.model.xml.Statistic;
 import cz.panjeskyne.model.xml.Statistics;
+import cz.panjeskyne.service.CharacterService;
 import cz.panjeskyne.service.KindService;
 import cz.panjeskyne.service.Result;
+import cz.panjeskyne.service.SkillService;
 import cz.panjeskyne.service.StatisticService;
 import cz.panjeskyne.service.formula.Formula;
 
@@ -40,6 +43,9 @@ public class StatisticServiceImpl implements StatisticService {
 
 	@Autowired
 	private KindService kindService;
+	
+	@Autowired
+	private SkillService skillService;
 
 	@PostConstruct
 	private void init() {
@@ -120,8 +126,20 @@ public class StatisticServiceImpl implements StatisticService {
 			result.setException(inMiddle.getException());
 		}
 		
-		if (result.isSuccessful()) {
+		if (result.isSuccessful() && !statistic.isVoid()) {
 			result.increase(kindService.getCharactersKind(character).getStatisticBonus(statistic.getCodename()));
+			
+			double addition = 0;
+			for (CharacterSkill skill : character.getSkills()) {
+				addition += skillService.getAdditionBonus(skill.getSkillCodename(), skill.getSkillLevel(), statistic.getId());
+			} 
+			double multiply = 100;
+			for (CharacterSkill skill : character.getSkills()) {
+				addition += skillService.getMultiplyBonus(skill.getSkillCodename(), skill.getSkillLevel(), statistic.getId());
+			}
+			
+			result.increase(addition);
+			result.multiply(0.01 * multiply);
 		}
 		
 		return result;

@@ -1,4 +1,4 @@
-package cz.panjeskyne.model.xml;
+package cz.panjeskyne.model.xml.kind;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -6,9 +6,12 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
+import cz.panjeskyne.model.xml.Kind;
+import cz.panjeskyne.model.xml.XmlMappable;
+
 @XmlRootElement(name = "bonus")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class LevelStatisticBonus implements XmlMappable<String, LevelStatisticBonus> {
+public class KindStatisticBonus implements XmlMappable<String, KindStatisticBonus> {
 
 	@XmlAttribute(name= "ref")
 	private String statisticCodename;
@@ -41,7 +44,7 @@ public class LevelStatisticBonus implements XmlMappable<String, LevelStatisticBo
 	}
 
 	@Override
-	public LevelStatisticBonus getValue() {
+	public KindStatisticBonus getValue() {
 		return this;
 	}
 

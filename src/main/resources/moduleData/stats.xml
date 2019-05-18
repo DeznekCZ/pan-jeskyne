@@ -16,8 +16,8 @@
     desc="Vyjadřuje odolnost hrdiny vůči okolním vlivům (př. počasí)">
     statistic.sil
   </statistic>
-  <statistic id="statistic.kon" name="kondice"
-    desc="Kondice vyjadřuje hrdinovu schonost vydržet vyšší silové či magické vypětí.">
+  <statistic id="statistic.kon" name="zdraví"
+    desc="Zdraví vyjadřuje hrdinovu schonost vydržet vyšší silové či magické vypětí (po přepočtu zranění).">
     6 + statistic.odl
   </statistic>
   <statistic id="statistic.moc" name="moc"
@@ -28,19 +28,19 @@
     desc="Smysly vyjadřují shopnost vnímat okolí (všeobecně)">
     statistic.zrc
   </statistic>
-  <statistic id="statistic.sms.zrak" name="zrak">
+  <statistic id="statistic.sms.zrak" name="zrak" groups="senses">
     statistic.sms
   </statistic>
-  <statistic id="statistic.sms.cich" name="čich">
+  <statistic id="statistic.sms.cich" name="čich" groups="senses">
     statistic.sms
   </statistic>
-  <statistic id="statistic.sms.chut" name="chuť">
+  <statistic id="statistic.sms.chut" name="chuť" groups="senses">
     statistic.sms
   </statistic>
-  <statistic id="statistic.sms.hmat" name="hmat">
+  <statistic id="statistic.sms.hmat" name="hmat" groups="senses">
     statistic.sms
   </statistic>
-  <statistic id="statistic.sms.sluch" name="sluch">
+  <statistic id="statistic.sms.sluch" name="sluch" groups="senses">
     statistic.sms
   </statistic>
   <statistic id="statistic.krs" name="krása" desc="">

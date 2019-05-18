@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.google.common.collect.ImmutableMap;
 
-import cz.panjeskyne.model.xml.SkillGroup;
+import cz.panjeskyne.model.xml.skill.SkillGroup;
 import cz.panjeskyne.service.SkillGroupService;
 
 @Service

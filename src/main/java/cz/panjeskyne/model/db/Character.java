@@ -1,5 +1,6 @@
 package cz.panjeskyne.model.db;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -12,6 +13,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "character")
 public class Character extends AbstractEntity {
+
+	private static final List<CharacterSkill> EMPTY = new ArrayList<>(0);
 
 	@Id
 	@GeneratedValue
@@ -47,7 +50,7 @@ public class Character extends AbstractEntity {
 	}
 
 	public List<CharacterSkill> getSkills() {
-		return skills;
+		return skills == null ? EMPTY : skills;
 	}
 
 	public void setSkills(List<CharacterSkill> skills) {

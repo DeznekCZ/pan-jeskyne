@@ -42,7 +42,7 @@ public class Result {
 
 	public void increase(double statistic) {
 		if (this.successful)
-			this.value = statistic + this.value;
+			this.value += statistic;
 	}
 
 	public boolean getBoolean() {
@@ -64,5 +64,10 @@ public class Result {
 
 	public FormulaException getException() {
 		return exception;
+	}
+
+	public void multiply(double statistic) {
+		if (this.successful)
+			this.value *= statistic;
 	}
 }

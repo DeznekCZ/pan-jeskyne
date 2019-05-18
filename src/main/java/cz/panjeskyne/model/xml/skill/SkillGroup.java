@@ -1,4 +1,4 @@
-package cz.panjeskyne.model.xml;
+package cz.panjeskyne.model.xml.skill;
 
 import java.util.HashMap;
 
@@ -12,6 +12,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import com.google.common.collect.ImmutableMap;
 
 import cz.panjeskyne.i18n.I18NTexts;
+import cz.panjeskyne.model.xml.Skill;
 import cz.panjeskyne.model.xml.adapter.SkillMapAdapter;
 
 @XmlRootElement(name = "skillgroup")

@@ -13,6 +13,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import cz.panjeskyne.i18n.I18NTexts;
 import cz.panjeskyne.model.enums.Gender;
 import cz.panjeskyne.model.xml.adapter.BonusMapAdapter;
+import cz.panjeskyne.model.xml.kind.KindStatisticBonus;
 
 @XmlRootElement(name = "kind")
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -33,7 +34,7 @@ public class Kind implements XmlMappable<String, Kind>, I18NTexts {
 //	@XmlElement(name="bonus")
 //	private List<KindStatisticBonus> bonuses;
 
-	@XmlJavaTypeAdapter(value = BonusMapAdapter.KindStatistic.class)
+	@XmlJavaTypeAdapter(value = BonusMapAdapter.class)
 	@XmlElement(name = "bonuses")
 	private HashMap<String, KindStatisticBonus> bonuses;
 

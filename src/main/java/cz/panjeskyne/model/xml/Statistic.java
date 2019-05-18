@@ -70,4 +70,8 @@ public class Statistic {
 		return getFormula() != null && getFormula().length() > 0;
 	}
 
+	public boolean isVoid() {
+		return "void".equals(id);
+	}
+
 }
