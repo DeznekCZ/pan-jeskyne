@@ -73,5 +73,9 @@ public class Statistic {
 	public boolean isVoid() {
 		return "void".equals(id);
 	}
-
+	
+	@Override
+	public String toString() {
+		return id + (hasFormula() ? ("(" + formula + ")") : "");
+	}
 }

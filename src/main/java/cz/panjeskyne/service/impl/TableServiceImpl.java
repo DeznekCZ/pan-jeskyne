@@ -42,12 +42,12 @@ public class TableServiceImpl {
 		{15,16,16,16,16,16,16,16,16,16,16,17,17,17,17,17,18,18,18,19,19,19,20,20,21,21}
 	};
 	
-	public static int zz(double[] args) throws FormulaException
+	public static double zz(double[] args) throws FormulaException
 	{
 		int zz = (int) args[0];
 		int sila = (int) args[1];
 		if (zz > 15 || sila > 15 || zz < -5 || sila < -5) {
-			return (int) round((log10(pow(2, zz / 6.0) + pow(2, sila / 6.0)) / log10(2)) * 6) - 5;
+			return round((log10(pow(2, zz / 6.0) + pow(2, sila / 6.0)) / log10(2)) * 6) - 5;
 		} else {
 			return ZZvalue[(zz + 5)][(sila + 5)];
 		}
@@ -62,14 +62,14 @@ public class TableServiceImpl {
 			2/6.0,2/6.0,2/6.0,3/6.0,3/6.0,3/6.0,4/6.0,4/6.0,5/6.0,5/6.0
 			);
 	
-	public static int life(double[] args) throws FormulaException {
+	public static double life(double[] args) throws FormulaException {
 		int kondice = (int) args[0];
 		if (kondice < -20) {
 			throw new FormulaException(I18N.argumented(I18N.DATA_NOT_FOUND, I18N.id("table.life(" + kondice + ")")));
 		} else if (kondice < -10) {
-			return (int) Math.round(LIFEext[(kondice + 20)]);
+			return round(LIFEext[(kondice + 20)]);
 		} else {
-			return (int) Math.round(LIFEroot[(int) ((Math.pow(10, (kondice + 10) / 20)) * ((kondice + 10) % 20))]);
+			return round(LIFEroot[(int) ((Math.pow(10, (kondice + 10) / 20)) * ((kondice + 10) % 20))]);
 		}
 	}
 
@@ -95,7 +95,7 @@ public class TableServiceImpl {
 					@Override
 					public double getValue(double[] numbers) throws FormulaException {
 						try {
-							return (double) (int) method.invoke(null, (Object) numbers);
+							return (double) method.invoke(null, (Object) numbers);
 						} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
 							throw new FormulaException(I18N.argumented(I18N.DATA_NOT_FOUND, I18N.id(identifier)));
 						}

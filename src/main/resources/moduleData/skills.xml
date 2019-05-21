@@ -2,13 +2,13 @@
 <skillgroups>
   <skillgroup id="race" name="Schopnosti ras">
     <skills>
-      <skill id="infravideni" name="Infravidění" desc="" limit="1"
+      <skill id="skill.race.infravideni" name="Infravidění" desc="" limit="1"
         hidden="true" />
     </skills>
   </skillgroup>
   <skillgroup id="weapon" name="Bojová dovednost">
     <skills>
-      <skill id="palice_kyje" name="Boj s palicemi a kyji" desc="">
+      <skill id="skill.palice_kyje" name="Boj s palicemi a kyji" desc="">
         <bonuses>
           <bonus ref="skills.known" addition="+1" />
         </bonuses>
@@ -35,7 +35,7 @@
           </level>
         </levels>
       </skill>
-      <skill id="mece_dyky" name="Boj s meči a dýkami" desc="">
+      <skill id="skill.mece_dyky" name="Boj s meči a dýkami" desc="">
         <bonuses>
           <bonus ref="skills.known" addition="+1" />
         </bonuses>
@@ -62,7 +62,7 @@
           </level>
         </levels>
       </skill>
-      <skill id="remdihy_bijaky" name="Boj s řemdihy a bijáky"
+      <skill id="skill.remdihy_bijaky" name="Boj s řemdihy a bijáky"
         desc="">
         <bonuses>
           <bonus ref="skills.known" addition="+1" />

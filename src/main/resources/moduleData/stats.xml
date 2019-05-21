@@ -16,7 +16,7 @@
     desc="Vyjadřuje odolnost hrdiny vůči okolním vlivům (př. počasí)">
     statistic.sil
   </statistic>
-  <statistic id="statistic.kon" name="zdraví"
+  <statistic id="statistic.zdr" name="zdraví"
     desc="Zdraví vyjadřuje hrdinovu schonost vydržet vyšší silové či magické vypětí (po přepočtu zranění).">
     6 + statistic.odl
   </statistic>
@@ -78,4 +78,9 @@
   <statistic id="zazemi.puvod" />
   <statistic id="zazemi.skills" />
   <statistic id="zazemi.majetek" />
+  
+  <!-- životy a únava -->
+  <statistic id="character.zivoty">
+    table.life(statistic.odl + 6)
+  </statistic>
 </stats>

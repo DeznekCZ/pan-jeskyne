@@ -61,6 +61,6 @@ public class SkillGroup implements I18NTexts {
 	}
 
 	public HashMap<String, Skill> getSkills() {
-		return skills;
+		return skills == null ? skills = new HashMap<>() : skills;
 	}
 }

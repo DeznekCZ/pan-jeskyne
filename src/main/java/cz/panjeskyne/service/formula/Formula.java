@@ -7,7 +7,6 @@ import java.util.regex.Pattern;
 
 import cz.panjeskyne.i18n.I18N;
 import cz.panjeskyne.model.xml.Statistic;
-import cz.panjeskyne.service.Result;
 import cz.panjeskyne.service.StatisticService;
 
 public class Formula {
@@ -156,6 +155,11 @@ public class Formula {
 
 	public void setRootElement(FormulaElement rootElement) {
 		this.rootElement = rootElement;
+	}
+	
+	@Override
+	public String toString() {
+		return "Formula(" + computingFormula + ")";
 	}
 
 }

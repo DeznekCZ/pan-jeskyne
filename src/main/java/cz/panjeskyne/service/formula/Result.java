@@ -1,8 +1,7 @@
-package cz.panjeskyne.service;
+package cz.panjeskyne.service.formula;
 
 import cz.panjeskyne.model.db.Character;
-import cz.panjeskyne.service.formula.Formula;
-import cz.panjeskyne.service.formula.FormulaException;
+import cz.panjeskyne.service.StatisticService;
 
 public class Result {
 

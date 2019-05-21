@@ -13,7 +13,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import cz.panjeskyne.i18n.I18NTexts;
 import cz.panjeskyne.model.enums.Gender;
 import cz.panjeskyne.model.xml.adapter.BonusMapAdapter;
-import cz.panjeskyne.model.xml.kind.KindStatisticBonus;
+import cz.panjeskyne.model.xml.adapter.KindSkillMapAdapter;
+import cz.panjeskyne.model.xml.skill.KindSkill;
 
 @XmlRootElement(name = "kind")
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -31,12 +32,13 @@ public class Kind implements XmlMappable<String, Kind>, I18NTexts {
 	@XmlAttribute(name="gender")
 	private Gender gender;
 
-//	@XmlElement(name="bonus")
-//	private List<KindStatisticBonus> bonuses;
-
 	@XmlJavaTypeAdapter(value = BonusMapAdapter.class)
-	@XmlElement(name = "bonuses")
-	private HashMap<String, KindStatisticBonus> bonuses;
+	@XmlElement(name = "bonuses", nillable = false)
+	private HashMap<String, Bonus> bonuses;
+
+	@XmlJavaTypeAdapter(value = KindSkillMapAdapter.class)
+	@XmlElement(name = "skills", nillable = false)
+	private HashMap<String, KindSkill> skills;
 
 	public String getId() {
 		return id;
@@ -74,8 +76,12 @@ public class Kind implements XmlMappable<String, Kind>, I18NTexts {
 		return id;
 	}
 
-	public int getStatisticBonus(String codename) {
-		return bonuses.getOrDefault(codename, new KindStatisticBonus()).getBonusValue();
+	public HashMap<String, Bonus> getBonuses() {
+		return bonuses == null ? bonuses = new HashMap<>() : bonuses;
+	}
+	
+	public double getStatisticBonus(String codename) {
+		return getBonuses().getOrDefault(codename, Bonus.NONE).getAddition();
 	}
 
 	@Override
@@ -91,6 +97,10 @@ public class Kind implements XmlMappable<String, Kind>, I18NTexts {
 	@Override
 	public String getDesc() {
 		return "";
+	}
+
+	public HashMap<String, KindSkill> getSkills() {
+		return skills == null ? skills = new HashMap<>() : skills;
 	}
 
 }

@@ -21,14 +21,17 @@ import com.google.common.collect.ImmutableMap;
 
 import cz.panjeskyne.model.db.Character;
 import cz.panjeskyne.model.db.CharacterSkill;
+import cz.panjeskyne.model.xml.Kind;
+import cz.panjeskyne.model.xml.Kinds;
 import cz.panjeskyne.model.xml.Statistic;
 import cz.panjeskyne.model.xml.Statistics;
+import cz.panjeskyne.model.xml.skill.KindSkill;
 import cz.panjeskyne.service.CharacterService;
 import cz.panjeskyne.service.KindService;
-import cz.panjeskyne.service.Result;
 import cz.panjeskyne.service.SkillService;
 import cz.panjeskyne.service.StatisticService;
 import cz.panjeskyne.service.formula.Formula;
+import cz.panjeskyne.service.formula.Result;
 
 @Service
 public class StatisticServiceImpl implements StatisticService {
@@ -127,15 +130,28 @@ public class StatisticServiceImpl implements StatisticService {
 		}
 		
 		if (result.isSuccessful() && !statistic.isVoid()) {
-			result.increase(kindService.getCharactersKind(character).getStatisticBonus(statistic.getCodename()));
+			Kind kind = kindService.getCharactersKind(character);
+			result.increase(kind.getStatisticBonus(statistic.getCodename()));
+			
+			List<String> handled = new ArrayList<>();
 			
 			double addition = 0;
 			for (CharacterSkill skill : character.getSkills()) {
 				addition += skillService.getAdditionBonus(skill.getSkillCodename(), skill.getSkillLevel(), statistic.getId());
-			} 
+				handled.add(skill.getSkillCodename());
+			}
+			for (KindSkill skill : kind.getSkills().values()) {
+				if (!handled.contains(skill.getRef()))
+					addition += skillService.getAdditionBonus(skill.getSkillCodename(), skill.getSkillLevel(), statistic.getId());
+			}
 			double multiply = 100;
 			for (CharacterSkill skill : character.getSkills()) {
 				addition += skillService.getMultiplyBonus(skill.getSkillCodename(), skill.getSkillLevel(), statistic.getId());
+				handled.add(skill.getSkillCodename());
+			}
+			for (KindSkill skill : kind.getSkills().values()) {
+				if (!handled.contains(skill.getRef()))
+					addition += skillService.getMultiplyBonus(skill.getSkillCodename(), skill.getSkillLevel(), statistic.getId());
 			}
 			
 			result.increase(addition);

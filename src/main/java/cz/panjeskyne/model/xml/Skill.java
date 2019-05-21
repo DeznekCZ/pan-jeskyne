@@ -10,6 +10,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import cz.panjeskyne.i18n.I18NTexts;
 import cz.panjeskyne.model.db.Character;
 import cz.panjeskyne.model.db.CharacterSkill;
@@ -41,12 +43,12 @@ public class Skill implements XmlMappable<String, Skill>, I18NTexts {
 	private SkillGroup skillgroup;
 
 	@XmlJavaTypeAdapter(value = BonusMapAdapter.class)
-	@XmlElement(name = "bonuses")
+	@XmlElement(name = "bonuses", nillable = false)
 	private HashMap<String, Bonus> bonuses;
 
 	@XmlJavaTypeAdapter(value = SkillLevelMapAdapter.class)
-	@XmlElement(name = "levels")
-	private HashMap<String, SkillLevel> levels;
+	@XmlElement(name = "levels", nillable = false)
+	private HashMap<Integer, SkillLevel> levels;
 	
 	public String getDesc() {
 		return desc;
@@ -114,7 +116,11 @@ public class Skill implements XmlMappable<String, Skill>, I18NTexts {
 	}
 
 	public HashMap<String, Bonus> getBonuses() {
-		return bonuses;
+		return bonuses == null ? bonuses = new HashMap<>() : bonuses;
+	}
+	
+	public HashMap<Integer, SkillLevel> getLevels() {
+		return levels == null ? levels = new HashMap<>() : levels;
 	}
 	
 	public Bonus getSkillBonus(String statistic) {
@@ -122,10 +128,10 @@ public class Skill implements XmlMappable<String, Skill>, I18NTexts {
 	}
 	
 	public Bonus getLevelSkillBonus(int level, String statistic) {
-		if (levels.isEmpty()) {
+		if (getLevels().isEmpty()) {
 			return Bonus.NONE;
-		} else if (levels.containsKey(level)) {
-			return levels.get(level).getSkillBonus(statistic);
+		} else if (getLevels().containsKey(level)) {
+			return getLevels().get(level).getSkillBonus(statistic);
 		} else {
 			return Bonus.NONE;
 		}

@@ -19,8 +19,8 @@ import cz.panjeskyne.model.db.Character;
 import cz.panjeskyne.model.db.CharacterSkill;
 import cz.panjeskyne.model.xml.Skill;
 import cz.panjeskyne.model.xml.Statistic;
-import cz.panjeskyne.service.Result;
 import cz.panjeskyne.service.formula.FormulaException;
+import cz.panjeskyne.service.formula.Result;
 import cz.panjeskyne.test.AbstractSpringTest;
 
 public class StatisticServiceImplTest extends AbstractSpringTest {
@@ -61,9 +61,9 @@ public class StatisticServiceImplTest extends AbstractSpringTest {
 		} else {
 			throw result.getException();
 		}
-		result = service.getValue(character, "statistic.kon");
+		result = service.getValue(character, "statistic.zdr");
 		if (result.isSuccessful()) {
-			assertEquals("špatná hodnota kondice", (Double) result.getValue(), (Double) 8.0);
+			assertEquals("špatná hodnota zdraví", (Double) result.getValue(), (Double) 8.0);
 		} else {
 			throw result.getException();
 		}
@@ -73,52 +73,57 @@ public class StatisticServiceImplTest extends AbstractSpringTest {
 	}
 	
 	@Test
-	public void formulaComputing() throws FormulaException {
+	public void formulaComputing() throws Exception {
 		Character character = new Character();
 		character.setKindCodename("dwarf");
 		
 		character.setSkills(new ArrayList<>()); // not loaded by default
 	    skills.getByCodename("skill.sil").learnSkill(character, 1);
-
-		Result result;
 		
+	    // Standard formula with parenthesis testing
+		test(character, "-1",                            -1.0);
+		test(character, "((1+(1))+((1)+1))",              4.0);
+		test(character, "(1+2)/3",                        1.0);
+		test(character, "1+2/3",                          1.6667);
+		test(character, "1/(2+3)*3",                      0.6);
+		test(character, "(1/2)+(3*+3)",                   9.5);
+		test(character, "(1/2)+(3*3)",                    9.5);
+		
+		// Condition testing
+		test(character, "1>0",                            1.0);
+		test(character, "1<0",                            0.0);
+		test(character, "1>=0",                           1.0);
+		test(character, "1>=1",                           1.0);
+		test(character, "1>=3/3",                         1.0);
+		test(character, "1<=0",                           0.0);
+		test(character, "1>=-1",                          1.0);
+		test(character, "1=-1",                           0.0);
+		test(character, "1=1",                            1.0);
+		
+		// Table testing
+		test(character, "table.zz(5,5)",                  6.0);
+		test(character, "table.life(0)",                  3.0);
+		
+		// Function testing
+		test(character, "(function.abs_i((((-1.1)))))",   1.0);
+		test(character, "(function.abs((((-1.1)))))",     1.1);
+		test(character, "function.roundup(1+2.5)",        4.0);
+		test(character, "function.roundup((1/2)+(3*3))", 10.0);
+	    
+		// Statistic referenced value
+		test(character, "statistic.sil",                  2.0);
+		test(character, "character.zivoty",               9.0);
+	}
+
+	private void test(Character character, String function, double expected) throws Exception {
 		DecimalFormat formatter = (DecimalFormat) NumberFormat.getNumberInstance();
 		formatter.applyPattern("0.####");
 		
-		Map<String, Double> results = new HashMap<>();
-		results.put("table.zz(5,5)",                  6.0);
-		results.put("table.life(0)",                  3.0);
-		results.put("function.roundup(1+2.5)",        4.0);
-		results.put("-1",                            -1.0);
-		results.put("(function.abs_i((((-1.1)))))",   1.0);
-		results.put("(function.abs((((-1.1)))))",     1.1);
-		results.put("((1+(1))+((1)+1))",              4.0);
-		results.put("(1+2)/3",                        1.0);
-		results.put("1+2/3",                          1.6667);
-		results.put("1/(2+3)*3",                      0.6);
-		results.put("(1/2)+(3*+3)",                   9.5);
-		results.put("(1/2)+(3*3)",                    9.5);
-		results.put("function.roundup((1/2)+(3*3))", 10.0);
-		results.put("1>0",                            1.0);
-		results.put("1<0",                            0.0);
-		results.put("1>=0",                           1.0);
-		results.put("1>=1",                           1.0);
-		results.put("1>=3/3",                         1.0);
-		results.put("1<=0",                           0.0);
-		results.put("1>=-1",                          1.0);
-		results.put("1=-1",                           0.0);
-		results.put("1=1",                            1.0);
-	    
-		// Statistic referenced value
-		results.put("statistic.sil",                  2.0);
-		
-		for (String string : results.keySet()) {
-			result = service.getFormulaValue(character, string);
-			if (result.isSuccessful()) {
-				assertEquals(string + "=", formatter.format(results.get(string)), formatter.format(result.getValue()));
-			} else {
-				throw result.getException();
-			}
+		Result result = service.getFormulaValue(character, function);
+		if (result.isSuccessful()) {
+			assertEquals(function + "=", formatter.format(expected), formatter.format(result.getValue()));
+		} else {
+			throw new Exception(function + " :: " + result.getException().getLocalizedMessage(), result.getException());
 		}
 	}
 }

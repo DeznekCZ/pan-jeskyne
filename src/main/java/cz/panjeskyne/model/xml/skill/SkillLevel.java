@@ -43,8 +43,12 @@ public class SkillLevel implements XmlMappable<Integer, SkillLevel> {
 		return this;
 	}
 
+	public HashMap<String, Bonus> getBonuses() {
+		return bonuses == null ? bonuses = new HashMap<>() : bonuses;
+	}
+	
 	public Bonus getSkillBonus(String statistic) {
-		return bonuses.containsKey(statistic) ? bonuses.get(statistic) : Bonus.NONE;
+		return getBonuses().getOrDefault(statistic, Bonus.NONE);
 	}
 	
 }

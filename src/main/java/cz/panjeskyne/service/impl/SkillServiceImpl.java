@@ -47,6 +47,8 @@ public class SkillServiceImpl implements SkillService {
 	public synchronized double getAdditionBonus(String skill, int level, String statistic) {
 		if (lastSkill == null || !lastSkill.getId().equals(skill)) {
 			lastSkill = getByCodename(skill);
+			if (lastSkill == null)
+				throw new RuntimeException("Missing skill: " + skill);
 		}
 		return lastSkill.getSkillBonus(statistic).getAddition();
 	}

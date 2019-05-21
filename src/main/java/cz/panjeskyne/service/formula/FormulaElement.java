@@ -5,300 +5,17 @@ import java.util.List;
 
 import cz.panjeskyne.i18n.I18N;
 import cz.panjeskyne.model.db.Character;
-import cz.panjeskyne.model.db.Function;
-import cz.panjeskyne.model.db.Table;
 import cz.panjeskyne.model.xml.Statistic;
-import cz.panjeskyne.service.FunctionService;
-import cz.panjeskyne.service.Result;
 import cz.panjeskyne.service.StatisticService;
-import cz.panjeskyne.service.TableService;
+import cz.panjeskyne.service.formula.element.BracketElement;
+import cz.panjeskyne.service.formula.element.FunctionElement;
+import cz.panjeskyne.service.formula.element.NextElement;
+import cz.panjeskyne.service.formula.element.NumberElement;
+import cz.panjeskyne.service.formula.element.OperatorElement;
+import cz.panjeskyne.service.formula.element.StatisticElement;
 
 public abstract class FormulaElement {
-
-	public static class NextElement extends FormulaElement {
-
-		@Override
-		public double getValue(StatisticService provider, Character character) throws FormulaException {
-			return 0;
-		}
-
-		@Override
-		protected FormulaElement applyChild(FormulaElement child) throws FormulaException {
-			return null;
-		}
-
-	}
 	
-	public static class OperatorElement extends FormulaElement {
-
-		private OperandType operandType;
-
-		public OperatorElement(OperandType operatorType) {
-			this.operandType = operatorType;
-		}
-
-		@Override
-		public double getValue(StatisticService provider, Character character) throws FormulaException {
-			return operandType.apply(calculateOperands(provider, character));
-		}
-
-		@Override
-		protected FormulaElement applyChild(FormulaElement child) throws FormulaException {
-			if (operandType.getOperands() > operands.size() && !child.isOperator()) {
-				child.parent = this;
-				operands.add(child);
-			} else if (child.isOperator()) {
-				boolean isEqualOperator = cast(child).operandType.equals(OperandType.EQ);
-				if (!isEqualOperator && operandType.getPriority() > cast(child).operandType.getPriority()) {
-					child.operands.add(this);
-					child.parent = this.parent;
-					this.parent = child;
-				} else if (!isEqualOperator) {
-					child.parent = this;
-					child.operands.add(this.operands.get(1));
-					this.operands.get(1).parent = child;
-					this.operands.set(1, child);
-				} else if(isEqualOperator) {
-					operandType = OperandType.valueOf(operandType.name() + "E");
-					return this;
-				} else {
-					throw new FormulaException(I18N.argumented(I18N.OPERATOR_INVALID, I18N.id(cast(child).operandType.getOperator())));
-				}
-			} else {
-				throw new FormulaException(I18N.argumented(I18N.TOO_MUCH_OPERANDS, I18N.id(getClass().getName())));
-			}
-			return child;
-		}
-
-		private OperatorElement cast(FormulaElement child) {
-			return (OperatorElement) child;
-		}
-
-		@Override
-		public String toString() {
-			return operandType.toString(operands);
-		}
-	}
-
-	public static class StatisticElement extends FormulaElement {
-
-		private Statistic statistic;
-
-		public StatisticElement(Statistic statistic) {
-			this.statistic = statistic;
-		}
-
-		@Override
-		public double getValue(StatisticService provider, Character character) throws FormulaException {
-			return validate(provider.getValue(character, statistic));
-		}
-
-		@Override
-		protected FormulaElement applyChild(FormulaElement child) throws FormulaException {
-			if (child.isSimpleType()) {
-				throw new FormulaException(I18N.argumented(I18N.CHILDREN_NOT_IMPLEMENTED, I18N.id(getClass().getName())));
-			} else if (!child.isSimpleType() && !hasParent()) {
-				child.applyChild(this);
-				this.parent = child;
-				return child;
-			} else {
-				throw new FormulaException(I18N.HAS_PARENT_ELEMENT);
-			}
-		}
-		
-		@Override
-		public String toString() {
-			return statistic.getCodename() != null ? statistic.getCodename() : "[NOT_DEFINED]";
-		}
-
-	}
-
-	public static class NumberElement extends FormulaElement {
-
-		private Double number;
-		
-		public NumberElement(Double number) {
-			this.number = number;
-		}
-
-		@Override
-		public double getValue(StatisticService provider, Character character) throws FormulaException {
-			return number;
-		}
-
-		@Override
-		protected FormulaElement applyChild(FormulaElement child) throws FormulaException {
-			if (child.isSimpleType() && !hasParent()) {
-				throw new FormulaException(I18N.argumented(I18N.CHILDREN_NOT_IMPLEMENTED, I18N.id(getClass().getName())));
-			} else if (!child.isSimpleType() && !hasParent()) {
-				return child.applyChild(this);
-			} else if (hasParent()) {
-				return getParent().applyChild(child);
-			} else {
-				throw new FormulaException(I18N.HAS_PARENT_ELEMENT);
-			}
-		}
-		
-		@Override
-		public String toString() {
-			return number != null ? String.valueOf(number) : "[NOT_DEFINED]";
-		}
-
-	}
-
-	public static class BracketElement extends FormulaElement {
-
-		private boolean closed;
-
-		public BracketElement() {
-			this.closed = false;
-		}
-		
-		@Override
-		public double getValue(StatisticService provider, Character character) throws FormulaException {
-			if (operands.size() != 1)
-				throw new FormulaException(I18N.BRACKET_INVALID);
-			return operands.get(0).getValue(provider, character);
-		}
-		
-		public void setClosed(boolean closed) {
-			this.closed = closed;
-		}
-
-		public boolean isClosed() {
-			return closed;
-		}
-
-		@Override
-		protected FormulaElement applyChild(FormulaElement child) throws FormulaException {
-			if (isClosed() && child.isSimpleType()) {
-				throw new FormulaException(I18N.BRACKET_IS_CLOSED);
-			} else if (operands.size() < 1 && !isClosed()) {
-				this.operands.add(child);
-				child.parent = this;
-			} else if (operands.size() == 1 && !child.isSimpleType() && !isClosed() && !child.isNext()) {
-				FormulaElement tmp = this.operands.get(0);
-				this.operands.set(0, child);
-				child.parent = this;
-				child.applyChild(tmp);
-			} else if ((isClosed() || child.isNext()) && !child.isSimpleType()) {
-				if (hasParent()) {
-					return getParent().applyChild(child);
-				} else {
-					child.applyChild(this);
-				}
-			} else {
-				throw new FormulaException(I18N.argumented(I18N.TOO_MUCH_OPERANDS, I18N.id(getClass().getName())));
-			}
-			return child;
-		}
-
-		@Override
-		public String toString() {
-			return operands.size() > 0 ? ("("+operands.get(0).toString()+")") : ("([NOT_DEFINED])");
-		}
-	}
-	
-	public static class FunctionElement extends BracketElement {
-
-		private String identifier;
-		private Function function;
-		private Table table;
-		private JavaMethodReference math;
-		private BracketElement argument;
-		private int nextArgument;
-		private int argsCount;
-
-		public FunctionElement(String identifier) throws FormulaException {
-			this.identifier = identifier;
-			
-			check();
-		}
-
-		private void check() throws FormulaException {
-			function = FunctionService.getFunction(identifier);
-			if (function == null) {
-				throw new FormulaException(I18N.argumented(I18N.FUNCTION_NOT_FOUND, I18N.id(identifier)));
-			} else if (function.getType() == FunctionTypes.TABLE) {
-				table = TableService.getTable(identifier);
-				if (table == null) throw new FormulaException(I18N.argumented(I18N.TABLE_NOT_FOUND, I18N.id(identifier)));
-				for (int i = 0; i < table.getArgsCount(); i++) {
-					this.operands.add(FormulaElement.bracket());
-					this.operands.get(i).parent = this;
-				}
-				this.argument = (BracketElement) this.operands.get(0);
-				this.nextArgument = 1;
-				this.setArgsCount(table.getArgsCount());
-				
-			} else if (function.getType() == FunctionTypes.MATH) {
-				this.math = new JavaMethodReference(this.function.getFormula(), operands);
-				for (int i = 0; i < function.getArgsCount(); i++) {
-					this.operands.add(FormulaElement.bracket());
-					this.operands.get(i).parent = this;
-				}
-				this.argument = (BracketElement) this.operands.get(0);
-				this.nextArgument = 1;
-				this.setArgsCount(function.getArgsCount());
-			} else {
-				throw new FormulaException(I18N.argumented(I18N.FUNCTION_NOT_FOUND, I18N.id(identifier)));
-			}
-		}
-
-		public void setArgsCount(int argsCount) {
-			this.argsCount = argsCount;
-		}
-
-		public int getArgsCount() {
-			return argsCount;
-		}
-		
-		@Override
-		public double getValue(StatisticService provider, Character character) throws FormulaException {
-			if (function.getType() == FunctionTypes.TABLE) {
-				return table.getValue(calculateOperands(provider, character));
-			}
-			if (function.getType() == FunctionTypes.MATH) {
-				return math.getValue(calculateOperands(provider, character));
-			}
-			return 0.0;
-		}
-		
-		@Override
-		protected FormulaElement applyChild(FormulaElement child) throws FormulaException {
-			if (isClosed()) {
-				throw new FormulaException(I18N.BRACKET_IS_CLOSED);
-			} else if (child instanceof NextElement) {
-				if (nextArgument == operands.size()) {
-					throw new FormulaException(I18N.argumented(I18N.TOO_MUCH_OPERANDS, I18N.id(getClass().getName())));
-				} else {
-					argument.applyClose();
-					argument = (BracketElement) operands.get(nextArgument);
-					nextArgument ++;
-				}
-				return this;
-			} else {
-				return argument.applyChild(child);
-			}
-		}
-
-		@Override
-		public String toString() {
-			return operands.size() > 0 ? (identifier+"("+toStringOperands()+")") : (identifier+"([NOT_DEFINED])");
-		}
-		
-		@Override
-		public FormulaElement applyClose() throws FormulaException {
-			if (nextArgument < operands.size()) {
-				throw new FormulaException(
-						I18N.argumented(I18N.INVALID_ARGS_COUNT, 
-								I18N.id(identifier), I18N.number(nextArgument), I18N.number(getArgsCount())));
-			} else {
-				argument.applyClose();
-			}
-			return super.applyClose();
-		}
-	}
-
 	public static FormulaElement function(String codename) throws FormulaException {
 		return new FunctionElement(codename);
 	}
@@ -330,8 +47,8 @@ public abstract class FormulaElement {
 		return new NumberElement(number);
 	}
 
-	protected List<FormulaElement> operands = new ArrayList<>(2);
-	protected FormulaElement parent;
+	public List<FormulaElement> operands = new ArrayList<>(2);
+	public FormulaElement parent;
 
 	public boolean isSimpleType() {
 		return this instanceof NumberElement || this instanceof StatisticElement;
@@ -396,7 +113,7 @@ public abstract class FormulaElement {
 		}
 	}
 	
-	protected abstract FormulaElement applyChild(FormulaElement child) throws FormulaException;
+	public abstract FormulaElement applyChild(FormulaElement child) throws FormulaException;
 
 	public boolean isCloseAble() {
 		return this instanceof BracketElement && !((BracketElement) this).isClosed();
