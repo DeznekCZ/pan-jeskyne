@@ -63,4 +63,11 @@ public class Bonus implements XmlMappable<String, Bonus> {
 	public double getAddition() {
 		return addition;
 	}
+
+	public Bonus leveled(int level) {
+		Bonus b = new Bonus();
+		b.addition = level * addition;
+		b.multiply = level * multiply;
+		return b;
+	}
 }

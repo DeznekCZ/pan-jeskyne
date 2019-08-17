@@ -50,7 +50,8 @@ public class SkillServiceImpl implements SkillService {
 			if (lastSkill == null)
 				throw new RuntimeException("Missing skill: " + skill);
 		}
-		return lastSkill.getSkillBonus(statistic).getAddition();
+		return lastSkill.getSkillSimpleBonus(statistic, level).getAddition()
+			 + lastSkill.getSkillLevelBonus(statistic, level).getAddition();
 	}
 
 	@Override
@@ -58,6 +59,7 @@ public class SkillServiceImpl implements SkillService {
 		if (lastSkill == null || !lastSkill.getId().equals(skill)) {
 			lastSkill = getByCodename(skill);
 		}
-		return lastSkill.getSkillBonus(statistic).getMultiply();
+		return lastSkill.getSkillSimpleBonus(statistic, level).getMultiply()
+		     + lastSkill.getSkillLevelBonus(statistic, level).getMultiply();
 	}
 }

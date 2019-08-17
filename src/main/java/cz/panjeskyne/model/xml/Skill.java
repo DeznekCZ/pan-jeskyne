@@ -123,11 +123,11 @@ public class Skill implements XmlMappable<String, Skill>, I18NTexts {
 		return levels == null ? levels = new HashMap<>() : levels;
 	}
 	
-	public Bonus getSkillBonus(String statistic) {
-		return getBonuses().containsKey(statistic) ? getBonuses().get(statistic) : Bonus.NONE;
+	public Bonus getSkillSimpleBonus(String statistic, int level) {
+		return getBonuses().containsKey(statistic) ? getBonuses().get(statistic).leveled(level) : Bonus.NONE;
 	}
 	
-	public Bonus getLevelSkillBonus(int level, String statistic) {
+	public Bonus getSkillLevelBonus(String statistic, int level) {
 		if (getLevels().isEmpty()) {
 			return Bonus.NONE;
 		} else if (getLevels().containsKey(level)) {

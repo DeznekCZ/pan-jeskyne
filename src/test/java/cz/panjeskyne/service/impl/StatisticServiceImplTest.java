@@ -113,6 +113,11 @@ public class StatisticServiceImplTest extends AbstractSpringTest {
 		// Statistic referenced value
 		test(character, "statistic.sil",                  2.0);
 		test(character, "character.zivoty",               9.0);
+		
+		skills.getByCodename("skill.sil").learnSkill(character, 2);
+		
+		test(character, "statistic.sil",                  3.0);
+		test(character, "character.zivoty",              10.0);
 	}
 
 	private void test(Character character, String function, double expected) throws Exception {
