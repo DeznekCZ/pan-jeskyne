@@ -7,7 +7,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "skill")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class CharacterSkill {
+public class CharacterSkill implements XmlSerialized {
+
+	private static final long serialVersionUID = 6027496389698146229L;
 
 	@XmlAttribute(name = "ref")
 	private String skillCodename;

@@ -2,31 +2,36 @@ package cz.deznekcz.games.panjeskyne.service;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Map;
 
 import javax.annotation.PostConstruct;
 
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Maps;
 
 import cz.deznekcz.games.panjeskyne.model.xml.Character;
 import cz.deznekcz.games.panjeskyne.model.xml.Kind;
 import cz.deznekcz.games.panjeskyne.model.xml.Race;
+import cz.deznekcz.games.panjeskyne.module.AModule;
 import cz.deznekcz.games.panjeskyne.service.KindService;
 import cz.deznekcz.games.panjeskyne.service.RaceService;
 
 public class KindService {
 
-	private ImmutableMap<String, Kind> kinds;
+	private Map<String, Kind> kinds;
 
 	private RaceService raceService;
 
-	public KindService() {
-		raceService = new RaceService();
+	private AModule module;
+
+	public KindService(AModule module) {
+		this.module = module;
+		raceService = new RaceService(module, this);
 		
-		ImmutableMap.Builder<String, Kind> builder = ImmutableMap.<String, Kind>builder();
+		kinds = Maps.newHashMap();
 		for (Race race : raceService.getAll()) {
-			builder.putAll(race.getKinds());
+			kinds.putAll(race.getKinds());
 		}
-		kinds = builder.build();
 	}
 
 	public Kind getByCodename(String codename) {
@@ -42,14 +47,14 @@ public class KindService {
 	}
 
 	public Collection<Kind> getKindsForRace(String raceCodename) {
-		Race race = raceService.getByCodename(raceCodename);
-		if (race == null) {
-			return new ArrayList<>();
-		}
-		return race.getKinds().values();
+		return raceService.getKindsForRace(raceCodename);
 	}
 	
 	public RaceService getRaceService() {
 		return raceService;
+	}
+	
+	public AModule getModule() {
+		return module;
 	}
 }

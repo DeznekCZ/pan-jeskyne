@@ -11,6 +11,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class CharacterSkills implements ListType<CharacterSkill> {
 
+	private static final long serialVersionUID = 801396725806657898L;
+	
 	@XmlElement(name = "skill", required = false)
 	private List<CharacterSkill> list;
 

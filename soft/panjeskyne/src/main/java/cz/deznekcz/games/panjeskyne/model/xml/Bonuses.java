@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name="bonuses")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Bonuses implements ListType<Bonus> {
+public class Bonuses implements ListType<Bonus>, XmlSerialized {
 
 	@XmlElement(name = "bonus")
 	private List<Bonus> bonuses;

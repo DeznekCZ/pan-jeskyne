@@ -4,10 +4,8 @@ import java.io.File;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.vaadin.event.ShortcutListener;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
-import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
@@ -19,9 +17,7 @@ import cz.deznekcz.games.panjeskyne.user.User;
 
 public class LoginDialog {
 	
-	private static final String USERS = "/home/users/";
-
-	private TextField mail;
+	private TextField username;
 	private Button button;
 	private PasswordField pass;
 
@@ -29,22 +25,22 @@ public class LoginDialog {
 		Login login = ui.getSession().getAttribute(Login.class);
 		if (login == null) {
 			
-			mail = new TextField();
-			mail.setId("username");
-			mail.setCaption("Zadej své přihlašovací jméno");
-			mail.addValueChangeListener(change -> {
+			username = new TextField();
+			username.setId("username");
+			username.setCaption("Zadej své přihlašovací jméno");
+			username.addValueChangeListener(change -> {
 				String text = change.getValue();
 				
 				if (StringUtils.isEmpty(text)) {
-					mail.setComponentError(LoginError.LOGIN_EMPTY);
+					username.setComponentError(LoginError.LOGIN_EMPTY);
 					button.setEnabled(false);
 				} else {
-					File f = new File(USERS + text);
+					File f = new File(User.USERS + text);
 					if (!f.exists()) {
-						mail.setComponentError(LoginError.LOGIN_BAD_USER);
+						username.setComponentError(LoginError.LOGIN_BAD_USER);
 						button.setEnabled(false);
 					} else {
-						mail.setComponentError(null);
+						username.setComponentError(null);
 						button.setEnabled(true);
 					}
 				}
@@ -58,7 +54,7 @@ public class LoginDialog {
 			button.setId("submit");
 			button.setCaption("Přihlásit");
 			button.addClickListener(event -> {
-				User user = User.parse(USERS + mail.getValue());
+				User user = User.parse(username.getValue());
 				if (user.matchPassword(pass.getValue())) {
 					ui.getSession().setAttribute(Login.class, new Login(user));
 					button.setComponentError(null);
@@ -68,8 +64,8 @@ public class LoginDialog {
 				}
 			});
 			
-			VerticalLayout layout = new VerticalLayout(mail, pass, button);
-			layout.setComponentAlignment(mail, Alignment.MIDDLE_CENTER);
+			VerticalLayout layout = new VerticalLayout(username, pass, button);
+			layout.setComponentAlignment(username, Alignment.MIDDLE_CENTER);
 			layout.setComponentAlignment(pass, Alignment.MIDDLE_CENTER); 
 			layout.setComponentAlignment(button, Alignment.MIDDLE_CENTER);
 			ui.setContent(layout);

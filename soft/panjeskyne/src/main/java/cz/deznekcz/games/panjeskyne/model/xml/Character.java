@@ -9,11 +9,11 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.apache.commons.lang3.StringUtils;
-
 @XmlRootElement(name="character")
 @XmlAccessorType(XmlAccessType.NONE)
-public class Character {
+public class Character implements XmlSerialized {
+
+	private static final long serialVersionUID = 4619283962362366059L;
 
 	private static final List<CharacterSkill> EMPTY = new ArrayList<>(0);
 
@@ -34,6 +34,9 @@ public class Character {
 
 	@XmlElement(name = "skills", required = false)
 	private CharacterSkills skills;
+
+	@XmlAttribute(name = "module")
+	private String module;
 
 	private String errorText;
 
@@ -79,5 +82,13 @@ public class Character {
 
 	public void setError(String errorText) {
 		this.errorText = errorText;
+	}
+	
+	public String getErrorText() {
+		return errorText;
+	}
+
+	public String getModule() {
+		return module;
 	}
 }

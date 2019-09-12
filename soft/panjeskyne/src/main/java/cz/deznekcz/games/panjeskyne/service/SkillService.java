@@ -1,33 +1,39 @@
 package cz.deznekcz.games.panjeskyne.service;
 
 import java.util.Collection;
+import java.util.Map;
 
 import javax.annotation.PostConstruct;
 
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Maps;
 
 import cz.deznekcz.games.panjeskyne.model.xml.Bonus;
 import cz.deznekcz.games.panjeskyne.model.xml.Skill;
 import cz.deznekcz.games.panjeskyne.model.xml.skill.SkillGroup;
+import cz.deznekcz.games.panjeskyne.module.AModule;
 import cz.deznekcz.games.panjeskyne.service.SkillGroupService;
 import cz.deznekcz.games.panjeskyne.service.SkillService;
 
 public class SkillService {
 	
-	private ImmutableMap<String, Skill> skills;
+	private Map<String, Skill> skills;
 	
 	private SkillGroupService skillGroupService;
 
 	private Skill lastSkill;
+
+	private AModule module;
 	
-	public SkillService() {
-		skillGroupService = new SkillGroupService();
+	public SkillService(AModule module) {
+		this.module = module;
+		skillGroupService = new SkillGroupService(module);
 		
-		ImmutableMap.Builder<String, Skill> builder = ImmutableMap.<String, Skill>builder();
+		skills = Maps.newHashMap();
+		
 		for (SkillGroup race : skillGroupService.getAll()) {
-			builder.putAll(race.getSkills());
+			skills.putAll(race.getSkills());
 		}
-		skills = builder.build();
 	}
 
 	public Collection<Skill> getAll() {

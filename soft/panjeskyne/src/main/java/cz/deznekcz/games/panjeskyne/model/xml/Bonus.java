@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 @XmlRootElement(name = "bonus")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Bonus implements XmlMappable<String, Bonus> {
+public class Bonus implements XmlMappable<String, Bonus>, XmlSerialized {
 
 	public static final Bonus NONE = new Bonus();
 

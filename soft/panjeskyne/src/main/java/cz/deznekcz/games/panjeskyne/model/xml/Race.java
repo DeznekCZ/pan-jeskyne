@@ -1,6 +1,7 @@
 package cz.deznekcz.games.panjeskyne.model.xml;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -43,7 +44,7 @@ public class Race {
 		return id;
 	}
 
-	public HashMap<String, Kind> getKinds() {
+	public Map<String, Kind> getKinds() {
 		return kinds;
 	}
 }

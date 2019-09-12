@@ -16,7 +16,6 @@ import org.apache.commons.lang3.StringUtils;
 
 import com.google.common.collect.Maps;
 
-import cz.deznekcz.games.panjeskyne.client.Services;
 import cz.deznekcz.games.panjeskyne.i18n.I18N;
 import cz.deznekcz.games.panjeskyne.model.xml.Character;
 import cz.deznekcz.games.panjeskyne.model.xml.CharacterSkill;
@@ -24,6 +23,7 @@ import cz.deznekcz.games.panjeskyne.model.xml.Kind;
 import cz.deznekcz.games.panjeskyne.model.xml.Statistic;
 import cz.deznekcz.games.panjeskyne.model.xml.Statistics;
 import cz.deznekcz.games.panjeskyne.model.xml.skill.KindSkill;
+import cz.deznekcz.games.panjeskyne.module.AModule;
 import cz.deznekcz.games.panjeskyne.service.KindService;
 import cz.deznekcz.games.panjeskyne.service.SkillService;
 import cz.deznekcz.games.panjeskyne.service.StatisticService;
@@ -36,7 +36,7 @@ import cz.deznekcz.util.xml.XMLRoot;
 
 public class StatisticService {
 
-	private static final String STATS_XML = "/home/data/stats.xml";
+	private static final String STATS_XML = "/home/data/%s/stats.xml";
 
 	private Map<String, Statistic> statistics;
 
@@ -44,9 +44,13 @@ public class StatisticService {
 	
 	private Map<String, List<Statistic>> dependents;
 
-	public StatisticService() {
+	private AModule module;
+
+	public StatisticService(AModule module) {
+		this.module = module;
+		
 		try {
-			File file = new File(STATS_XML);
+			File file = new File(String.format(STATS_XML, module.getId()));
 			if (!file.exists()) throw new FileNotFoundException(file.getAbsolutePath());
 			
 			JAXBContext jc = JAXBContext.newInstance(Statistics.class);
@@ -87,7 +91,7 @@ public class StatisticService {
 			}
 		}
 	}
-		
+
 	public Statistic getByCodename(String codename) {
 		return statistics.get(codename);
 	}
@@ -114,8 +118,8 @@ public class StatisticService {
 		}
 		
 		if (result.isSuccessful() && !statistic.isVoid()) {
-			KindService kindService = Services.getKindService();
-			SkillService skillService = Services.getSkillService();
+			KindService kindService = getModule().getKindService();
+			SkillService skillService = getModule().getSkillService();
 			
 			Kind kind = kindService.getCharactersKind(character);
 			if (kind == null) kind = Kind.EMPTY;
@@ -147,6 +151,10 @@ public class StatisticService {
 		}
 		
 		return result;
+	}
+
+	private AModule getModule() {
+		return module;
 	}
 
 	public Result validateFormula(String formula) {

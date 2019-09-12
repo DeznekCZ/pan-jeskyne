@@ -1,21 +1,56 @@
 package cz.deznekcz.games.panjeskyne.service;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Map;
 
-import com.google.common.collect.ImmutableMap;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
 
-import cz.deznekcz.games.panjeskyne.client.Services;
+import com.google.common.collect.Maps;
+
 import cz.deznekcz.games.panjeskyne.model.xml.Character;
 import cz.deznekcz.games.panjeskyne.model.xml.Kind;
 import cz.deznekcz.games.panjeskyne.model.xml.Race;
+import cz.deznekcz.games.panjeskyne.model.xml.Races;
+import cz.deznekcz.games.panjeskyne.module.AModule;
 import cz.deznekcz.games.panjeskyne.service.RaceService;
 
 public class RaceService {
-
-	private final ImmutableMap<String, Race> races = RaceKindLoader.loadRacesAndKinds();
 	
-	public RaceService() {
+	private static final String RACES_XML = "/home/data/%s/races.xml";
+	
+	private final Map<String, Race> races;
+
+	private KindService kindService;
+
+	private AModule module;
+	
+	public RaceService(AModule module, KindService kindService) {
+		races = Maps.newHashMap();
+		this.kindService = kindService;
+		this.module = module;
 		
+		try {
+			File file = new File(String.format(RACES_XML, module.getId()));
+			if (!file.exists()) throw new FileNotFoundException(file.getAbsolutePath());
+			JAXBContext jc = JAXBContext.newInstance(Races.class);
+            Unmarshaller u = jc.createUnmarshaller();
+            
+			Races stats = (Races)u.unmarshal(file);
+			for(Race race : stats.getRaces()) {
+				for (Kind kind : race.getKinds().values()) {
+					kind.setRace(race);
+				}
+				races.put(race.getCodename(), race);
+			}
+		} catch (JAXBException | IOException e) {
+			throw new IllegalStateException("Statistics could not be loaded from the XML.", e);
+		}
 	}
 
 	public Race getByCodename(String codename) {
@@ -26,9 +61,20 @@ public class RaceService {
 		return races.values();
 	}
 
-	public Race getCharactersRace(Character character) {
-		Kind kind = Services.getKindService().getByCodename(character.getKindCodename());
+	public Race getCharacterRace(Character character) {
+		Kind kind = kindService.getByCodename(character.getKindCodename());
 		return kind.getRace();
 	}
 
+	public Collection<Kind> getKindsForRace(String raceCodename) {
+		Race race = getByCodename(raceCodename);
+		if (race == null) {
+			return new ArrayList<>();
+		}
+		return race.getKinds().values();
+	}
+
+	public AModule getModule() {
+		return module;
+	}
 }
