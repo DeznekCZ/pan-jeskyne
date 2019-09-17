@@ -7,8 +7,11 @@ import java.io.ObjectStreamException;
 import java.io.Serializable;
 import java.util.Map;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 import com.google.common.collect.Maps;
+import com.vaadin.ui.Component;
+import com.vaadin.ui.ComponentContainer;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.Window;
 
@@ -34,7 +37,7 @@ public abstract class AModule implements Serializable {
 	private SkillService skillService;
 	private RaceService raceService;
 	private KindService kindService;
-	private CharacterService CharacterService;
+	private CharacterService characterService;
 	
 	private void writeObject(ObjectOutputStream out) throws IOException {
 		out.writeObject(id);
@@ -74,6 +77,7 @@ public abstract class AModule implements Serializable {
 		skillGroupService = skillService.getSkillGroupService();
 		kindService = new KindService(this);
 		raceService = kindService.getRaceService();
+		characterService = new CharacterService(this);
 	}
 
 	public String getId() {
@@ -123,13 +127,14 @@ public abstract class AModule implements Serializable {
 	}
 
 	public CharacterService getCharacterService() {
-		return CharacterService;
+		return characterService;
 	}
 
 	public TextField getStatisticAsField(String statisticId, Character character, boolean isFloat, Consumer<String> onEdit) {
 		StatisticService service = getStatisticService();
 		Statistic statistic = service.getByCodename(statisticId);
 		TextField textField = new TextField();
+		textField.setData(statistic);
 		textField.setCaption(statistic.getName());
 		Result result = service.getValue(character, statistic);
 		if (isFloat) {
@@ -138,6 +143,35 @@ public abstract class AModule implements Serializable {
 			textField.setValue((long) result.getValue() + "");
 		}
 		textField.setReadOnly(onEdit == null);
+		if (onEdit != null) textField.addValueChangeListener(event -> {
+			onEdit.accept(event.getValue());
+		});
 		return textField;
+	}
+
+	public static interface InfoGetter<T> {
+		T get() throws Throwable; 
+	}
+	
+	public static <T> T tryGet(T defaultValue, InfoGetter<T> object) {
+		try {
+			return object.get();
+		} catch (Throwable e) {
+			e.printStackTrace(System.out);
+			return defaultValue;
+		}
+	}
+
+	public <L extends ComponentContainer, C extends Component> void add(L l, C c, Consumer<C> onAddAction) {
+		l.addComponent(c);
+		onAddAction.accept(c);
+	}
+
+	public static String numberToIII(int level) {
+		StringBuilder stringBuilder = new StringBuilder();
+		for (int i = 0; i < level; i++) {
+			stringBuilder.append('I');
+		}
+		return stringBuilder.toString();
 	}
 }

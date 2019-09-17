@@ -69,4 +69,26 @@ public class Result {
 		if (this.successful)
 			this.value *= statistic;
 	}
+
+	/**
+	 * 
+	 * @param floatValue
+	 * @return returns value represented as string
+	 */
+	public String getValueAsString(boolean floatValue) {
+		return floatValue ? Double.toString(getValue()) : Integer.toString((int) getValue());
+	}
+
+	/**
+	 * 
+	 * @param floatValue default false
+	 * @return returns value represented as string
+	 */
+	public String getValueAsString() {
+		return getValueAsString(false);
+	}
+
+	public int getIntValue() {
+		return (int) getValue();
+	}
 }

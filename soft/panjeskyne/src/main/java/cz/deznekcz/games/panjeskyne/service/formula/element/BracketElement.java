@@ -36,6 +36,7 @@ public class BracketElement extends FormulaElement {
 		} else if (operands.size() < 1 && !isClosed()) {
 			this.operands.add(child);
 			child.parent = this;
+			return child.isSimpleType() ? this : child;
 		} else if (operands.size() == 1 && !child.isSimpleType() && !isClosed() && !child.isNext()) {
 			FormulaElement tmp = this.operands.get(0);
 			this.operands.set(0, child);

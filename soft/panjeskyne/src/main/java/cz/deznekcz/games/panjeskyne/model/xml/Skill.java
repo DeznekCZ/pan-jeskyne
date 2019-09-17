@@ -12,9 +12,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import cz.deznekcz.games.panjeskyne.i18n.I18NTexts;
 import cz.deznekcz.games.panjeskyne.model.xml.Character;
-import cz.deznekcz.games.panjeskyne.model.xml.CharacterSkill;
 import cz.deznekcz.games.panjeskyne.model.xml.adapter.BonusMapAdapter;
 import cz.deznekcz.games.panjeskyne.model.xml.adapter.SkillLevelMapAdapter;
+import cz.deznekcz.games.panjeskyne.model.xml.skill.CharacterSkill;
 import cz.deznekcz.games.panjeskyne.model.xml.skill.SkillGroup;
 import cz.deznekcz.games.panjeskyne.model.xml.skill.SkillLevel;
 
@@ -49,7 +49,7 @@ public class Skill implements XmlMappable<String, Skill>, I18NTexts {
 	private HashMap<Integer, SkillLevel> levels;
 	
 	public String getDesc() {
-		return desc;
+		return desc == null ? "" : desc;
 	}
 	
 	public String getName() {
@@ -65,7 +65,7 @@ public class Skill implements XmlMappable<String, Skill>, I18NTexts {
 	}
 	
 	public int getLimit() {
-		return limit;
+		return limit == 0 ? 3 : limit;
 	}
 	
 	public void setLimit(int limit) {
@@ -100,15 +100,15 @@ public class Skill implements XmlMappable<String, Skill>, I18NTexts {
 
 	public void learnSkill(Character character, int level) {
 		for (CharacterSkill skill : character.getSkills()) {
-			if (skill.getSkillCodename().endsWith(getId())) {
-				skill.setSkillLevel(level);
+			if (skill.getRef().endsWith(getId())) {
+				skill.setLevel(level);
 				return;
 			}
 		}
 		
 		CharacterSkill cs = new CharacterSkill();
-		cs.setSkillCodename(getId());
-		cs.setSkillLevel(level);
+		cs.setRef(getId());
+		cs.setLevel(level);
 		character.getSkills().add(cs);
 	}
 

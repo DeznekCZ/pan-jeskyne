@@ -14,7 +14,9 @@ import cz.deznekcz.games.panjeskyne.model.xml.adapter.KindMapAdapter;
 
 @XmlRootElement(name = "race")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Race {
+public class Race implements XmlSerialized {
+
+	private static final long serialVersionUID = -1321710975290059938L;
 
 	public static final Race EMPTY = new Race();
 	static {
@@ -45,6 +47,6 @@ public class Race {
 	}
 
 	public Map<String, Kind> getKinds() {
-		return kinds;
+		return kinds == null ? new HashMap<>() : kinds;
 	}
 }

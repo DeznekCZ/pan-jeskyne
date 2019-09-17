@@ -16,7 +16,7 @@ public enum OperandType {
 	GTE(']', 2, 1, v -> v[0] >= v[1] ? 1.0 : 0.0, (op,ot) -> ot.getOperand(op, 0) + ">=" + ot.getOperand(op, 1)),
 	LTE('[', 2, 1, v -> v[0] <= v[1] ? 1.0 : 0.0, (op,ot) -> ot.getOperand(op, 0) + "<=" + ot.getOperand(op, 1)),
 	SUM('+', 2, 2, v -> v[0] + v[1], standardToString()),
-	SUB('-', 2, 3, v -> v[0] - v[1], standardToString()),
+	SUB('-', 2, 2, v -> v[0] - v[1], standardToString()),
 	MUL('*', 2, 4, v -> v[0] * v[1], standardToString()),
 	DIV('/', 2, 5, v -> v[0] / v[1], standardToString()); 
 	

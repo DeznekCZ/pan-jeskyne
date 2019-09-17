@@ -11,12 +11,15 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import cz.deznekcz.games.panjeskyne.i18n.I18NTexts;
 import cz.deznekcz.games.panjeskyne.model.xml.Skill;
+import cz.deznekcz.games.panjeskyne.model.xml.XmlSerialized;
 import cz.deznekcz.games.panjeskyne.model.xml.adapter.SkillMapAdapter;
 
 @XmlRootElement(name = "skillgroup")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class SkillGroup implements I18NTexts {
+public class SkillGroup implements I18NTexts, XmlSerialized {
 	
+	private static final long serialVersionUID = 1704136506625478969L;
+
 	@XmlAttribute(name = "id")
 	private String id;
 	

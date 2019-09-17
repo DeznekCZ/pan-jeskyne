@@ -3,6 +3,9 @@ package cz.deznekcz.games.panjeskyne.pages;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.vaadin.ui.Button;
+import com.vaadin.ui.Component;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Notification;
@@ -51,11 +54,27 @@ public class MainPage extends VerticalLayout {
 		characterGrid.addColumn(Character::getName).setCaption("Jméno Postavy");
 		characterGrid.addColumn(ch -> "Otevřít",
 			      new ButtonRenderer<>(clickEvent -> {
-			    	  getUI().addWindow(module.getCharacterPreviewScreen(login.getUser(), clickEvent.getItem()));
+			    	  getUI().addWindow(module.getCharacterPreviewScreen(login.getUser(), 
+			    			  CharacterLoader.load(clickEvent.getItem().getId())));
 			    }));
 		
-		sheet.addTab(characterGrid, "Postavy");
+		Button create = new Button();
+		create.setCaption("Vytvořit postavu");
+		create.addClickListener(event -> {
+			getUI().addWindow(module.getCharacterCreationScreen(this::refreshList));
+		});
 		
+		VerticalLayout verticalLayout = new VerticalLayout();
+		verticalLayout.addComponent(create);
+		verticalLayout.addComponent(characterGrid);
+		verticalLayout.setExpandRatio(characterGrid, 1);
+		
+		sheet.addTab(verticalLayout, "Postavy");
+		
+		refreshList();
+	}
+
+	private void refreshList() {
 		File characterLinks = new File(CHARACTER_LINKS + login.getUser().getUserName());
 		File[] characters = characterLinks.listFiles();
 		if (characters == null || characters.length == 0) {

@@ -1,5 +1,7 @@
 package cz.deznekcz.games.panjeskyne.service.formula.element;
 
+import java.util.List;
+
 import cz.deznekcz.games.panjeskyne.i18n.I18N;
 import cz.deznekcz.games.panjeskyne.model.xml.Character;
 import cz.deznekcz.games.panjeskyne.model.xml.Statistic;
@@ -17,7 +19,12 @@ public class StatisticElement extends FormulaElement {
 
 	@Override
 	public double getValue(StatisticService provider, Character character) throws FormulaException {
-		return validate(provider.getValue(character, statistic));
+//		System.out.format("%s=%s\n", statistic.getCodename(), statistic.isCharacterData());
+		if (statistic.isCharacterData()) {
+			return character.getData(statistic.getCodename());
+		} else {
+			return validate(provider.getValue(character, statistic));
+		}
 	}
 
 	@Override
@@ -25,8 +32,14 @@ public class StatisticElement extends FormulaElement {
 		if (child.isSimpleType()) {
 			throw new FormulaException(I18N.argumented(I18N.CHILDREN_NOT_IMPLEMENTED, I18N.id(getClass().getName())));
 		} else if (!child.isSimpleType()) {
+			child.parent = this.parent;
 			this.parent = child;
 			child.applyChild(this);
+			if (child.parent instanceof BracketElement) {
+				List<FormulaElement> parentOperands = ((BracketElement) child.parent).operands;
+				parentOperands.remove(parentOperands.size() - 1);
+				parentOperands.add(child);
+			}
 			return child;
 		}
 		else {

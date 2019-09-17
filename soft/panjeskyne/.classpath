@@ -13,9 +13,9 @@
 	</classpathentry>
 	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
 		<attributes>
+			<attribute name="test" value="true"/>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="test" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
@@ -31,9 +31,9 @@
 	</classpathentry>
 	<classpathentry kind="src" output="target/classes" path="target/generated-resources/gwt">
 		<attributes>
+			<attribute name="ignore_optional_problems" value="true"/>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="ignore_optional_problems" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/Phanteks/.m2/repository/com/google/guava/guava/27.0-jre/guava-27.0-jre.jar" sourcepath="C:/Users/Phanteks/.m2/repository/com/google/guava/guava/27.0-jre/guava-27.0-jre-sources.jar">
@@ -56,13 +56,13 @@
 			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Phanteks/.m2/repository/org/springframework/spring-core/5.1.0.RELEASE/spring-core-5.1.0.RELEASE.jar" sourcepath="C:/Users/Phanteks/.m2/repository/org/springframework/spring-core/5.1.0.RELEASE/spring-core-5.1.0.RELEASE-sources.jar">
+	<classpathentry kind="lib" path="C:/Users/Phanteks/.m2/repository/com/vaadin/vaadin-server/8.8.6/vaadin-server-8.8.6.jar" sourcepath="C:/Users/Phanteks/.m2/repository/com/vaadin/vaadin-server/8.8.6/vaadin-server-8.8.6-sources.jar">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="org.eclipse.jst.component.archivename" value="spring-core-5.1.0.RELEASE.jar"/>
-			<attribute name="maven.groupId" value="org.springframework"/>
-			<attribute name="maven.artifactId" value="spring-core"/>
-			<attribute name="maven.version" value="5.1.0.RELEASE"/>
+			<attribute name="org.eclipse.jst.component.archivename" value="vaadin-server-8.8.6.jar"/>
+			<attribute name="maven.groupId" value="com.vaadin"/>
+			<attribute name="maven.artifactId" value="vaadin-server"/>
+			<attribute name="maven.version" value="8.8.6"/>
 			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>

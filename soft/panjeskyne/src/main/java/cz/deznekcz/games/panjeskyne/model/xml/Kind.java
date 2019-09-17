@@ -20,6 +20,8 @@ import cz.deznekcz.games.panjeskyne.model.xml.skill.KindSkill;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Kind implements XmlMappable<String, Kind>, I18NTexts {
 
+	private static final long serialVersionUID = -1030624895888303565L;
+
 	public static final Kind EMPTY = new Kind();
 	static {
 		EMPTY.id = "#EMPTY";
@@ -108,6 +110,10 @@ public class Kind implements XmlMappable<String, Kind>, I18NTexts {
 
 	public HashMap<String, KindSkill> getSkills() {
 		return skills == null ? skills = new HashMap<>() : skills;
+	}
+
+	public boolean hasSkills() {
+		return !getSkills().isEmpty();
 	}
 
 }

@@ -105,6 +105,9 @@ public class Formula {
 					} else if (type == OperandType.BRACKET_START) {
 						fe = FormulaElement.bracket().setParent(fe);
 					} else if (type == OperandType.NEXT) {
+						FormulaElement lfe = fe;
+						while (fe != null && !fe.isFunction()) fe = fe.parent;
+						if (fe == null) throw new FormulaException(I18N.FUNCTION_NOT_FOUND);
 						fe = FormulaElement.next().setParent(fe);
 					} else {
 						fe = FormulaElement.operator(type).setParent(fe);

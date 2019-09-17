@@ -18,10 +18,10 @@ import com.google.common.collect.Maps;
 
 import cz.deznekcz.games.panjeskyne.i18n.I18N;
 import cz.deznekcz.games.panjeskyne.model.xml.Character;
-import cz.deznekcz.games.panjeskyne.model.xml.CharacterSkill;
 import cz.deznekcz.games.panjeskyne.model.xml.Kind;
 import cz.deznekcz.games.panjeskyne.model.xml.Statistic;
 import cz.deznekcz.games.panjeskyne.model.xml.Statistics;
+import cz.deznekcz.games.panjeskyne.model.xml.skill.CharacterSkill;
 import cz.deznekcz.games.panjeskyne.model.xml.skill.KindSkill;
 import cz.deznekcz.games.panjeskyne.module.AModule;
 import cz.deznekcz.games.panjeskyne.service.KindService;
@@ -30,6 +30,7 @@ import cz.deznekcz.games.panjeskyne.service.StatisticService;
 import cz.deznekcz.games.panjeskyne.service.formula.Formula;
 import cz.deznekcz.games.panjeskyne.service.formula.FormulaException;
 import cz.deznekcz.games.panjeskyne.service.formula.Result;
+import cz.deznekcz.games.panjeskyne.service.helper.SkillData;
 import cz.deznekcz.util.xml.XML;
 import cz.deznekcz.util.xml.XMLPairTag;
 import cz.deznekcz.util.xml.XMLRoot;
@@ -115,6 +116,8 @@ public class StatisticService {
 			inMiddle.applyFormula(this, character);
 			result.setValue(inMiddle.getValue());
 			result.setException(inMiddle.getException());
+		} else if (statistic.isCharacterData()) {
+			result.setValue(character.getData(statistic.getCodename()));
 		}
 		
 		if (result.isSuccessful() && !statistic.isVoid()) {
@@ -125,25 +128,12 @@ public class StatisticService {
 			if (kind == null) kind = Kind.EMPTY;
 			result.increase(kind.getStatisticBonus(statistic.getCodename()));
 			
-			List<String> handled = new ArrayList<>();
-			
 			double addition = 0;
-			for (CharacterSkill skill : character.getSkills()) {
-				addition += skillService.getAdditionBonus(skill.getSkillCodename(), skill.getSkillLevel(), statistic.getId());
-				handled.add(skill.getSkillCodename());
-			}
-			for (KindSkill skill : kind.getSkills().values()) {
-				if (!handled.contains(skill.getRef()))
-					addition += skillService.getAdditionBonus(skill.getSkillCodename(), skill.getSkillLevel(), statistic.getId());
-			}
 			double multiply = 100;
-			for (CharacterSkill skill : character.getSkills()) {
-				addition += skillService.getMultiplyBonus(skill.getSkillCodename(), skill.getSkillLevel(), statistic.getId());
-				handled.add(skill.getSkillCodename());
-			}
-			for (KindSkill skill : kind.getSkills().values()) {
-				if (!handled.contains(skill.getRef()))
-					addition += skillService.getMultiplyBonus(skill.getSkillCodename(), skill.getSkillLevel(), statistic.getId());
+			
+			for (SkillData skill : module.getCharacterService().getCharacterSkills(character)) {
+				addition += skillService.getAdditionBonus(skill.getRef(), skill.getLevel(), statistic.getId());
+				multiply += skillService.getMultiplyBonus(skill.getRef(), skill.getLevel(), statistic.getId());
 			}
 			
 			result.increase(addition);

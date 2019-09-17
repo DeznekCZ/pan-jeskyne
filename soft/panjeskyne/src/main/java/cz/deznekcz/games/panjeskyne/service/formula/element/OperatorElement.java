@@ -25,17 +25,20 @@ public class OperatorElement extends FormulaElement {
 		if (operandType.getOperands() > operands.size() && !child.isOperator()) {
 			child.parent = this;
 			operands.add(child);
+			return child.isSimpleType() ? this : child;
 		} else if (child.isOperator()) {
 			boolean isEqualOperator = cast(child).operandType.equals(OperandType.EQ);
-			if (!isEqualOperator && operandType.getPriority() > cast(child).operandType.getPriority()) {
+			if (!isEqualOperator && operandType.getPriority() >= cast(child).operandType.getPriority()) {
 				child.operands.add(this);
 				child.parent = this.parent;
 				this.parent = child;
+				return child;
 			} else if (!isEqualOperator) {
 				child.parent = this;
 				child.operands.add(this.operands.get(1));
 				this.operands.get(1).parent = child;
 				this.operands.set(1, child);
+				return child;
 			} else if(isEqualOperator) {
 				operandType = OperandType.valueOf(operandType.name() + "E");
 				return this;
@@ -45,7 +48,6 @@ public class OperatorElement extends FormulaElement {
 		} else {
 			throw new FormulaException(I18N.argumented(I18N.TOO_MUCH_OPERANDS, I18N.id(getClass().getName())));
 		}
-		return child;
 	}
 
 	private OperatorElement cast(FormulaElement child) {

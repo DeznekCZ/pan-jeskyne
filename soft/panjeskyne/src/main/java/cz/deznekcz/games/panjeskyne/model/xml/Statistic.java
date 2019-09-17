@@ -14,7 +14,9 @@ import cz.deznekcz.util.xml.XMLSingleTag;
 
 @XmlRootElement(name="statistic")
 @XmlAccessorType(XmlAccessType.NONE)
-public class Statistic {
+public class Statistic implements XmlSerialized {
+
+	private static final long serialVersionUID = 8795269493281299844L;
 
 	@XmlAttribute(name = "id")
 	private String id;
@@ -30,6 +32,9 @@ public class Statistic {
 
 	@XmlAttribute(name = "desc", required = false)
 	private String description;
+	
+	@XmlAttribute(name = "characterData", required = false)
+	private boolean characterData;
 
 	public String getId() {
 		return id;
@@ -85,6 +90,10 @@ public class Statistic {
 
 	public boolean isVoid() {
 		return "void".equals(id);
+	}
+	
+	public boolean isCharacterData() {
+		return characterData;
 	}
 	
 	@Override

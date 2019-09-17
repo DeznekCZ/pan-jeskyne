@@ -82,6 +82,10 @@ public abstract class FormulaElement {
 	public boolean isBracketOrFunction() {
 		return this instanceof BracketElement;
 	}
+	
+	public boolean isFunction() {
+		return this instanceof FunctionElement;
+	}
 
 	public FormulaElement applyClose() throws FormulaException {
 		if (this.isCloseAble()) {

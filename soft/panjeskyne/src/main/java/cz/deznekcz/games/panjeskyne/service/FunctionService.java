@@ -23,6 +23,7 @@ public class FunctionService {
 
 		buildTable("table.zz");
 		buildTable("table.life");
+		buildTable("table.skills");
 	}
 
 	static void buildFunction(String codename, int args, String formula) {

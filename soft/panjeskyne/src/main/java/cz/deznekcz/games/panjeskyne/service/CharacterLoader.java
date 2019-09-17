@@ -25,7 +25,6 @@ public class CharacterLoader {
 		try {
 			File file = new File(CHAR_XML + name + ".xml");
 			if (!file.exists()) throw new FileNotFoundException(file.getAbsolutePath());
-			System.out.println(file.getAbsolutePath());
 			
 			JAXBContext jc = JAXBContext.newInstance(Character.class);
             Unmarshaller u = jc.createUnmarshaller();

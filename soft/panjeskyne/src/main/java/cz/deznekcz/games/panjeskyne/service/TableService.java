@@ -76,6 +76,12 @@ public class TableService {
 	private static double[] v(double...values) {
 		return values;
 	}
+	
+	private static final double[] skills = v(10, 11, 12, 14, 16, 18, 20, 22, 24);
+	public static double skills(double[] args) throws FormulaException
+	{
+		return skills[((int) args[0])];
+	}
 
 	public static Table getTable(String identifier) throws FormulaException {
 		String tableName = identifier.substring("table.".length());

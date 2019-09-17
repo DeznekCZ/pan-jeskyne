@@ -1,7 +1,13 @@
 package cz.deznekcz.games.panjeskyne.service.formula;
 
-public class Pair<K, V> {
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
+public class Pair<K, V> implements Serializable {
+
+	private static final long serialVersionUID = 5525806260784266240L;
 	private K key;
 	private V value;
 
@@ -24,6 +30,17 @@ public class Pair<K, V> {
 
 	public V getValue() {
 		return value;
+	}
+
+	private void writeObject(ObjectOutputStream out) throws IOException {
+		out.writeObject(key);
+		out.writeObject(value);
+	}
+	
+	@SuppressWarnings("unchecked")
+	private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+		key = (K) in.readObject();
+		value = (V) in.readObject();
 	}
 
 }
