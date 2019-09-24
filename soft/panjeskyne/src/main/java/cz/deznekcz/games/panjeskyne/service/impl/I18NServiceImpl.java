@@ -25,6 +25,8 @@ public class I18NServiceImpl {
 		add("exception.formula.has_no_parent", "Chybějící rodičovský element");
 		add("exception.data.not_found", "Nenalezena data pro id: %s");
 		add("exception.function.invalid_count_arguments", "Funkce \"%s\" očekávý tento počet argumentů: %s obdržela však %s");	
+		
+		add("tabs.rules", "Pravidla");	
 	}
 	
 	public static String getString(String codename) {

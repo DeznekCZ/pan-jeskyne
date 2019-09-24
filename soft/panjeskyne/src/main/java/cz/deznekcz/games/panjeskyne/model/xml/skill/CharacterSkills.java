@@ -50,4 +50,9 @@ public class CharacterSkills implements ListType<CharacterSkill> {
 		}
 	}
 
+	@Override
+	public void setList(List<CharacterSkill> list) {
+		this.list = list;
+	}
+
 }

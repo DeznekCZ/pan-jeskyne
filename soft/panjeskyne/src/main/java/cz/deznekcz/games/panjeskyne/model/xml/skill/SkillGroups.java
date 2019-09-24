@@ -14,15 +14,18 @@ import cz.deznekcz.games.panjeskyne.model.xml.ListType;
 public class SkillGroups implements ListType<SkillGroup> {
 	
 	@XmlElement(name = "skillgroup")
-	private List<SkillGroup> kinds;
+	private List<SkillGroup> list;
 
 	@Override
 	public List<SkillGroup> getList() {
-		return kinds;
+		return list;
 	}
 
 	public List<SkillGroup> getSkillGroups() {
 		return getList();
 	}
 	
+	public void setList(List<SkillGroup> list) {
+		this.list = list;
+	}
 }

@@ -16,8 +16,8 @@ import org.apache.commons.lang3.StringUtils;
 
 import com.google.common.collect.Maps;
 
+import cz.deznekcz.games.panjeskyne.data.Character;
 import cz.deznekcz.games.panjeskyne.i18n.I18N;
-import cz.deznekcz.games.panjeskyne.model.xml.Character;
 import cz.deznekcz.games.panjeskyne.model.xml.Kind;
 import cz.deznekcz.games.panjeskyne.model.xml.Statistic;
 import cz.deznekcz.games.panjeskyne.model.xml.Statistics;
@@ -30,7 +30,6 @@ import cz.deznekcz.games.panjeskyne.service.StatisticService;
 import cz.deznekcz.games.panjeskyne.service.formula.Formula;
 import cz.deznekcz.games.panjeskyne.service.formula.FormulaException;
 import cz.deznekcz.games.panjeskyne.service.formula.Result;
-import cz.deznekcz.games.panjeskyne.service.helper.SkillData;
 import cz.deznekcz.util.xml.XML;
 import cz.deznekcz.util.xml.XMLPairTag;
 import cz.deznekcz.util.xml.XMLRoot;
@@ -117,7 +116,7 @@ public class StatisticService {
 			result.setValue(inMiddle.getValue());
 			result.setException(inMiddle.getException());
 		} else if (statistic.isCharacterData()) {
-			result.setValue(character.getData(statistic.getCodename()));
+//			result.setValue(character.getData(statistic.getCodename()));
 		}
 		
 		if (result.isSuccessful() && !statistic.isVoid()) {
@@ -131,10 +130,10 @@ public class StatisticService {
 			double addition = 0;
 			double multiply = 100;
 			
-			for (SkillData skill : module.getCharacterService().getCharacterSkills(character)) {
-				addition += skillService.getAdditionBonus(skill.getRef(), skill.getLevel(), statistic.getId());
-				multiply += skillService.getMultiplyBonus(skill.getRef(), skill.getLevel(), statistic.getId());
-			}
+//			for (SkillData skill : module.getCharacterService().getCharacterSkills(character)) {
+//				addition += skillService.getAdditionBonus(skill.getRef(), skill.getLevel(), statistic.getId());
+//				multiply += skillService.getMultiplyBonus(skill.getRef(), skill.getLevel(), statistic.getId());
+//			}
 			
 			result.increase(addition);
 			result.multiply(0.01 * multiply);

@@ -1,6 +1,6 @@
 package cz.deznekcz.games.panjeskyne.service.formula.element;
 
-import cz.deznekcz.games.panjeskyne.model.xml.Character;
+import cz.deznekcz.games.panjeskyne.data.Character;
 import cz.deznekcz.games.panjeskyne.service.StatisticService;
 import cz.deznekcz.games.panjeskyne.service.formula.FormulaElement;
 import cz.deznekcz.games.panjeskyne.service.formula.FormulaException;

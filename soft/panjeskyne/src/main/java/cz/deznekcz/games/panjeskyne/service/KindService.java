@@ -9,7 +9,7 @@ import javax.annotation.PostConstruct;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 
-import cz.deznekcz.games.panjeskyne.model.xml.Character;
+import cz.deznekcz.games.panjeskyne.data.Character;
 import cz.deznekcz.games.panjeskyne.model.xml.Kind;
 import cz.deznekcz.games.panjeskyne.model.xml.Race;
 import cz.deznekcz.games.panjeskyne.module.AModule;
@@ -43,7 +43,8 @@ public class KindService {
 	}
 
 	public Kind getCharactersKind(Character character) {
-		return getByCodename(character.getKindCodename());
+//		return getByCodename(character.getKind());
+		return null;
 	}
 
 	public Collection<Kind> getKindsForRace(String raceCodename) {

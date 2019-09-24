@@ -13,7 +13,7 @@ import javax.xml.bind.Unmarshaller;
 
 import com.google.common.collect.Maps;
 
-import cz.deznekcz.games.panjeskyne.model.xml.Character;
+import cz.deznekcz.games.panjeskyne.data.Character;
 import cz.deznekcz.games.panjeskyne.model.xml.Kind;
 import cz.deznekcz.games.panjeskyne.model.xml.Race;
 import cz.deznekcz.games.panjeskyne.model.xml.Races;
@@ -62,8 +62,9 @@ public class RaceService {
 	}
 
 	public Race getCharacterRace(Character character) {
-		Kind kind = kindService.getByCodename(character.getKindCodename());
-		return kind.getRace();
+//		Kind kind = kindService.getByCodename(character.getKind());
+//		return kind.getRace();
+		return null;
 	}
 
 	public Collection<Kind> getKindsForRace(String raceCodename) {

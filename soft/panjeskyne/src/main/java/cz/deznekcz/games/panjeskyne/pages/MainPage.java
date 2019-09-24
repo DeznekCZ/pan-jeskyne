@@ -14,9 +14,12 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.renderers.ButtonRenderer;
 
+import cz.deznekcz.games.panjeskyne.data.Character;
+import cz.deznekcz.games.panjeskyne.data.RulesData;
 import cz.deznekcz.games.panjeskyne.drdplus2.DrDplus2;
-import cz.deznekcz.games.panjeskyne.model.xml.Character;
-import cz.deznekcz.games.panjeskyne.service.CharacterLoader;
+import cz.deznekcz.games.panjeskyne.i18n.I18N;
+import cz.deznekcz.games.panjeskyne.module.ModuleConstants;
+import cz.deznekcz.games.panjeskyne.service.RulesService;
 import cz.deznekcz.games.panjeskyne.user.Login;
 
 public class MainPage extends VerticalLayout {
@@ -32,15 +35,16 @@ public class MainPage extends VerticalLayout {
 
 	private DrDplus2 module;
 
-
 	public MainPage(Login login) {
 		this.module = DrDplus2.getModule();
 		
 		this.characterList = new ArrayList<>(5);
 		this.login = login;
 		sheet = new TabSheet();
+		sheet.setWidth(ModuleConstants.FILL);
 		
-		initCharacters();
+		//initCharacters();
+		initRules();
 		
 		horizontal = new HorizontalLayout(sheet);
 		addComponent(horizontal);
@@ -49,14 +53,23 @@ public class MainPage extends VerticalLayout {
 		while(i++ == 10000);
 	}
 
+	private void initRules() {
+		VerticalLayout layout = new VerticalLayout();
+		layout.setWidth(ModuleConstants.FILL);
+		
+		List<RulesData> rules = RulesService.getAll();
+		
+		TabSheet.Tab rulesTab = sheet.addTab(layout, I18N.RULES_TAB.getString());
+	}
+
 	private void initCharacters() {
 		characterGrid = new Grid<>();
 		characterGrid.addColumn(Character::getName).setCaption("Jméno Postavy");
-		characterGrid.addColumn(ch -> "Otevřít",
-			      new ButtonRenderer<>(clickEvent -> {
-			    	  getUI().addWindow(module.getCharacterPreviewScreen(login.getUser(), 
-			    			  CharacterLoader.load(clickEvent.getItem().getId())));
-			    }));
+//		characterGrid.addColumn(ch -> "Otevřít",
+//			      new ButtonRenderer<>(clickEvent -> {
+//			    	  getUI().addWindow(module.getCharacterPreviewScreen(login.getUser(), 
+//			    			  CharacterLoader.load(clickEvent.getItem().getId())));
+//			    }));
 		
 		Button create = new Button();
 		create.setCaption("Vytvořit postavu");
@@ -77,14 +90,14 @@ public class MainPage extends VerticalLayout {
 	private void refreshList() {
 		File characterLinks = new File(CHARACTER_LINKS + login.getUser().getUserName());
 		File[] characters = characterLinks.listFiles();
-		if (characters == null || characters.length == 0) {
-			characterList.clear();
-		} else {
-			characterList.clear();
-			for (File file : characters) {
-				characterList.add(CharacterLoader.load(file.getName()));
-			}
-		}
+//		if (characters == null || characters.length == 0) {
+//			characterList.clear();
+//		} else {
+//			characterList.clear();
+//			for (File file : characters) {
+//				characterList.add(CharacterLoader.load(file.getName()));
+//			}
+//		}
 		
 		characterGrid.setItems(characterList);
 	}

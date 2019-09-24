@@ -9,10 +9,9 @@ import com.vaadin.ui.TextArea;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Window;
 
-import cz.deznekcz.games.panjeskyne.model.xml.Character;
+import cz.deznekcz.games.panjeskyne.data.Character;
 import cz.deznekcz.games.panjeskyne.model.xml.Skill;
 import cz.deznekcz.games.panjeskyne.service.formula.Result;
-import cz.deznekcz.games.panjeskyne.service.helper.SkillData;
 
 public class SkillList extends Window implements ModuleConstants {
 
@@ -43,22 +42,22 @@ public class SkillList extends Window implements ModuleConstants {
 	public void refreshSkills() {
 		ArrayList<Skill> allSkills = new ArrayList<>(module.getSkillService().getAll());
 		ArrayList<Skill> filteredSkills = new ArrayList<>();
-		ArrayList<SkillData> characterSkills = new ArrayList<>(module.getCharacterService().getCharacterSkills(character));
+//		ArrayList<SkillData> characterSkills = new ArrayList<>(module.getCharacterService().getCharacterSkills(character));
 		
-		for (Skill skill : allSkills) {
-			if (skill.isHidden()) continue;
-			
-			boolean known = false;
-			for (SkillData skillData : characterSkills) {
-				if (skillData.isFound() && !known) {
-					known |= skillData.getRef().equals(skill.getId());
-					if (known) break;
-				}
-			}
-			if (!known) {
-				filteredSkills.add(skill);
-			}
-		}
+//		for (Skill skill : allSkills) {
+//			if (skill.isHidden()) continue;
+//			
+//			boolean known = false;
+//			for (SkillData skillData : characterSkills) {
+//				if (skillData.isFound() && !known) {
+//					known |= skillData.getRef().equals(skill.getId());
+//					if (known) break;
+//				}
+//			}
+//			if (!known) {
+//				filteredSkills.add(skill);
+//			}
+//		}
 		
 		list.removeAllComponents();
 		filteredSkills.sort((_1, _2) -> _1.getName().compareTo(_2.getName()));
@@ -72,7 +71,7 @@ public class SkillList extends Window implements ModuleConstants {
 			Button addSkill = new Button("Přidat");
 			addSkill.addClickListener(event -> {
 				list.removeTab(tab);
-				character.learn(skill.getId(), 1);
+//				character.learn(skill.getId(), 1);
 				refreshOnAdd.run();
 			});
 			vl.addComponent(addSkill);

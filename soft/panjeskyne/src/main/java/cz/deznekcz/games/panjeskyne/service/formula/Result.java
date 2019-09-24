@@ -1,6 +1,6 @@
 package cz.deznekcz.games.panjeskyne.service.formula;
 
-import cz.deznekcz.games.panjeskyne.model.xml.Character;
+import cz.deznekcz.games.panjeskyne.data.Character;
 import cz.deznekcz.games.panjeskyne.service.StatisticService;
 
 public class Result {

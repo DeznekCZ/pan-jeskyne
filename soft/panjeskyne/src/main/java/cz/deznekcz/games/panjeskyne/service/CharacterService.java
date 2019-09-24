@@ -1,51 +1,48 @@
 package cz.deznekcz.games.panjeskyne.service;
 
-import java.util.ArrayList;
+import java.io.File;
 import java.util.List;
 
-import cz.deznekcz.games.panjeskyne.model.xml.Character;
-import cz.deznekcz.games.panjeskyne.model.xml.Kind;
-import cz.deznekcz.games.panjeskyne.module.AModule;
-import cz.deznekcz.games.panjeskyne.service.helper.SkillData;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+
+import com.google.common.collect.Lists;
+
+import cz.deznekcz.games.panjeskyne.data.Character;
 
 public class CharacterService {
 	
-	private AModule module;
+	private static final String WORLD_CHAR_PATH = "/home/data/world/%s/character/";
 
-	public CharacterService(AModule module) {
-		this.module = module;
-	}
-	
-	public List<SkillData> getCharacterSkills(Character character) {
-		List<SkillData> skills = new ArrayList<>();
+	public static List<Character> getWorldCharacters(String id) {
+		File charactersDirectory = new File(String.format(WORLD_CHAR_PATH, id));
+		List<Character> characters = Lists.newArrayList();
 		
-		Kind kind = module.getKindService().getByCodename(character.getKindCodename());
-		if (kind != null)
-			kind.getSkills()
-					.values()
-					.stream()
-					.map(skill -> new SkillData(skill.getRef(), skill.getLevel(), module))
-					.sorted()
-					.forEach(skills::add);
-				
-		character.getSkills()
-				.stream()
-				.map(skill -> new SkillData(skill.getRef(), skill.getLevel(), module))
-				.sorted()
-				.forEach(skill -> {
-					int ind = skills.indexOf(skill);
-					if (ind == -1) {
-						skills.add(skill);
-					} else {
-						SkillData sk = skills.get(ind);
-						sk.setLevel(Math.max(skill.getLevel(), sk.getLevel()));
-					}
-				});
+		File[] charFiles = charactersDirectory.listFiles();
+		if (charFiles != null) {
+			for (File charFile : charFiles) {
+				Character character = getCharacter(id, charFile.getName().replace(".xml", ""));
+				characters.add(character);
+			}
+		}
 		
-		return skills;
+		return characters;
 	}
 
-	public void learn(Character character, String id, int level) {
-		character.learn(id, level);
+	public static Character getCharacter(String worldId, String characterId) {
+		File charXml = new File(String.format(WORLD_CHAR_PATH, worldId) + characterId + ".xml");
+		
+		try {
+			JAXBContext jc = JAXBContext.newInstance(Character.class);
+            Unmarshaller u = jc.createUnmarshaller();
+            Character character = (Character)u.unmarshal(charXml);
+            return character;
+		} catch (JAXBException e) {
+			Character character = new Character();
+			character.init(charXml.getName().replace(".xml", ""));
+			character.setError(e);
+			return character;
+		}
 	}
 }

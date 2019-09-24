@@ -2,8 +2,8 @@ package cz.deznekcz.games.panjeskyne.service.formula.element;
 
 import java.util.List;
 
+import cz.deznekcz.games.panjeskyne.data.Character;
 import cz.deznekcz.games.panjeskyne.i18n.I18N;
-import cz.deznekcz.games.panjeskyne.model.xml.Character;
 import cz.deznekcz.games.panjeskyne.model.xml.Statistic;
 import cz.deznekcz.games.panjeskyne.service.StatisticService;
 import cz.deznekcz.games.panjeskyne.service.formula.FormulaElement;
@@ -20,11 +20,11 @@ public class StatisticElement extends FormulaElement {
 	@Override
 	public double getValue(StatisticService provider, Character character) throws FormulaException {
 //		System.out.format("%s=%s\n", statistic.getCodename(), statistic.isCharacterData());
-		if (statistic.isCharacterData()) {
-			return character.getData(statistic.getCodename());
-		} else {
+//		if (statistic.isCharacterData()) {
+//			return character.getDoubleData(statistic.getCodename());
+//		} else {
 			return validate(provider.getValue(character, statistic));
-		}
+//		}
 	}
 
 	@Override

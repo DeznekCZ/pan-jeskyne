@@ -1,7 +1,7 @@
 package cz.deznekcz.games.panjeskyne.service.formula.element;
 
+import cz.deznekcz.games.panjeskyne.data.Character;
 import cz.deznekcz.games.panjeskyne.i18n.I18N;
-import cz.deznekcz.games.panjeskyne.model.xml.Character;
 import cz.deznekcz.games.panjeskyne.model.xml.Function;
 import cz.deznekcz.games.panjeskyne.model.xml.Table;
 import cz.deznekcz.games.panjeskyne.service.FunctionService;

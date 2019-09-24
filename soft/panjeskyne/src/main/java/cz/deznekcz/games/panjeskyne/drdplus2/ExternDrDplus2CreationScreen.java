@@ -8,34 +8,27 @@ import java.util.function.Consumer;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.vaadin.shared.ui.MarginInfo;
-import com.vaadin.ui.AbstractComponent;
-import com.vaadin.ui.Accordion;
-import com.vaadin.ui.Button;
 import com.vaadin.ui.ComboBox;
-import com.vaadin.ui.Component;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TabSheet;
+import com.vaadin.ui.TabSheet.Tab;
 import com.vaadin.ui.TextArea;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Window;
-import com.vaadin.ui.TabSheet.Tab;
 
-import cz.deznekcz.games.panjeskyne.model.xml.Character;
+import cz.deznekcz.games.panjeskyne.data.Character;
 import cz.deznekcz.games.panjeskyne.model.xml.Kind;
 import cz.deznekcz.games.panjeskyne.model.xml.Race;
 import cz.deznekcz.games.panjeskyne.model.xml.Skill;
 import cz.deznekcz.games.panjeskyne.model.xml.Statistic;
-import cz.deznekcz.games.panjeskyne.model.xml.skill.CharacterSkill;
 import cz.deznekcz.games.panjeskyne.model.xml.skill.KindSkill;
 import cz.deznekcz.games.panjeskyne.model.xml.skill.SkillGroup;
 import cz.deznekcz.games.panjeskyne.module.ModuleConstants;
-import cz.deznekcz.games.panjeskyne.module.SkillList;
 import cz.deznekcz.games.panjeskyne.service.formula.Pair;
 import cz.deznekcz.games.panjeskyne.service.formula.Result;
-import cz.deznekcz.games.panjeskyne.service.helper.SkillData;
 
 public class ExternDrDplus2CreationScreen extends Window implements ModuleConstants {
 
@@ -76,7 +69,7 @@ public class ExternDrDplus2CreationScreen extends Window implements ModuleConsta
 	private void open() {
 		setCaption("Tvorba postavy");
 		character = new Character();
-		character.setKind(Kind.EMPTY);
+//		character.setKind(Kind.EMPTY.getId());
 		
 		Consumer<TextField> onAdd = with -> {
 			with.setWidth(FILL);
@@ -142,7 +135,7 @@ public class ExternDrDplus2CreationScreen extends Window implements ModuleConsta
 							name.setCaption("Jméno");
 							name.setWidth(FILL);
 							name.addValueChangeListener(event -> {
-								character.setName(event.getValue());
+//								character.setName(event.getValue());
 								checkSaveAble();
 							});
 							infoLayout.addComponent(name);
@@ -165,7 +158,7 @@ public class ExternDrDplus2CreationScreen extends Window implements ModuleConsta
 							kind = new ComboBox<>("Druh");
 							kind.setWidth(FILL);
 							kind.addValueChangeListener(event -> {
-								character.setKind(event.getValue());
+//								character.setKind(event.getValue());
 								refreshSkills();
 								checkSaveAble();
 							});
@@ -179,7 +172,7 @@ public class ExternDrDplus2CreationScreen extends Window implements ModuleConsta
 							infoArea.setWidth(FILL);
 							infoArea.setCaption("Poznámky");
 							infoArea.addValueChangeListener(event -> {
-								character.setDescription(event.getValue());
+//								character.setDescription(event.getValue());
 								checkSaveAble();
 							});
 							infoLayout.addComponent(infoArea);
@@ -235,7 +228,7 @@ public class ExternDrDplus2CreationScreen extends Window implements ModuleConsta
 		}
 		
 		if (!skillsLoaded) {
-			List<CharacterSkill> chs = Lists.newArrayList(character.getSkills());
+//			List<CharacterSkill> chs = Lists.newArrayList(character.getSkills());
 			List<SkillGroup> sg =  Lists.newArrayList(module.getSkillGroupService().getAll());
 			
 			for (SkillGroup sgi : sg) {
@@ -249,15 +242,15 @@ public class ExternDrDplus2CreationScreen extends Window implements ModuleConsta
 					SkillInfo skillInfo = new SkillInfo(character, module, si.getKey(), 0, this::refreshStatistics);
 					skillInfo.setWidth(FILL);
 					
-					if (!chs.isEmpty()) {
-						for (CharacterSkill chsi : chs) {
-							if (chsi.getRef().equals(si.getId())) {
-								chs.remove(chsi);
-								skillInfo.setStartLevel(chsi.getLevel());
-								break;
-							}
-						}
-					}
+//					if (!chs.isEmpty()) {
+//						for (CharacterSkill chsi : chs) {
+//							if (chsi.getRef().equals(si.getId())) {
+//								chs.remove(chsi);
+//								skillInfo.setStartLevel(chsi.getLevel());
+//								break;
+//							}
+//						}
+//					}
 					
 					if (!si.isHidden() || skillInfo.getStartLevel() > 0) {
 						groupLayout.addComponent(skillInfo);

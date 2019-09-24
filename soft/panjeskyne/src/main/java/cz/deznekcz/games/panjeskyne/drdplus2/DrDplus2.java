@@ -5,17 +5,17 @@ import java.io.ObjectOutputStream;
 
 import com.vaadin.ui.Window;
 
-import cz.deznekcz.games.panjeskyne.model.xml.Character;
+import cz.deznekcz.games.panjeskyne.data.Character;
 import cz.deznekcz.games.panjeskyne.module.AModule;
 import cz.deznekcz.games.panjeskyne.module.ModuleException;
 import cz.deznekcz.games.panjeskyne.user.User;
 
 public class DrDplus2 extends AModule {
 
-	private static final String MODULE_KEY = "drdplus2";
+	public static final String ID = "drdplus2";
 
 	protected DrDplus2() {
-		super(MODULE_KEY, "Dačí doupě + 2.0");
+		super(ID, "Dačí doupě + 2.0");
 	}
 
 	@Override
@@ -35,12 +35,12 @@ public class DrDplus2 extends AModule {
 	}
 
 	public static DrDplus2 getModule() {
-		if (!getModules().containsKey(MODULE_KEY))
+		if (!getModules().containsKey(ID))
 		{
 			return new DrDplus2();
 		} else {
 			try {
-				return getModule(MODULE_KEY);
+				return getModule(ID);
 			} catch (ModuleException e) {
 				return new DrDplus2();
 			}

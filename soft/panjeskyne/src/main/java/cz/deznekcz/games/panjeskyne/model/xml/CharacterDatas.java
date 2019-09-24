@@ -22,6 +22,11 @@ public class CharacterDatas implements ListType<CharacterData> {
 	public List<CharacterData> getList() {
 		return list;
 	}
+	
+	@Override
+	public void setList(List<CharacterData> list) {
+		this.list = list;
+	}
 
 	public double getValue(String key) {
 		if (list == null) return 0;

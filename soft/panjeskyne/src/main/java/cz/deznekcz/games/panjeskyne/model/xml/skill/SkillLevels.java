@@ -24,4 +24,9 @@ public class SkillLevels implements ListType<SkillLevel> {
 	public List<SkillLevel> getLevels() {
 		return levels;
 	}
+	
+	@Override
+	public void setList(List<SkillLevel> list) {
+		this.levels = list;
+	}
 }

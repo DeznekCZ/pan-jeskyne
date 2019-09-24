@@ -5,8 +5,7 @@ import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 
-import cz.deznekcz.games.panjeskyne.service.helper.SkillData;
-import cz.deznekcz.games.panjeskyne.model.xml.Character;
+import cz.deznekcz.games.panjeskyne.data.Character;
 import cz.deznekcz.games.panjeskyne.module.AModule;
 
 public class SkillInfo extends HorizontalLayout implements Button.ClickListener {
@@ -22,7 +21,7 @@ public class SkillInfo extends HorizontalLayout implements Button.ClickListener 
 	}
 	
 	// Module data
-	private SkillData skill;
+	//private SkillData skill;
 	private Character character;
 	
 	// Layout
@@ -41,10 +40,10 @@ public class SkillInfo extends HorizontalLayout implements Button.ClickListener 
 	
 	public SkillInfo(Character character, AModule module, String ref, int level, Runnable onChange) {
 		this.character = character;
-		this.skill = new SkillData(ref, level, module);
+		//this.skill = new SkillData(ref, level, module);
 		this.onChange = onChange;
-		this.startLevel = skill.getLevel();
-		this.enableAdd = skill.getSkill().getLimit() > startLevel;
+		//this.startLevel = skill.getLevel();
+		//this.enableAdd = skill.getSkill().getLimit() > startLevel;
 		this.enableRemove = startLevel > 1;
 		
 		label = new Label();
@@ -61,7 +60,7 @@ public class SkillInfo extends HorizontalLayout implements Button.ClickListener 
 		addComponent(removeButton);
 		
 		infoButton = new Button("?");
-		infoButton.setDescription(skill.getSkill().getDesc());
+		//infoButton.setDescription(skill.getSkill().getDesc());
 		addComponent(infoButton);
 		
 		setMargin(false);
@@ -70,26 +69,26 @@ public class SkillInfo extends HorizontalLayout implements Button.ClickListener 
 
 	@Override
 	public void buttonClick(ClickEvent event) {
-		if (event.getButton() == addButton) {
-			skill.setLevel(skill.getLevel() + 1);
-			enableRemove = true;
-			if (skill.getSkill().getLimit() == skill.getLevel()) {
-				enableAdd = false;
-			}
-		} else if (event.getButton() == removeButton) {
-			skill.setLevel(skill.getLevel() - 1);
-			enableAdd = true;
-			if (startLevel == skill.getLevel()) {
-				enableRemove = false;
-			}
-		}
-		character.learn(skill.getRef(), skill.getLevel());
+//		if (event.getButton() == addButton) {
+//			skill.setLevel(skill.getLevel() + 1);
+//			enableRemove = true;
+//			if (skill.getSkill().getLimit() == skill.getLevel()) {
+//				enableAdd = false;
+//			}
+//		} else if (event.getButton() == removeButton) {
+//			skill.setLevel(skill.getLevel() - 1);
+//			enableAdd = true;
+//			if (startLevel == skill.getLevel()) {
+//				enableRemove = false;
+//			}
+//		}
+//		character.learn(skill.getRef(), skill.getLevel());
 		onChange.run();
 		updateLabel();
 	}
 	
 	private void updateLabel() {
-		label.setCaption(skill.getSkill().getName() + ": " + numberToIII(skill.getLevel()));
+		//label.setCaption(skill.getSkill().getName() + ": " + numberToIII(skill.getLevel()));
 	}
 
 	public void setCanIncrease(boolean can) {
@@ -99,7 +98,7 @@ public class SkillInfo extends HorizontalLayout implements Button.ClickListener 
 
 	public void setStartLevel(int startLevel) {
 		this.startLevel = startLevel;
-		this.enableAdd = skill.getSkill().getLimit() > startLevel;
+		//this.enableAdd = skill.getSkill().getLimit() > startLevel;
 	}
 
 	public int getStartLevel() {

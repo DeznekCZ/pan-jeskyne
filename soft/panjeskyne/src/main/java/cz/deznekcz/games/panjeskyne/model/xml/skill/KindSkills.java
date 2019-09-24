@@ -25,4 +25,7 @@ public class KindSkills implements ListType<KindSkill> {
 		return getList();
 	}
 	
+	public void setList(List<KindSkill> skill) {
+		this.skill = skill;
+	}
 }

@@ -10,8 +10,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+import cz.deznekcz.games.panjeskyne.data.Character;
 import cz.deznekcz.games.panjeskyne.i18n.I18NTexts;
-import cz.deznekcz.games.panjeskyne.model.xml.Character;
 import cz.deznekcz.games.panjeskyne.model.xml.adapter.BonusMapAdapter;
 import cz.deznekcz.games.panjeskyne.model.xml.adapter.SkillLevelMapAdapter;
 import cz.deznekcz.games.panjeskyne.model.xml.skill.CharacterSkill;
@@ -99,17 +99,17 @@ public class Skill implements XmlMappable<String, Skill>, I18NTexts {
 	}
 
 	public void learnSkill(Character character, int level) {
-		for (CharacterSkill skill : character.getSkills()) {
-			if (skill.getRef().endsWith(getId())) {
-				skill.setLevel(level);
-				return;
-			}
-		}
-		
-		CharacterSkill cs = new CharacterSkill();
-		cs.setRef(getId());
-		cs.setLevel(level);
-		character.getSkills().add(cs);
+//		for (CharacterSkill skill : character.getSkills()) {
+//			if (skill.getRef().endsWith(getId())) {
+//				skill.setLevel(level);
+//				return;
+//			}
+//		}
+//		
+//		CharacterSkill cs = new CharacterSkill();
+//		cs.setRef(getId());
+//		cs.setLevel(level);
+//		character.getSkills().add(cs);
 	}
 
 	public HashMap<String, Bonus> getBonuses() {

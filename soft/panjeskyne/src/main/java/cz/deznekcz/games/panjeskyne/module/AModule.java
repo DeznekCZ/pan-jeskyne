@@ -16,7 +16,7 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.Window;
 
 import cz.deznekcz.games.panjeskyne.user.User;
-import cz.deznekcz.games.panjeskyne.model.xml.Character;
+import cz.deznekcz.games.panjeskyne.data.Character;
 import cz.deznekcz.games.panjeskyne.model.xml.Statistic;
 import cz.deznekcz.games.panjeskyne.service.CharacterService;
 import cz.deznekcz.games.panjeskyne.service.KindService;
@@ -72,12 +72,12 @@ public abstract class AModule implements Serializable {
 	}
 	
 	private void loadServices() {
-		statisticService = new StatisticService(this);
-		skillService = new SkillService(this);
-		skillGroupService = skillService.getSkillGroupService();
-		kindService = new KindService(this);
-		raceService = kindService.getRaceService();
-		characterService = new CharacterService(this);
+//		statisticService = new StatisticService(this);
+//		skillService = new SkillService(this);
+//		skillGroupService = skillService.getSkillGroupService();
+//		kindService = new KindService(this);
+//		raceService = kindService.getRaceService();
+//		characterService = new CharacterService(this);
 	}
 
 	public String getId() {

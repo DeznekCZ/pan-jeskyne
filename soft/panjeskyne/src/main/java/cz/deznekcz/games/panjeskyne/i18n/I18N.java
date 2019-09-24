@@ -25,9 +25,10 @@ public enum I18N implements I18NA {
 	INVALID_ARGS_COUNT("exception.function.invalid_count_arguments"),
 	
 	_VOID("void"), 
+	RULES_TAB("tabs.rules"), 
 	;
 	
-	private static final String LOCALE = "cs_CZ";
+	public static String LOCALE = "csCZ";
 	
 	private String codename;
 
