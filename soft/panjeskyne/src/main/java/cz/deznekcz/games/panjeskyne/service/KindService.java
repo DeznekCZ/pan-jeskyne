@@ -18,6 +18,8 @@ import cz.deznekcz.games.panjeskyne.service.RaceService;
 
 public class KindService {
 
+	private static KindService instance;
+
 	private Map<String, Kind> kinds;
 
 	private RaceService raceService;
@@ -32,6 +34,10 @@ public class KindService {
 		for (Race race : raceService.getAll()) {
 			kinds.putAll(race.getKinds());
 		}
+	}
+
+	public KindService() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public Kind getByCodename(String codename) {
@@ -57,5 +63,12 @@ public class KindService {
 	
 	public AModule getModule() {
 		return module;
+	}
+	
+	public static KindService getInstance() {
+		if (instance == null) {
+			instance = new KindService();
+		}
+		return instance;
 	}
 }

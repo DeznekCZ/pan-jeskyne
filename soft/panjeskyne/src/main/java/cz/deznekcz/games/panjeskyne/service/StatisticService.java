@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -37,6 +38,8 @@ import cz.deznekcz.util.xml.XMLRoot;
 public class StatisticService {
 
 	private static final String STATS_XML = "/home/data/%s/stats.xml";
+
+	private static StatisticService instance;
 
 	private Map<String, Statistic> statistics;
 
@@ -92,6 +95,13 @@ public class StatisticService {
 		}
 	}
 
+	public StatisticService() {
+
+		statistics = new HashMap<>();
+		groups = new HashMap<>();
+		dependents = new HashMap<>();
+	}
+
 	public Statistic getByCodename(String codename) {
 		return statistics.get(codename);
 	}
@@ -100,8 +110,8 @@ public class StatisticService {
 		return dependents.get(codename);
 	}
 	
-	public Collection<Statistic> getAll() {
-		return statistics.values();
+	public List<Statistic> getAll() {
+		return new ArrayList<>(statistics.values());
 	}
 
 	public Result getValue(Character character, Statistic statistic) {
@@ -189,5 +199,12 @@ public class StatisticService {
 		}
 		
 		System.out.println(xml.write());
+	}
+
+	public static StatisticService getInstance() {
+		if (instance == null) {
+			instance = new StatisticService();
+		}
+		return instance;
 	}
 }

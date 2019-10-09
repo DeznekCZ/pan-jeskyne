@@ -40,47 +40,47 @@ public class SkillList extends Window implements ModuleConstants {
 	}
 
 	public void refreshSkills() {
-		ArrayList<Skill> allSkills = new ArrayList<>(module.getSkillService().getAll());
-		ArrayList<Skill> filteredSkills = new ArrayList<>();
-//		ArrayList<SkillData> characterSkills = new ArrayList<>(module.getCharacterService().getCharacterSkills(character));
-		
-//		for (Skill skill : allSkills) {
-//			if (skill.isHidden()) continue;
+//		ArrayList<Skill> allSkills = new ArrayList<>(module.getSkillService().getAll());
+//		ArrayList<Skill> filteredSkills = new ArrayList<>();
+////		ArrayList<SkillData> characterSkills = new ArrayList<>(module.getCharacterService().getCharacterSkills(character));
+//		
+////		for (Skill skill : allSkills) {
+////			if (skill.isHidden()) continue;
+////			
+////			boolean known = false;
+////			for (SkillData skillData : characterSkills) {
+////				if (skillData.isFound() && !known) {
+////					known |= skillData.getRef().equals(skill.getId());
+////					if (known) break;
+////				}
+////			}
+////			if (!known) {
+////				filteredSkills.add(skill);
+////			}
+////		}
+//		
+//		list.removeAllComponents();
+//		filteredSkills.sort((_1, _2) -> _1.getName().compareTo(_2.getName()));
+//		
+//		for (Skill skill : filteredSkills) {
+//			VerticalLayout vl = new VerticalLayout();
+//			vl.setWidth(FILL);
 //			
-//			boolean known = false;
-//			for (SkillData skillData : characterSkills) {
-//				if (skillData.isFound() && !known) {
-//					known |= skillData.getRef().equals(skill.getId());
-//					if (known) break;
-//				}
-//			}
-//			if (!known) {
-//				filteredSkills.add(skill);
-//			}
+//			Tab tab = list.addTab(vl, skill.getName());
+//			
+//			Button addSkill = new Button("Přidat");
+//			addSkill.addClickListener(event -> {
+//				list.removeTab(tab);
+////				character.learn(skill.getId(), 1);
+//				refreshOnAdd.run();
+//			});
+//			vl.addComponent(addSkill);
+//			
+//			TextArea desc = new TextArea("Popis");
+//			desc.setValue(skill.getDesc());
+//			desc.setReadOnly(true);
+//			desc.setWidth(FILL);
+//			vl.addComponent(desc);
 //		}
-		
-		list.removeAllComponents();
-		filteredSkills.sort((_1, _2) -> _1.getName().compareTo(_2.getName()));
-		
-		for (Skill skill : filteredSkills) {
-			VerticalLayout vl = new VerticalLayout();
-			vl.setWidth(FILL);
-			
-			Tab tab = list.addTab(vl, skill.getName());
-			
-			Button addSkill = new Button("Přidat");
-			addSkill.addClickListener(event -> {
-				list.removeTab(tab);
-//				character.learn(skill.getId(), 1);
-				refreshOnAdd.run();
-			});
-			vl.addComponent(addSkill);
-			
-			TextArea desc = new TextArea("Popis");
-			desc.setValue(skill.getDesc());
-			desc.setReadOnly(true);
-			desc.setWidth(FILL);
-			vl.addComponent(desc);
-		}
 	}
 }

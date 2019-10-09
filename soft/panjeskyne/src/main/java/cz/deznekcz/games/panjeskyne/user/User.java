@@ -82,4 +82,7 @@ public class User implements Serializable {
 		};
 	}
 
+	public boolean exists() {
+		return file.exists();
+	}
 }

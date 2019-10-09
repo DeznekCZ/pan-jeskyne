@@ -23,6 +23,8 @@ import cz.deznekcz.games.panjeskyne.service.RaceService;
 public class RaceService {
 	
 	private static final String RACES_XML = "/home/data/%s/races.xml";
+
+	private static RaceService instance;
 	
 	private final Map<String, Race> races;
 
@@ -53,6 +55,11 @@ public class RaceService {
 		}
 	}
 
+	public RaceService() {
+		// TODO Auto-generated constructor stub
+		races = null;
+	}
+
 	public Race getByCodename(String codename) {
 		return races.get(codename);
 	}
@@ -77,5 +84,12 @@ public class RaceService {
 
 	public AModule getModule() {
 		return module;
+	}
+
+	public static RaceService getInstance() {
+		if (instance == null) {
+			instance = new RaceService();
+		}
+		return instance;
 	}
 }

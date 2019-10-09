@@ -2630,11 +2630,11 @@ div.v-layout.v-horizontal.v-widget {
 	padding: 5px;
 	margin: 0;
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	color: #464646;
+	border: 1px solid #327596;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	color: #d0dfe7;
 }
 
 .dracidoupe select:focus {
@@ -2887,12 +2887,12 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-verticallayout-well, .dracidoupe .v-horizontallayout-well {
-	background: #f5f5f5;
-	color: #454545;
+	background: #3e8eb7;
+	color: #cedee6;
 	-webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05), inset 0 2px 3px rgba(0, 0, 0, 0.05);
 	box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05), inset 0 2px 3px rgba(0, 0, 0, 0.05);
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
+	border: 1px solid #327596;
 }
 
 .dracidoupe .v-verticallayout-well  > div > [class*="-caption"], .dracidoupe .v-horizontallayout-well  > div > [class*="-caption"] {
@@ -2964,20 +2964,20 @@ div.v-layout.v-horizontal.v-widget {
 	cursor: pointer;
 	height: 37px;
 	padding: 0 16px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 }
 
 .dracidoupe .v-button:before {
@@ -3041,17 +3041,17 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-button:hover:after {
-	background-color: rgba(186, 186, 186, 0.1);
+	background-color: rgba(121, 181, 210, 0.1);
 }
 
 .dracidoupe .v-button:focus:after {
-	border-color: #197de1;
+	border: inherit;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 }
 
 .dracidoupe .v-button:active:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 .dracidoupe .v-button-primary {
@@ -3441,11 +3441,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-checkbox > input:focus ~ label:before {
-	border-color: #197de1;
+	border: 1px solid #327596;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
-	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
 :root .dracidoupe .v-checkbox > input ~ label:before, :root .dracidoupe .v-checkbox > input ~ label:after {
@@ -3465,20 +3465,20 @@ div.v-layout.v-horizontal.v-widget {
 :root .dracidoupe .v-checkbox > input ~ label:before {
 	height: 18.5px;
 	padding: 0 9px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	padding: 0;
 	height: 19px;
 }
@@ -3493,7 +3493,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-checkbox > input:active ~ label:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 :root .dracidoupe .v-checkbox > input:checked ~ label:after {
@@ -3569,11 +3569,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-checkbox-small > input:focus ~ label:before {
-	border-color: #197de1;
+	border: 1px solid #327596;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
-	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
 :root .dracidoupe .v-checkbox-small > input ~ label:before, :root .dracidoupe .v-checkbox-small > input ~ label:after {
@@ -3593,20 +3593,20 @@ div.v-layout.v-horizontal.v-widget {
 :root .dracidoupe .v-checkbox-small > input ~ label:before {
 	height: 15.5px;
 	padding: 0 7px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	padding: 0;
 	height: 16px;
 }
@@ -3621,7 +3621,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-checkbox-small > input:active ~ label:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 :root .dracidoupe .v-checkbox-small > input:checked ~ label:after {
@@ -3697,11 +3697,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-checkbox-large > input:focus ~ label:before {
-	border-color: #197de1;
+	border: 1px solid #327596;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
-	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
 :root .dracidoupe .v-checkbox-large > input ~ label:before, :root .dracidoupe .v-checkbox-large > input ~ label:after {
@@ -3721,20 +3721,20 @@ div.v-layout.v-horizontal.v-widget {
 :root .dracidoupe .v-checkbox-large > input ~ label:before {
 	height: 22px;
 	padding: 0 10px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	padding: 0;
 	height: 22px;
 }
@@ -3749,7 +3749,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-checkbox-large > input:active ~ label:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 :root .dracidoupe .v-checkbox-large > input:checked ~ label:after {
@@ -3844,7 +3844,6 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-transition: none;
 	-moz-transition: none;
 	transition: none;
-	border-color: #197de1;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
@@ -4110,8 +4109,8 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-filterselect-suggestpopup [class$="status"] {
 	position: absolute;
 	right: 4px;
-	background: rgba(212, 212, 212, 0.9);
-	color: #3b3b3b;
+	background: rgba(54, 126, 163, 0.9);
+	color: #c9dae3;
 	border-radius: 0 0 4px 4px;
 	height: 23px;
 	bottom: -23px;
@@ -4126,7 +4125,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-filterselect-suggestpopup [class$="status"]  > * {
-	color: #3b3b3b;
+	color: #c9dae3;
 	text-decoration: none;
 }
 
@@ -4150,7 +4149,7 @@ div.v-layout.v-horizontal.v-widget {
 	-ms-transform: scale(0.8);
 	-o-transform: scale(0.8);
 	transform: scale(0.8);
-	color: #464646;
+	color: #d0dfe7;
 }
 
 .dracidoupe .v-filterselect-suggestpopup div[class*="page"]:after {
@@ -4163,7 +4162,7 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-filterselect-suggestpopup div[class*="page"]:hover {
 	opacity: 1;
 	filter: none ;
-	background: rgba(250, 250, 250, 0.5);
+	background: rgba(64, 149, 191, 0.5);
 }
 
 .dracidoupe .v-filterselect-suggestpopup div[class*="page"]:hover:after {
@@ -4227,15 +4226,15 @@ div.v-layout.v-horizontal.v-widget {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
 	cursor: inherit;
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
 	text-shadow: inherit;
 	text-overflow: ellipsis;
 	border-radius: inherit;
@@ -4246,9 +4245,8 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-transition: none;
 	-moz-transition: none;
 	transition: none;
-	border-color: #197de1;
-	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 }
@@ -4790,12 +4788,12 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-csslayout-well {
-	background: #f5f5f5;
-	color: #454545;
+	background: #3e8eb7;
+	color: #cedee6;
 	-webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05), inset 0 2px 3px rgba(0, 0, 0, 0.05);
 	box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05), inset 0 2px 3px rgba(0, 0, 0, 0.05);
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
+	border: 1px solid #327596;
 }
 
 .dracidoupe .v-csslayout-well  > div > [class*="-caption"] {
@@ -5007,7 +5005,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-formlayout.light  > table > tbody > tr > [class*="captioncell"] {
-	color: #7d7d7d;
+	color: #a7c7d7;
 	text-align: right;
 	padding-left: 13px;
 	line-height: 37px;
@@ -5060,7 +5058,6 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-transition: none;
 	-moz-transition: none;
 	transition: none;
-	border-color: #197de1;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), none;
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), none;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
@@ -5718,7 +5715,7 @@ div.v-layout.v-horizontal.v-widget {
 	-moz-user-select: text;
 	-ms-user-select: text;
 	user-select: text;
-	background-color: #fafafa;
+	background-color: #4095bf;
 }
 
 .dracidoupe .v-grid.v-disabled {
@@ -5826,8 +5823,8 @@ div.v-layout.v-horizontal.v-widget {
 	border: none;
 	border-radius: 0;
 	background: transparent;
-	-webkit-box-shadow: inset 0 1px 0 #f2f2f2;
-	box-shadow: inset 0 1px 0 #f2f2f2;
+	-webkit-box-shadow: inset 0 1px 0 #408fb6;
+	box-shadow: inset 0 1px 0 #408fb6;
 }
 
 .dracidoupe .v-grid-editor-cells > div input[type="text"].v-datefield-textfield {
@@ -6036,7 +6033,6 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-transition: none;
 	-moz-transition: none;
 	transition: none;
-	border-color: #197de1;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
@@ -6506,7 +6502,6 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-transition: none;
 	-moz-transition: none;
 	transition: none;
-	border-color: #197de1;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
@@ -6733,7 +6728,6 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-transition: none;
 	-moz-transition: none;
 	transition: none;
-	border-color: #197de1;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
@@ -6969,7 +6963,7 @@ div.v-layout.v-horizontal.v-widget {
 	line-height: 26px;
 	text-align: center;
 	font-size: 14px;
-	background: #fafafa;
+	background: #4095bf;
 	border-radius: 2px;
 	-webkit-transition: color 200ms;
 	-moz-transition: color 200ms;
@@ -6984,14 +6978,14 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-datefield-popup .v-datefield-calendarpanel-day-offmonth {
-	color: #a0a0a0;
+	color: #88bad3;
 	background: transparent;
 }
 
 .dracidoupe .v-datefield-popup .v-datefield-calendarpanel-day-today {
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 600;
-	border-color: #afafaf;
+	border-color: #80b2cc;
 }
 
 .dracidoupe .v-datefield-popup .v-datefield-calendarpanel-day.v-datefield-calendarpanel-day-selected, .dracidoupe .v-datefield-popup .v-datefield-calendarpanel-day.v-datefield-calendarpanel-day-selected:hover {
@@ -7010,13 +7004,13 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-datefield-popup .v-datefield-calendarpanel-day.v-datefield-calendarpanel-day-outside-range, .dracidoupe .v-datefield-popup .v-datefield-calendarpanel-day.v-datefield-calendarpanel-day-outside-range:hover {
-	color: #a0a0a0;
+	color: #88bad3;
 	cursor: not-allowed;
 }
 
 .dracidoupe .v-datefield-popup .v-datefield-calendarpanel-weekdays {
 	height: 26px;
-	color: rgba(133, 133, 133, 0.85);
+	color: rgba(157, 197, 217, 0.85);
 }
 
 .dracidoupe .v-datefield-popup .v-datefield-calendarpanel-weekdays strong {
@@ -7049,7 +7043,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-datefield-popup td[class*="year"] button:before, .dracidoupe .v-datefield-popup td[class*="month"] button:before {
-	color: #a0a0a0;
+	color: #88bad3;
 	font-size: 21px;
 	line-height: 24px;
 	-webkit-transition: color 200ms;
@@ -7068,7 +7062,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-datefield-popup td[class*="year"] button.outside-range:hover:before, .dracidoupe .v-datefield-popup td[class*="month"] button.outside-range:hover:before {
-	color: #a0a0a0;
+	color: #88bad3;
 }
 
 .dracidoupe .v-datefield-popup .v-button-prevyear:before {
@@ -7107,7 +7101,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .dracidoupe .v-datefield-popup .v-datefield-calendarpanel-weeknumber, .dracidoupe .v-datefield-popup .v-datefield-calendarpanel-weekdays.v-datefield-calendarpanel-weeknumbers td:first-child {
 	width: 30px;
-	color: rgba(133, 133, 133, 0.85);
+	color: rgba(157, 197, 217, 0.85);
 	font-size: 14px;
 	display: inline-block;
 	text-align: left;
@@ -7159,7 +7153,7 @@ div.v-layout.v-horizontal.v-widget {
 	line-height: 26px;
 	text-align: center;
 	font-size: 14px;
-	background: #fafafa;
+	background: #4095bf;
 	border-radius: 2px;
 	-webkit-transition: color 200ms;
 	-moz-transition: color 200ms;
@@ -7174,14 +7168,14 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-datefield-calendarpanel-day-offmonth {
-	color: #a0a0a0;
+	color: #88bad3;
 	background: transparent;
 }
 
 .dracidoupe .v-datefield-calendarpanel-day-today {
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 600;
-	border-color: #afafaf;
+	border-color: #80b2cc;
 }
 
 .dracidoupe .v-datefield-calendarpanel-day.v-datefield-calendarpanel-day-selected, .dracidoupe .v-datefield-calendarpanel-day.v-datefield-calendarpanel-day-selected:hover {
@@ -7200,13 +7194,13 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-datefield-calendarpanel-day.v-datefield-calendarpanel-day-outside-range, .dracidoupe .v-datefield-calendarpanel-day.v-datefield-calendarpanel-day-outside-range:hover {
-	color: #a0a0a0;
+	color: #88bad3;
 	cursor: not-allowed;
 }
 
 .dracidoupe .v-datefield-calendarpanel-weekdays {
 	height: 26px;
-	color: rgba(133, 133, 133, 0.85);
+	color: rgba(157, 197, 217, 0.85);
 }
 
 .dracidoupe .v-datefield-calendarpanel-weekdays strong {
@@ -7239,7 +7233,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe td[class*="year"] button:before, .dracidoupe td[class*="month"] button:before {
-	color: #a0a0a0;
+	color: #88bad3;
 	font-size: 21px;
 	line-height: 24px;
 	-webkit-transition: color 200ms;
@@ -7258,7 +7252,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe td[class*="year"] button.outside-range:hover:before, .dracidoupe td[class*="month"] button.outside-range:hover:before {
-	color: #a0a0a0;
+	color: #88bad3;
 }
 
 .dracidoupe .v-button-prevyear:before {
@@ -7297,7 +7291,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .dracidoupe .v-datefield-calendarpanel-weeknumber, .dracidoupe .v-datefield-calendarpanel-weekdays.v-datefield-calendarpanel-weeknumbers td:first-child {
 	width: 30px;
-	color: rgba(133, 133, 133, 0.85);
+	color: rgba(157, 197, 217, 0.85);
 	font-size: 14px;
 	display: inline-block;
 	text-align: left;
@@ -7819,7 +7813,7 @@ div.v-layout.v-horizontal.v-widget {
 	line-height: 26px;
 	text-align: center;
 	font-size: 14px;
-	background: #fafafa;
+	background: #4095bf;
 	border-radius: 2px;
 	-webkit-transition: color 200ms;
 	-moz-transition: color 200ms;
@@ -7834,14 +7828,14 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-inline-datefield-calendarpanel-day-offmonth {
-	color: #a0a0a0;
+	color: #88bad3;
 	background: transparent;
 }
 
 .dracidoupe .v-inline-datefield-calendarpanel-day-today {
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 600;
-	border-color: #afafaf;
+	border-color: #80b2cc;
 }
 
 .dracidoupe .v-inline-datefield-calendarpanel-day.v-inline-datefield-calendarpanel-day-selected, .dracidoupe .v-inline-datefield-calendarpanel-day.v-inline-datefield-calendarpanel-day-selected:hover {
@@ -7860,13 +7854,13 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-inline-datefield-calendarpanel-day.v-inline-datefield-calendarpanel-day-outside-range, .dracidoupe .v-inline-datefield-calendarpanel-day.v-inline-datefield-calendarpanel-day-outside-range:hover {
-	color: #a0a0a0;
+	color: #88bad3;
 	cursor: not-allowed;
 }
 
 .dracidoupe .v-inline-datefield-calendarpanel-weekdays {
 	height: 26px;
-	color: rgba(133, 133, 133, 0.85);
+	color: rgba(157, 197, 217, 0.85);
 }
 
 .dracidoupe .v-inline-datefield-calendarpanel-weekdays strong {
@@ -7899,7 +7893,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe td[class*="year"] button:before, .dracidoupe td[class*="month"] button:before {
-	color: #a0a0a0;
+	color: #88bad3;
 	font-size: 21px;
 	line-height: 24px;
 	-webkit-transition: color 200ms;
@@ -7918,7 +7912,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe td[class*="year"] button.outside-range:hover:before, .dracidoupe td[class*="month"] button.outside-range:hover:before {
-	color: #a0a0a0;
+	color: #88bad3;
 }
 
 .dracidoupe .v-button-prevyear:before {
@@ -7957,7 +7951,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .dracidoupe .v-inline-datefield-calendarpanel-weeknumber, .dracidoupe .v-inline-datefield-calendarpanel-weekdays.v-inline-datefield-calendarpanel-weeknumbers td:first-child {
 	width: 30px;
-	color: rgba(133, 133, 133, 0.85);
+	color: rgba(157, 197, 217, 0.85);
 	font-size: 14px;
 	display: inline-block;
 	text-align: left;
@@ -8029,20 +8023,20 @@ div.v-layout.v-horizontal.v-widget {
 	cursor: pointer;
 	height: 37px;
 	padding: 0 16px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	cursor: default;
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	padding: 0;
 	text-align: left;
 	line-height: 35px;
@@ -8085,7 +8079,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-menubar:focus:after {
-	border-color: #197de1;
+	border: inherit;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 }
@@ -8114,14 +8108,14 @@ div.v-layout.v-horizontal.v-widget {
 	
 	cursor: pointer;
 	border-radius: 0;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7;
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7;
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9;
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9;
 	background: transparent;
 	-webkit-box-shadow: none;
 	box-shadow: none;
@@ -8162,12 +8156,12 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-menubar > .v-menubar-menuitem:hover:before {
-	background-color: rgba(186, 186, 186, 0.1);
+	background-color: rgba(121, 181, 210, 0.1);
 	border: none;
 }
 
 .dracidoupe .v-menubar > .v-menubar-menuitem:active:before {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 .dracidoupe .v-menubar > .v-menubar-menuitem .v-icon {
@@ -8187,10 +8181,10 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-menubar > .v-menubar-menuitem-checked {
 	-webkit-box-shadow: none;
 	box-shadow: none;
-	background-color: #ededed;
-	background-image: -webkit-linear-gradient(bottom, #ededed 2%, #e9e9e9 98%);
-	background-image: linear-gradient(to top,#ededed 2%, #e9e9e9 98%);
-	color: #181818;
+	background-color: #408cb3;
+	background-image: -webkit-linear-gradient(bottom, #418eb4 2%, #3d87af 98%);
+	background-image: linear-gradient(to top,#418eb4 2%, #3d87af 98%);
+	color: #eef3f5;
 }
 
 .dracidoupe .v-disabled > .v-menubar-menuitem, .dracidoupe .v-menubar > .v-menubar-menuitem-disabled {
@@ -8431,7 +8425,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-menubar-borderless .v-menubar-menuitem-checked, .dracidoupe .v-menubar-borderless .v-menubar-menuitem-checked:first-child {
-	border: 1px solid #c5c5c5;
+	border: 1px solid #327596;
 	color: #197de1;
 }
 
@@ -8484,11 +8478,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-radiobutton > input:focus ~ label:before {
-	border-color: #197de1;
+	border: 1px solid #327596;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
-	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
 :root .dracidoupe .v-radiobutton > input ~ label:before, :root .dracidoupe .v-radiobutton > input ~ label:after {
@@ -8508,20 +8502,20 @@ div.v-layout.v-horizontal.v-widget {
 :root .dracidoupe .v-radiobutton > input ~ label:before {
 	height: 18.5px;
 	padding: 0 9px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	padding: 0;
 	height: 19px;
 }
@@ -8536,7 +8530,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-radiobutton > input:active ~ label:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 :root .dracidoupe .v-radiobutton > input:checked ~ label:after {
@@ -8645,11 +8639,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-select-optiongroup-small .v-checkbox > input:focus ~ label:before {
-	border-color: #197de1;
+	border: 1px solid #327596;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
-	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
 :root .dracidoupe .v-select-optiongroup-small .v-checkbox > input ~ label:before, :root .dracidoupe .v-select-optiongroup-small .v-checkbox > input ~ label:after {
@@ -8669,20 +8663,20 @@ div.v-layout.v-horizontal.v-widget {
 :root .dracidoupe .v-select-optiongroup-small .v-checkbox > input ~ label:before {
 	height: 15.5px;
 	padding: 0 7px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	padding: 0;
 	height: 16px;
 }
@@ -8697,7 +8691,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-select-optiongroup-small .v-checkbox > input:active ~ label:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 :root .dracidoupe .v-select-optiongroup-small .v-checkbox > input:checked ~ label:after {
@@ -8772,11 +8766,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-select-optiongroup-small .v-radiobutton > input:focus ~ label:before {
-	border-color: #197de1;
+	border: 1px solid #327596;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
-	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
 :root .dracidoupe .v-select-optiongroup-small .v-radiobutton > input ~ label:before, :root .dracidoupe .v-select-optiongroup-small .v-radiobutton > input ~ label:after {
@@ -8796,20 +8790,20 @@ div.v-layout.v-horizontal.v-widget {
 :root .dracidoupe .v-select-optiongroup-small .v-radiobutton > input ~ label:before {
 	height: 15.5px;
 	padding: 0 7px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	padding: 0;
 	height: 16px;
 }
@@ -8824,7 +8818,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-select-optiongroup-small .v-radiobutton > input:active ~ label:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 :root .dracidoupe .v-select-optiongroup-small .v-radiobutton > input:checked ~ label:after {
@@ -8933,11 +8927,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-select-optiongroup-large .v-checkbox > input:focus ~ label:before {
-	border-color: #197de1;
+	border: 1px solid #327596;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
-	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
 :root .dracidoupe .v-select-optiongroup-large .v-checkbox > input ~ label:before, :root .dracidoupe .v-select-optiongroup-large .v-checkbox > input ~ label:after {
@@ -8957,20 +8951,20 @@ div.v-layout.v-horizontal.v-widget {
 :root .dracidoupe .v-select-optiongroup-large .v-checkbox > input ~ label:before {
 	height: 22px;
 	padding: 0 10px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	padding: 0;
 	height: 22px;
 }
@@ -8985,7 +8979,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-select-optiongroup-large .v-checkbox > input:active ~ label:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 :root .dracidoupe .v-select-optiongroup-large .v-checkbox > input:checked ~ label:after {
@@ -9060,11 +9054,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-select-optiongroup-large .v-radiobutton > input:focus ~ label:before {
-	border-color: #197de1;
+	border: 1px solid #327596;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
-	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
 :root .dracidoupe .v-select-optiongroup-large .v-radiobutton > input ~ label:before, :root .dracidoupe .v-select-optiongroup-large .v-radiobutton > input ~ label:after {
@@ -9084,20 +9078,20 @@ div.v-layout.v-horizontal.v-widget {
 :root .dracidoupe .v-select-optiongroup-large .v-radiobutton > input ~ label:before {
 	height: 22px;
 	padding: 0 10px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	padding: 0;
 	height: 22px;
 }
@@ -9112,7 +9106,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-select-optiongroup-large .v-radiobutton > input:active ~ label:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 :root .dracidoupe .v-select-optiongroup-large .v-radiobutton > input:checked ~ label:after {
@@ -9352,8 +9346,8 @@ div.v-layout.v-horizontal.v-widget {
 	right: 0;
 	left: 0;
 	height: 0;
-	border-top: 1px solid #dfdfdf;
-	border-color: rgba(197, 197, 197, 0.5);
+	border-top: 1px solid #3985aa;
+	border-color: rgba(50, 117, 150, 0.5);
 }
 
 .dracidoupe .v-window-header {
@@ -9542,7 +9536,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-window-contents  > .v-scrollable .v-panel-captionwrap:after {
-	border-color: #dfdfdf;
+	border-color: #3985aa;
 }
 
 .dracidoupe .v-window-contents  > .v-scrollable .v-panel-content:before {
@@ -9585,9 +9579,9 @@ div.v-layout.v-horizontal.v-widget {
 	padding: 7px 12px;
 	position: relative;
 	z-index: 2;
-	border-top: 1px solid #dfdfdf;
-	border-bottom: 1px solid #dfdfdf;
-	background-color: #fafafa;
+	border-top: 1px solid #3985aa;
+	border-bottom: 1px solid #3985aa;
+	background-color: #4095bf;
 }
 
 .dracidoupe .v-window-top-toolbar.v-menubar {
@@ -9602,10 +9596,10 @@ div.v-layout.v-horizontal.v-widget {
 
 .dracidoupe .v-window-bottom-toolbar.v-layout {
 	padding: 7px 12px;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #f0f0f0 0, #fafafa 4px);
-	background-image: linear-gradient(to bottom,#f0f0f0 0, #fafafa 4px);
-	border-top: 1px solid #dfdfdf;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #3b89b0 0, #4095bf 4px);
+	background-image: linear-gradient(to bottom,#3b89b0 0, #4095bf 4px);
+	border-top: 1px solid #3985aa;
 	border-radius: 0 0 4px 4px;
 }
 
@@ -9757,7 +9751,7 @@ div.v-layout.v-horizontal.v-widget {
 	line-height: 2px;
 	color: #197de1;
 	text-indent: -4px;
-	text-shadow: 0 0 1px #fafafa, 0 0 1px #fafafa;
+	text-shadow: 0 0 1px #4095bf, 0 0 1px #4095bf;
 	opacity: 1;
 	visibility: visible;
 }
@@ -10385,7 +10379,7 @@ div.v-layout.v-horizontal.v-widget {
 	-moz-user-select: text;
 	-ms-user-select: text;
 	user-select: text;
-	background-color: #fafafa;
+	background-color: #4095bf;
 }
 
 .dracidoupe .v-tree8.v-disabled {
@@ -10493,8 +10487,8 @@ div.v-layout.v-horizontal.v-widget {
 	border: none;
 	border-radius: 0;
 	background: transparent;
-	-webkit-box-shadow: inset 0 1px 0 #f2f2f2;
-	box-shadow: inset 0 1px 0 #f2f2f2;
+	-webkit-box-shadow: inset 0 1px 0 #408fb6;
+	box-shadow: inset 0 1px 0 #408fb6;
 }
 
 .dracidoupe .v-tree8-editor-cells > div input[type="text"].v-datefield-textfield {
@@ -11531,7 +11525,7 @@ div.v-layout.v-horizontal.v-widget {
 	-moz-user-select: text;
 	-ms-user-select: text;
 	user-select: text;
-	background-color: #fafafa;
+	background-color: #4095bf;
 }
 
 .dracidoupe .v-treegrid.v-disabled {
@@ -11639,8 +11633,8 @@ div.v-layout.v-horizontal.v-widget {
 	border: none;
 	border-radius: 0;
 	background: transparent;
-	-webkit-box-shadow: inset 0 1px 0 #f2f2f2;
-	box-shadow: inset 0 1px 0 #f2f2f2;
+	-webkit-box-shadow: inset 0 1px 0 #408fb6;
+	box-shadow: inset 0 1px 0 #408fb6;
 }
 
 .dracidoupe .v-treegrid-editor-cells > div input[type="text"].v-datefield-textfield {
@@ -12005,21 +11999,21 @@ div.v-layout.v-horizontal.v-widget {
 
 .dracidoupe .v-table {
 	position: relative;
-	background: #fafafa;
-	color: #464646;
+	background: #4095bf;
+	color: #d0dfe7;
 	overflow: hidden;
 }
 
 .dracidoupe .v-table-header table, .dracidoupe .v-table-footer table, .dracidoupe .v-table-table {
-	-webkit-box-shadow: 0 0 0 1px #d4d4d4;
-	box-shadow: 0 0 0 1px #d4d4d4;
+	-webkit-box-shadow: 0 0 0 1px #327699;
+	box-shadow: 0 0 0 1px #327699;
 }
 
 .dracidoupe .v-table-header-wrap, .dracidoupe .v-table-footer-wrap, .dracidoupe .v-table-header-drag {
-	border: 1px solid #d4d4d4;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
+	border: 1px solid #327699;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
 	white-space: nowrap;
 	font-size: 14px;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
@@ -12035,7 +12029,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-table-footer td {
-	border-left: 1px solid #d4d4d4;
+	border-left: 1px solid #327699;
 }
 
 .dracidoupe .v-table-footer-container, .dracidoupe .v-table-caption-container {
@@ -12056,7 +12050,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .dracidoupe .v-table-caption-container, .dracidoupe .v-table-header-drag {
 	padding: 12px 12px 11px;
-	border-left: 1px solid #d4d4d4;
+	border-left: 1px solid #327699;
 }
 
 .dracidoupe .v-table-caption-container-align-right {
@@ -12075,7 +12069,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-table-cell-content {
-	border-left: 1px solid #d4d4d4;
+	border-left: 1px solid #327699;
 	overflow: hidden;
 	height: 37px;
 	vertical-align: middle;
@@ -12111,7 +12105,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-table-body {
-	border: 1px solid #d4d4d4;
+	border: 1px solid #327699;
 	-webkit-user-select: text;
 	-moz-user-select: text;
 	-ms-user-select: text;
@@ -12119,12 +12113,12 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-table-table {
-	background-color: white;
+	background-color: #3d8fb8;
 	white-space: nowrap;
 }
 
 .dracidoupe .v-table-table td {
-	border-top: 1px solid #d4d4d4;
+	border-top: 1px solid #327699;
 }
 
 .dracidoupe .v-table-table tr:first-child > td {
@@ -12132,12 +12126,12 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-table-row {
-	background-color: white;
+	background-color: #3d8fb8;
 	cursor: pointer;
 }
 
 .dracidoupe .v-table-row-odd {
-	background-color: #f5f5f5;
+	background-color: #3b89b0;
 	cursor: pointer;
 }
 
@@ -12235,20 +12229,20 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-table-column-selector {
 	height: 37px;
 	padding: 0 16px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7;
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9;
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	position: absolute;
 	z-index: 2;
 	top: 0;
@@ -12278,17 +12272,17 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-table-column-selector:hover:after {
-	background-color: rgba(186, 186, 186, 0.1);
+	background-color: rgba(121, 181, 210, 0.1);
 }
 
 .dracidoupe .v-table-column-selector:focus:after {
-	border-color: #197de1;
+	border: inherit;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 }
 
 .dracidoupe .v-table-column-selector:active:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 .dracidoupe .v-table-column-selector:after {
@@ -12302,7 +12296,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-table-column-selector:active:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 .dracidoupe .v-table-column-selector:before {
@@ -12358,7 +12352,7 @@ div.v-layout.v-horizontal.v-widget {
 	overflow: hidden;
 	opacity: 0.5;
 	filter: alpha(opacity=50) ;
-	background: white;
+	background: #3d8fb8;
 }
 
 .dracidoupe .v-table-body {
@@ -12383,7 +12377,6 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-table-drag .v-table-body {
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
-	border-color: #197de1;
 }
 
 .dracidoupe .v-table-drag .v-table-body .v-table-focus {
@@ -12391,8 +12384,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-table-row-drag-middle .v-table-cell-content {
-	background-color: #d1e5f9;
-	color: #214060;
+	background-color: #358bc0;
+	color: #ccdde7;
 }
 
 .dracidoupe .v-table-row-drag-bottom td.v-table-cell-content {
@@ -12444,11 +12437,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-table-borderless .v-table-header-wrap {
-	border-bottom: 1px solid #d9d9d9;
+	border-bottom: 1px solid #34799c;
 }
 
 .dracidoupe .v-table-borderless .v-table-footer-wrap {
-	border-top: 1px solid #d9d9d9;
+	border-top: 1px solid #34799c;
 }
 
 .dracidoupe .v-table-compact .v-table-header-wrap, .dracidoupe .v-table-compact .v-table-footer-wrap, .dracidoupe .v-table-compact .v-table-header-drag, .dracidoupe .v-table-small .v-table-header-wrap, .dracidoupe .v-table-small .v-table-footer-wrap, .dracidoupe .v-table-small .v-table-header-drag {
@@ -12603,26 +12596,26 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-splitpanel-horizontal  > div > .v-splitpanel-hsplitter div:before {
 	height: 37px;
 	padding: 0 16px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, none;
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, none;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, none;
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, none;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	height: auto;
 	padding: 0;
 	border-radius: 0;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(left, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to right,#fafafa 2%, #efefef 98%);
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(left, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to right,#459dc4 2%, #3786b1 98%);
 }
 
 .dracidoupe .v-splitpanel-horizontal  > div > .v-splitpanel-hsplitter div:before:after {
@@ -12634,17 +12627,17 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-splitpanel-horizontal  > div > .v-splitpanel-hsplitter div:before:hover:after {
-	background-color: rgba(186, 186, 186, 0.1);
+	background-color: rgba(121, 181, 210, 0.1);
 }
 
 .dracidoupe .v-splitpanel-horizontal  > div > .v-splitpanel-hsplitter div:before:focus:after {
-	border-color: #197de1;
+	border: inherit;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 }
 
 .dracidoupe .v-splitpanel-horizontal  > div > .v-splitpanel-hsplitter div:before:active:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 .dracidoupe .v-splitpanel-horizontal  > div > .v-splitpanel-second-container {
@@ -12663,20 +12656,20 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-splitpanel-vertical  > div > .v-splitpanel-vsplitter div:before {
 	height: 37px;
 	padding: 0 16px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, none;
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, none;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, none;
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, none;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	height: auto;
 	padding: 0;
 	border-radius: 0;
@@ -12691,17 +12684,17 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-splitpanel-vertical  > div > .v-splitpanel-vsplitter div:before:hover:after {
-	background-color: rgba(186, 186, 186, 0.1);
+	background-color: rgba(121, 181, 210, 0.1);
 }
 
 .dracidoupe .v-splitpanel-vertical  > div > .v-splitpanel-vsplitter div:before:focus:after {
-	border-color: #197de1;
+	border: inherit;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 }
 
 .dracidoupe .v-splitpanel-vertical  > div > .v-splitpanel-vsplitter div:before:active:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 .dracidoupe .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter {
@@ -12716,26 +12709,26 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter div:before {
 	height: 37px;
 	padding: 0 16px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, none;
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, none;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, none;
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, none;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	height: auto;
 	padding: 0;
 	border-radius: 0;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(left, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to right,#fafafa 2%, #efefef 98%);
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(left, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to right,#459dc4 2%, #3786b1 98%);
 }
 
 .dracidoupe .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter div:before:after {
@@ -12747,24 +12740,24 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter div:before:hover:after {
-	background-color: rgba(186, 186, 186, 0.1);
+	background-color: rgba(121, 181, 210, 0.1);
 }
 
 .dracidoupe .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter div:before:focus:after {
-	border-color: #197de1;
+	border: inherit;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 }
 
 .dracidoupe .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter div:before:active:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 .dracidoupe .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter div:after {
 	content: "";
-	border: 1px solid #dadada;
-	border-top-color: #bababa;
-	border-left-color: #bababa;
+	border: 1px solid #3782a6;
+	border-top-color: #2f6f8e;
+	border-left-color: #2f6f8e;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -12790,20 +12783,20 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-splitpanel-vertical.large  > div > .v-splitpanel-vsplitter div:before {
 	height: 37px;
 	padding: 0 16px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, none;
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, none;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, none;
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, none;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	height: auto;
 	padding: 0;
 	border-radius: 0;
@@ -12818,24 +12811,24 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-splitpanel-vertical.large  > div > .v-splitpanel-vsplitter div:before:hover:after {
-	background-color: rgba(186, 186, 186, 0.1);
+	background-color: rgba(121, 181, 210, 0.1);
 }
 
 .dracidoupe .v-splitpanel-vertical.large  > div > .v-splitpanel-vsplitter div:before:focus:after {
-	border-color: #197de1;
+	border: inherit;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 }
 
 .dracidoupe .v-splitpanel-vertical.large  > div > .v-splitpanel-vsplitter div:before:active:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 .dracidoupe .v-splitpanel-vertical.large  > div > .v-splitpanel-vsplitter div:after {
 	content: "";
-	border: 1px solid #dadada;
-	border-top-color: #bababa;
-	border-left-color: #bababa;
+	border: 1px solid #3782a6;
+	border-top-color: #2f6f8e;
+	border-left-color: #2f6f8e;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -12848,9 +12841,9 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-progressbar-wrapper {
 	border-radius: 4px;
 	height: 9px;
-	background-color: #d4d4d4;
-	background-image: -webkit-linear-gradient(bottom, #d7d7d7 2%, #c7c7c7 98%);
-	background-image: linear-gradient(to top,#d7d7d7 2%, #c7c7c7 98%);
+	background-color: #3e7c9a;
+	background-image: -webkit-linear-gradient(bottom, #4285a2 2%, #366d8b 98%);
+	background-image: linear-gradient(to top,#4285a2 2%, #366d8b 98%);
 	box-sizing: border-box;
 	min-width: 74px;
 }
@@ -12936,9 +12929,9 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-slider-base {
 	border-radius: 4px;
 	height: 9px;
-	background-color: #d4d4d4;
-	background-image: -webkit-linear-gradient(bottom, #d7d7d7 2%, #c7c7c7 98%);
-	background-image: linear-gradient(to top,#d7d7d7 2%, #c7c7c7 98%);
+	background-color: #3e7c9a;
+	background-image: -webkit-linear-gradient(bottom, #4285a2 2%, #366d8b 98%);
+	background-image: linear-gradient(to top,#4285a2 2%, #366d8b 98%);
 	box-sizing: border-box;
 	min-width: 74px;
 	height: 6px;
@@ -12991,20 +12984,20 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-slider-handle:before {
 	height: 37px;
 	padding: 0 16px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 }
 
 .dracidoupe .v-slider-handle:before:after {
@@ -13016,22 +13009,22 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-slider-handle:before:hover:after {
-	background-color: rgba(186, 186, 186, 0.1);
+	background-color: rgba(121, 181, 210, 0.1);
 }
 
 .dracidoupe .v-slider-handle:before:focus:after {
-	border-color: #197de1;
+	border: inherit;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 }
 
 .dracidoupe .v-slider-handle:before:active:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 .dracidoupe .v-slider-handle:after {
-	border: 1px solid #c5c5c5;
-	border-color: #197de1;
+	border: 1px solid #327596;
+	border: 1px solid #327596;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	opacity: 0;
@@ -13071,9 +13064,9 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-slider-vertical .v-slider-base {
-	background-color: #d4d4d4;
-	background-image: -webkit-linear-gradient(right, #d7d7d7 2%, #c7c7c7 98%);
-	background-image: linear-gradient(to left,#d7d7d7 2%, #c7c7c7 98%);
+	background-color: #3e7c9a;
+	background-image: -webkit-linear-gradient(right, #4285a2 2%, #366d8b 98%);
+	background-image: linear-gradient(to left,#4285a2 2%, #366d8b 98%);
 	width: 6px;
 	height: 100% !important;
 	min-width: 0;
@@ -13247,8 +13240,8 @@ div.v-layout.v-horizontal.v-widget {
 	bottom: 0;
 	padding-left: 19px;
 	background-color: transparent;
-	background-image: -webkit-linear-gradient(right, #fafafa 70%, rgba(250, 250, 250, 0) 100%);
-	background-image: linear-gradient(to left,#fafafa 70%, rgba(250, 250, 250, 0) 100%);
+	background-image: -webkit-linear-gradient(right, #4095bf 70%, rgba(64, 149, 191, 0) 100%);
+	background-image: linear-gradient(to left,#4095bf 70%, rgba(64, 149, 191, 0) 100%);
 	pointer-events: none;
 }
 
@@ -13261,8 +13254,8 @@ div.v-layout.v-horizontal.v-widget {
 	right: 0;
 	display: block;
 	background-color: transparent;
-	background-image: -webkit-linear-gradient(right, #dfdfdf 70%, rgba(223, 223, 223, 0) 100%);
-	background-image: linear-gradient(to left,#dfdfdf 70%, rgba(223, 223, 223, 0) 100%);
+	background-image: -webkit-linear-gradient(right, #3985aa 70%, rgba(57, 133, 170, 0) 100%);
+	background-image: linear-gradient(to left,#3985aa 70%, rgba(57, 133, 170, 0) 100%);
 }
 
 .dracidoupe .v-tabsheet-scroller button {
@@ -13435,7 +13428,7 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-tabsheet-framed.padded-tabbar  > .v-tabsheet-tabcontainer {
 	border: 1px solid #dfdfdf;
 	border-bottom: none;
-	background: #fafafa;
+	background: #4095bf;
 	padding-top: 6px;
 }
 
@@ -13579,8 +13572,8 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-colorpicker-popup .v-horizontallayout {
 	height: auto !important;
 	padding: 9px 0;
-	background-color: #fafafa;
-	border-top: 1px solid #ededed;
+	background-color: #4095bf;
+	border-top: 1px solid #3d8db6;
 }
 
 .dracidoupe .v-colorpicker-popup .v-horizontallayout .v-expand {
@@ -13637,16 +13630,16 @@ div.v-layout.v-horizontal.v-widget {
 	box-sizing: border-box;
 	padding: 0 12px;
 	line-height: 36px;
-	border-bottom: 1px solid #d5d5d5;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #f6f6f6 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #f6f6f6 98%);
-	color: #464646;
+	border-bottom: 1px solid #367fa2;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #4197c0 2%, #3d90bb 98%);
+	background-image: linear-gradient(to bottom,#4197c0 2%, #3d90bb 98%);
+	color: #d0dfe7;
 	font-weight: 400;
 	font-size: 14px;
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #eeeeee;
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #eeeeee;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	-webkit-box-shadow: inset 0 1px 0 #6ea1c5, inset 0 -1px 0 #3d8ab2;
+	box-shadow: inset 0 1px 0 #6ea1c5, inset 0 -1px 0 #3d8ab2;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	border-radius: 3px 3px 0 0;
 }
 
@@ -13692,12 +13685,12 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-panel-well {
-	background: #f5f5f5;
-	color: #454545;
+	background: #3e8eb7;
+	color: #cedee6;
 	-webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05), inset 0 2px 3px rgba(0, 0, 0, 0.05);
 	box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05), inset 0 2px 3px rgba(0, 0, 0, 0.05);
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
+	border: 1px solid #327596;
 }
 
 .dracidoupe .v-panel-well  > div > [class*="-caption"] {
@@ -13753,9 +13746,9 @@ div.v-layout.v-horizontal.v-widget {
 	border: 1px solid #d5d5d5;
 	-webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #f4f4f4 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #f4f4f4 98%);
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #4299c1 2%, #3b8db8 98%);
+	background-image: linear-gradient(to bottom,#4299c1 2%, #3b8db8 98%);
 	overflow: hidden;
 }
 
@@ -13798,16 +13791,16 @@ div.v-layout.v-horizontal.v-widget {
 	box-sizing: border-box;
 	padding: 0 12px;
 	line-height: 36px;
-	border-bottom: 1px solid #d5d5d5;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #f6f6f6 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #f6f6f6 98%);
-	color: #464646;
+	border-bottom: 1px solid #367fa2;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #4197c0 2%, #3d90bb 98%);
+	background-image: linear-gradient(to bottom,#4197c0 2%, #3d90bb 98%);
+	color: #d0dfe7;
 	font-weight: 400;
 	font-size: 14px;
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #eeeeee;
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #eeeeee;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	-webkit-box-shadow: inset 0 1px 0 #6ea1c5, inset 0 -1px 0 #3d8ab2;
+	box-shadow: inset 0 1px 0 #6ea1c5, inset 0 -1px 0 #3d8ab2;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	display: block;
 	background: transparent;
 	border-bottom-color: #c9c9c9;
@@ -13827,12 +13820,12 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-accordion-item-caption  > .v-caption:hover:before {
-	background-color: rgba(186, 186, 186, 0.1);
+	background-color: rgba(121, 181, 210, 0.1);
 	border: none;
 }
 
 .dracidoupe .v-accordion-item-caption  > .v-caption:active:before {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 .dracidoupe .v-accordion-item-content {
@@ -13874,11 +13867,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-select-twincol select {
-	border: 1px solid #c5c5c5;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	color: #464646;
+	border: 1px solid #327596;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	color: #d0dfe7;
 }
 
 .dracidoupe .v-select-twincol select:focus {
@@ -13992,11 +13985,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-select select {
-	border: 1px solid #c5c5c5;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	color: #464646;
+	border: 1px solid #327596;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	color: #d0dfe7;
 }
 
 .dracidoupe .v-select select:focus {
@@ -14122,7 +14115,7 @@ div.v-layout.v-horizontal.v-widget {
 	text-align: right;
 	margin: 0 5px;
 	white-space: nowrap;
-	border-top: 1px solid #f2f2f2;
+	border-top: 1px solid #3c8cb4;
 	cursor: pointer;
 }
 
@@ -14131,7 +14124,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-calendar-month-day-today {
-	background: #eef3f8;
+	background: #3e93c0;
 }
 
 .dracidoupe .v-calendar-month-day-today .v-calendar-day-number {
@@ -14144,7 +14137,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-calendar-month-day-selected {
-	background-color: #e3edf7;
+	background-color: #3c92c2;
 }
 
 .dracidoupe .v-calendar-month-day-dragemphasis {
@@ -14157,7 +14150,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .dracidoupe .v-calendar-weekly-longevents {
 	margin-left: 50px;
-	border-bottom: 3px solid #e0e0e0;
+	border-bottom: 3px solid #337799;
 }
 
 .dracidoupe .v-calendar-weekly-longevents .v-calendar-event-all-day {
@@ -14358,8 +14351,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-calendar-event-all-day {
-	background-color: #c8eaf4;
-	background-color: rgba(200, 234, 244, 0.8);
+	background-color: #3399c5;
+	background-color: rgba(51, 153, 197, 0.8);
 	color: #00ace0;
 }
 
@@ -14368,8 +14361,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-calendar-week-wrapper .v-calendar-event .v-calendar-event-content {
-	background-color: #c8eaf4;
-	background-color: rgba(200, 234, 244, 0.8);
+	background-color: #3399c5;
+	background-color: rgba(51, 153, 197, 0.8);
 }
 
 .dracidoupe .v-calendar-event-month[class*="color2"]:before {
@@ -14377,8 +14370,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-calendar-event-all-day[class*="color2"] {
-	background-color: #d1e7cd;
-	background-color: rgba(209, 231, 205, 0.8);
+	background-color: #3c979d;
+	background-color: rgba(60, 151, 157, 0.8);
 	color: #2d9f19;
 }
 
@@ -14387,8 +14380,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-calendar-week-wrapper .v-calendar-event[class*="color2"] .v-calendar-event-content {
-	background-color: #d1e7cd;
-	background-color: rgba(209, 231, 205, 0.8);
+	background-color: #3c979d;
+	background-color: rgba(60, 151, 157, 0.8);
 }
 
 .dracidoupe .v-calendar-event-month[class*="color3"]:before {
@@ -14396,8 +14389,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-calendar-event-all-day[class*="color3"] {
-	background-color: #f1e1c8;
-	background-color: rgba(241, 225, 200, 0.8);
+	background-color: #5d9198;
+	background-color: rgba(93, 145, 152, 0.8);
 	color: #d18100;
 }
 
@@ -14406,8 +14399,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-calendar-week-wrapper .v-calendar-event[class*="color3"] .v-calendar-event-content {
-	background-color: #f1e1c8;
-	background-color: rgba(241, 225, 200, 0.8);
+	background-color: #5d9198;
+	background-color: rgba(93, 145, 152, 0.8);
 }
 
 .dracidoupe .v-calendar-event-month[class*="color4"]:before {
@@ -14415,8 +14408,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-calendar-event-all-day[class*="color4"] {
-	background-color: #f1d3cb;
-	background-color: rgba(241, 211, 203, 0.8);
+	background-color: #5c829c;
+	background-color: rgba(92, 130, 156, 0.8);
 	color: #ce3812;
 }
 
@@ -14425,8 +14418,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-calendar-week-wrapper .v-calendar-event[class*="color4"] .v-calendar-event-content {
-	background-color: #f1d3cb;
-	background-color: rgba(241, 211, 203, 0.8);
+	background-color: #5c829c;
+	background-color: rgba(92, 130, 156, 0.8);
 }
 
 .dracidoupe .v-calendar-event-month[class*="color5"]:before {
@@ -14434,8 +14427,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-calendar-event-all-day[class*="color5"] {
-	background-color: #d1d9f1;
-	background-color: rgba(209, 217, 241, 0.8);
+	background-color: #3c88c1;
+	background-color: rgba(60, 136, 193, 0.8);
 	color: #2d55cd;
 }
 
@@ -14444,8 +14437,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-calendar-week-wrapper .v-calendar-event[class*="color5"] .v-calendar-event-content {
-	background-color: #d1d9f1;
-	background-color: rgba(209, 217, 241, 0.8);
+	background-color: #3c88c1;
+	background-color: rgba(60, 136, 193, 0.8);
 }
 
 .dracidoupe .v-calendar.v-disabled * {
@@ -14711,11 +14704,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-select select {
-	border: 1px solid #c5c5c5;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	color: #464646;
+	border: 1px solid #327596;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	color: #d0dfe7;
 }
 
 .dracidoupe .v-select select:focus {
@@ -14854,13 +14847,13 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-richtextarea .gwt-RichTextToolbar {
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7;
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7;
-	border-bottom: 1px solid #c5c5c5;
-	color: #464646;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9;
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9;
+	border-bottom: 1px solid #327596;
+	color: #d0dfe7;
 }
 
 .dracidoupe .v-richtextarea .gwt-ToggleButton, .dracidoupe .v-richtextarea .gwt-PushButton {
@@ -14872,13 +14865,13 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-richtextarea .gwt-ToggleButton:hover, .dracidoupe .v-richtextarea .gwt-PushButton:hover {
-	color: black;
+	color: white;
 }
 
 .dracidoupe .v-richtextarea .gwt-ToggleButton-down, .dracidoupe .v-richtextarea .gwt-ToggleButton-down-hovering {
-	background-color: #e0e0e0;
-	background-image: -webkit-linear-gradient(bottom, #e0e0e0 2%, #dcdcdc 98%);
-	background-image: linear-gradient(to top,#e0e0e0 2%, #dcdcdc 98%);
+	background-color: #337799;
+	background-image: -webkit-linear-gradient(bottom, #34799b 2%, #307294 98%);
+	background-image: linear-gradient(to top,#34799b 2%, #307294 98%);
 }
 
 .dracidoupe .v-richtextarea .gwt-RichTextToolbar-top img {
@@ -15577,7 +15570,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-menubar-user-menu .v-menubar-menuitem-checked, .dracidoupe .v-menubar-user-menu .v-menubar-menuitem-checked:first-child {
-	border: 1px solid #c5c5c5;
+	border: 1px solid #327596;
 	color: #197de1;
 }
 
@@ -15613,7 +15606,7 @@ div.v-layout.v-horizontal.v-widget {
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
 	display: block;
 	margin: 0 auto 0.3em;
-	border: 1px solid #c5c5c5;
+	border: 1px solid #327596;
 }
 
 .dracidoupe .v-menubar-user-menu  > .v-menubar-menuitem:after {
@@ -16222,11 +16215,11 @@ div.v-layout.v-horizontal.v-widget {
 	padding: 5px;
 	margin: 0;
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	color: #464646;
+	border: 1px solid #327596;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	color: #d0dfe7;
 }
 
 .dracidoupe select:focus {
@@ -16479,12 +16472,12 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-verticallayout-well, .dracidoupe .v-horizontallayout-well {
-	background: #f5f5f5;
-	color: #454545;
+	background: #3e8eb7;
+	color: #cedee6;
 	-webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05), inset 0 2px 3px rgba(0, 0, 0, 0.05);
 	box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05), inset 0 2px 3px rgba(0, 0, 0, 0.05);
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
+	border: 1px solid #327596;
 }
 
 .dracidoupe .v-verticallayout-well  > div > [class*="-caption"], .dracidoupe .v-horizontallayout-well  > div > [class*="-caption"] {
@@ -16556,20 +16549,20 @@ div.v-layout.v-horizontal.v-widget {
 	cursor: pointer;
 	height: 37px;
 	padding: 0 16px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 }
 
 .dracidoupe .v-button:before {
@@ -16633,17 +16626,17 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-button:hover:after {
-	background-color: rgba(186, 186, 186, 0.1);
+	background-color: rgba(121, 181, 210, 0.1);
 }
 
 .dracidoupe .v-button:focus:after {
-	border-color: #197de1;
+	border: inherit;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 }
 
 .dracidoupe .v-button:active:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 .dracidoupe .v-button-primary {
@@ -17033,11 +17026,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-checkbox > input:focus ~ label:before {
-	border-color: #197de1;
+	border: 1px solid #327596;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
-	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
 :root .dracidoupe .v-checkbox > input ~ label:before, :root .dracidoupe .v-checkbox > input ~ label:after {
@@ -17057,20 +17050,20 @@ div.v-layout.v-horizontal.v-widget {
 :root .dracidoupe .v-checkbox > input ~ label:before {
 	height: 18.5px;
 	padding: 0 9px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	padding: 0;
 	height: 19px;
 }
@@ -17085,7 +17078,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-checkbox > input:active ~ label:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 :root .dracidoupe .v-checkbox > input:checked ~ label:after {
@@ -17161,11 +17154,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-checkbox-small > input:focus ~ label:before {
-	border-color: #197de1;
+	border: 1px solid #327596;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
-	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
 :root .dracidoupe .v-checkbox-small > input ~ label:before, :root .dracidoupe .v-checkbox-small > input ~ label:after {
@@ -17185,20 +17178,20 @@ div.v-layout.v-horizontal.v-widget {
 :root .dracidoupe .v-checkbox-small > input ~ label:before {
 	height: 15.5px;
 	padding: 0 7px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	padding: 0;
 	height: 16px;
 }
@@ -17213,7 +17206,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-checkbox-small > input:active ~ label:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 :root .dracidoupe .v-checkbox-small > input:checked ~ label:after {
@@ -17289,11 +17282,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-checkbox-large > input:focus ~ label:before {
-	border-color: #197de1;
+	border: 1px solid #327596;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
-	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
 :root .dracidoupe .v-checkbox-large > input ~ label:before, :root .dracidoupe .v-checkbox-large > input ~ label:after {
@@ -17313,20 +17306,20 @@ div.v-layout.v-horizontal.v-widget {
 :root .dracidoupe .v-checkbox-large > input ~ label:before {
 	height: 22px;
 	padding: 0 10px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	padding: 0;
 	height: 22px;
 }
@@ -17341,7 +17334,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-checkbox-large > input:active ~ label:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 :root .dracidoupe .v-checkbox-large > input:checked ~ label:after {
@@ -17436,7 +17429,6 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-transition: none;
 	-moz-transition: none;
 	transition: none;
-	border-color: #197de1;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
@@ -17702,8 +17694,8 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-filterselect-suggestpopup [class$="status"] {
 	position: absolute;
 	right: 4px;
-	background: rgba(212, 212, 212, 0.9);
-	color: #3b3b3b;
+	background: rgba(54, 126, 163, 0.9);
+	color: #c9dae3;
 	border-radius: 0 0 4px 4px;
 	height: 23px;
 	bottom: -23px;
@@ -17718,7 +17710,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-filterselect-suggestpopup [class$="status"]  > * {
-	color: #3b3b3b;
+	color: #c9dae3;
 	text-decoration: none;
 }
 
@@ -17742,7 +17734,7 @@ div.v-layout.v-horizontal.v-widget {
 	-ms-transform: scale(0.8);
 	-o-transform: scale(0.8);
 	transform: scale(0.8);
-	color: #464646;
+	color: #d0dfe7;
 }
 
 .dracidoupe .v-filterselect-suggestpopup div[class*="page"]:after {
@@ -17755,7 +17747,7 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-filterselect-suggestpopup div[class*="page"]:hover {
 	opacity: 1;
 	filter: none ;
-	background: rgba(250, 250, 250, 0.5);
+	background: rgba(64, 149, 191, 0.5);
 }
 
 .dracidoupe .v-filterselect-suggestpopup div[class*="page"]:hover:after {
@@ -17819,15 +17811,15 @@ div.v-layout.v-horizontal.v-widget {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
 	cursor: inherit;
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
 	text-shadow: inherit;
 	text-overflow: ellipsis;
 	border-radius: inherit;
@@ -17838,9 +17830,8 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-transition: none;
 	-moz-transition: none;
 	transition: none;
-	border-color: #197de1;
-	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 }
@@ -18382,12 +18373,12 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-csslayout-well {
-	background: #f5f5f5;
-	color: #454545;
+	background: #3e8eb7;
+	color: #cedee6;
 	-webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05), inset 0 2px 3px rgba(0, 0, 0, 0.05);
 	box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05), inset 0 2px 3px rgba(0, 0, 0, 0.05);
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
+	border: 1px solid #327596;
 }
 
 .dracidoupe .v-csslayout-well  > div > [class*="-caption"] {
@@ -18599,7 +18590,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-formlayout.light  > table > tbody > tr > [class*="captioncell"] {
-	color: #7d7d7d;
+	color: #a7c7d7;
 	text-align: right;
 	padding-left: 13px;
 	line-height: 37px;
@@ -18652,7 +18643,6 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-transition: none;
 	-moz-transition: none;
 	transition: none;
-	border-color: #197de1;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), none;
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), none;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
@@ -19310,7 +19300,7 @@ div.v-layout.v-horizontal.v-widget {
 	-moz-user-select: text;
 	-ms-user-select: text;
 	user-select: text;
-	background-color: #fafafa;
+	background-color: #4095bf;
 }
 
 .dracidoupe .v-grid.v-disabled {
@@ -19418,8 +19408,8 @@ div.v-layout.v-horizontal.v-widget {
 	border: none;
 	border-radius: 0;
 	background: transparent;
-	-webkit-box-shadow: inset 0 1px 0 #f2f2f2;
-	box-shadow: inset 0 1px 0 #f2f2f2;
+	-webkit-box-shadow: inset 0 1px 0 #408fb6;
+	box-shadow: inset 0 1px 0 #408fb6;
 }
 
 .dracidoupe .v-grid-editor-cells > div input[type="text"].v-datefield-textfield {
@@ -19628,7 +19618,6 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-transition: none;
 	-moz-transition: none;
 	transition: none;
-	border-color: #197de1;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
@@ -20098,7 +20087,6 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-transition: none;
 	-moz-transition: none;
 	transition: none;
-	border-color: #197de1;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
@@ -20325,7 +20313,6 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-transition: none;
 	-moz-transition: none;
 	transition: none;
-	border-color: #197de1;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
@@ -20561,7 +20548,7 @@ div.v-layout.v-horizontal.v-widget {
 	line-height: 26px;
 	text-align: center;
 	font-size: 14px;
-	background: #fafafa;
+	background: #4095bf;
 	border-radius: 2px;
 	-webkit-transition: color 200ms;
 	-moz-transition: color 200ms;
@@ -20576,14 +20563,14 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-datefield-popup .v-datefield-calendarpanel-day-offmonth {
-	color: #a0a0a0;
+	color: #88bad3;
 	background: transparent;
 }
 
 .dracidoupe .v-datefield-popup .v-datefield-calendarpanel-day-today {
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 600;
-	border-color: #afafaf;
+	border-color: #80b2cc;
 }
 
 .dracidoupe .v-datefield-popup .v-datefield-calendarpanel-day.v-datefield-calendarpanel-day-selected, .dracidoupe .v-datefield-popup .v-datefield-calendarpanel-day.v-datefield-calendarpanel-day-selected:hover {
@@ -20602,13 +20589,13 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-datefield-popup .v-datefield-calendarpanel-day.v-datefield-calendarpanel-day-outside-range, .dracidoupe .v-datefield-popup .v-datefield-calendarpanel-day.v-datefield-calendarpanel-day-outside-range:hover {
-	color: #a0a0a0;
+	color: #88bad3;
 	cursor: not-allowed;
 }
 
 .dracidoupe .v-datefield-popup .v-datefield-calendarpanel-weekdays {
 	height: 26px;
-	color: rgba(133, 133, 133, 0.85);
+	color: rgba(157, 197, 217, 0.85);
 }
 
 .dracidoupe .v-datefield-popup .v-datefield-calendarpanel-weekdays strong {
@@ -20641,7 +20628,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-datefield-popup td[class*="year"] button:before, .dracidoupe .v-datefield-popup td[class*="month"] button:before {
-	color: #a0a0a0;
+	color: #88bad3;
 	font-size: 21px;
 	line-height: 24px;
 	-webkit-transition: color 200ms;
@@ -20660,7 +20647,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-datefield-popup td[class*="year"] button.outside-range:hover:before, .dracidoupe .v-datefield-popup td[class*="month"] button.outside-range:hover:before {
-	color: #a0a0a0;
+	color: #88bad3;
 }
 
 .dracidoupe .v-datefield-popup .v-button-prevyear:before {
@@ -20699,7 +20686,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .dracidoupe .v-datefield-popup .v-datefield-calendarpanel-weeknumber, .dracidoupe .v-datefield-popup .v-datefield-calendarpanel-weekdays.v-datefield-calendarpanel-weeknumbers td:first-child {
 	width: 30px;
-	color: rgba(133, 133, 133, 0.85);
+	color: rgba(157, 197, 217, 0.85);
 	font-size: 14px;
 	display: inline-block;
 	text-align: left;
@@ -20751,7 +20738,7 @@ div.v-layout.v-horizontal.v-widget {
 	line-height: 26px;
 	text-align: center;
 	font-size: 14px;
-	background: #fafafa;
+	background: #4095bf;
 	border-radius: 2px;
 	-webkit-transition: color 200ms;
 	-moz-transition: color 200ms;
@@ -20766,14 +20753,14 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-datefield-calendarpanel-day-offmonth {
-	color: #a0a0a0;
+	color: #88bad3;
 	background: transparent;
 }
 
 .dracidoupe .v-datefield-calendarpanel-day-today {
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 600;
-	border-color: #afafaf;
+	border-color: #80b2cc;
 }
 
 .dracidoupe .v-datefield-calendarpanel-day.v-datefield-calendarpanel-day-selected, .dracidoupe .v-datefield-calendarpanel-day.v-datefield-calendarpanel-day-selected:hover {
@@ -20792,13 +20779,13 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-datefield-calendarpanel-day.v-datefield-calendarpanel-day-outside-range, .dracidoupe .v-datefield-calendarpanel-day.v-datefield-calendarpanel-day-outside-range:hover {
-	color: #a0a0a0;
+	color: #88bad3;
 	cursor: not-allowed;
 }
 
 .dracidoupe .v-datefield-calendarpanel-weekdays {
 	height: 26px;
-	color: rgba(133, 133, 133, 0.85);
+	color: rgba(157, 197, 217, 0.85);
 }
 
 .dracidoupe .v-datefield-calendarpanel-weekdays strong {
@@ -20831,7 +20818,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe td[class*="year"] button:before, .dracidoupe td[class*="month"] button:before {
-	color: #a0a0a0;
+	color: #88bad3;
 	font-size: 21px;
 	line-height: 24px;
 	-webkit-transition: color 200ms;
@@ -20850,7 +20837,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe td[class*="year"] button.outside-range:hover:before, .dracidoupe td[class*="month"] button.outside-range:hover:before {
-	color: #a0a0a0;
+	color: #88bad3;
 }
 
 .dracidoupe .v-button-prevyear:before {
@@ -20889,7 +20876,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .dracidoupe .v-datefield-calendarpanel-weeknumber, .dracidoupe .v-datefield-calendarpanel-weekdays.v-datefield-calendarpanel-weeknumbers td:first-child {
 	width: 30px;
-	color: rgba(133, 133, 133, 0.85);
+	color: rgba(157, 197, 217, 0.85);
 	font-size: 14px;
 	display: inline-block;
 	text-align: left;
@@ -21411,7 +21398,7 @@ div.v-layout.v-horizontal.v-widget {
 	line-height: 26px;
 	text-align: center;
 	font-size: 14px;
-	background: #fafafa;
+	background: #4095bf;
 	border-radius: 2px;
 	-webkit-transition: color 200ms;
 	-moz-transition: color 200ms;
@@ -21426,14 +21413,14 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-inline-datefield-calendarpanel-day-offmonth {
-	color: #a0a0a0;
+	color: #88bad3;
 	background: transparent;
 }
 
 .dracidoupe .v-inline-datefield-calendarpanel-day-today {
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 600;
-	border-color: #afafaf;
+	border-color: #80b2cc;
 }
 
 .dracidoupe .v-inline-datefield-calendarpanel-day.v-inline-datefield-calendarpanel-day-selected, .dracidoupe .v-inline-datefield-calendarpanel-day.v-inline-datefield-calendarpanel-day-selected:hover {
@@ -21452,13 +21439,13 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-inline-datefield-calendarpanel-day.v-inline-datefield-calendarpanel-day-outside-range, .dracidoupe .v-inline-datefield-calendarpanel-day.v-inline-datefield-calendarpanel-day-outside-range:hover {
-	color: #a0a0a0;
+	color: #88bad3;
 	cursor: not-allowed;
 }
 
 .dracidoupe .v-inline-datefield-calendarpanel-weekdays {
 	height: 26px;
-	color: rgba(133, 133, 133, 0.85);
+	color: rgba(157, 197, 217, 0.85);
 }
 
 .dracidoupe .v-inline-datefield-calendarpanel-weekdays strong {
@@ -21491,7 +21478,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe td[class*="year"] button:before, .dracidoupe td[class*="month"] button:before {
-	color: #a0a0a0;
+	color: #88bad3;
 	font-size: 21px;
 	line-height: 24px;
 	-webkit-transition: color 200ms;
@@ -21510,7 +21497,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe td[class*="year"] button.outside-range:hover:before, .dracidoupe td[class*="month"] button.outside-range:hover:before {
-	color: #a0a0a0;
+	color: #88bad3;
 }
 
 .dracidoupe .v-button-prevyear:before {
@@ -21549,7 +21536,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .dracidoupe .v-inline-datefield-calendarpanel-weeknumber, .dracidoupe .v-inline-datefield-calendarpanel-weekdays.v-inline-datefield-calendarpanel-weeknumbers td:first-child {
 	width: 30px;
-	color: rgba(133, 133, 133, 0.85);
+	color: rgba(157, 197, 217, 0.85);
 	font-size: 14px;
 	display: inline-block;
 	text-align: left;
@@ -21621,20 +21608,20 @@ div.v-layout.v-horizontal.v-widget {
 	cursor: pointer;
 	height: 37px;
 	padding: 0 16px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	cursor: default;
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	padding: 0;
 	text-align: left;
 	line-height: 35px;
@@ -21677,7 +21664,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-menubar:focus:after {
-	border-color: #197de1;
+	border: inherit;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 }
@@ -21706,14 +21693,14 @@ div.v-layout.v-horizontal.v-widget {
 	
 	cursor: pointer;
 	border-radius: 0;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7;
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7;
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9;
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9;
 	background: transparent;
 	-webkit-box-shadow: none;
 	box-shadow: none;
@@ -21754,12 +21741,12 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-menubar > .v-menubar-menuitem:hover:before {
-	background-color: rgba(186, 186, 186, 0.1);
+	background-color: rgba(121, 181, 210, 0.1);
 	border: none;
 }
 
 .dracidoupe .v-menubar > .v-menubar-menuitem:active:before {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 .dracidoupe .v-menubar > .v-menubar-menuitem .v-icon {
@@ -21779,10 +21766,10 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-menubar > .v-menubar-menuitem-checked {
 	-webkit-box-shadow: none;
 	box-shadow: none;
-	background-color: #ededed;
-	background-image: -webkit-linear-gradient(bottom, #ededed 2%, #e9e9e9 98%);
-	background-image: linear-gradient(to top,#ededed 2%, #e9e9e9 98%);
-	color: #181818;
+	background-color: #408cb3;
+	background-image: -webkit-linear-gradient(bottom, #418eb4 2%, #3d87af 98%);
+	background-image: linear-gradient(to top,#418eb4 2%, #3d87af 98%);
+	color: #eef3f5;
 }
 
 .dracidoupe .v-disabled > .v-menubar-menuitem, .dracidoupe .v-menubar > .v-menubar-menuitem-disabled {
@@ -22023,7 +22010,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-menubar-borderless .v-menubar-menuitem-checked, .dracidoupe .v-menubar-borderless .v-menubar-menuitem-checked:first-child {
-	border: 1px solid #c5c5c5;
+	border: 1px solid #327596;
 	color: #197de1;
 }
 
@@ -22076,11 +22063,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-radiobutton > input:focus ~ label:before {
-	border-color: #197de1;
+	border: 1px solid #327596;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
-	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
 :root .dracidoupe .v-radiobutton > input ~ label:before, :root .dracidoupe .v-radiobutton > input ~ label:after {
@@ -22100,20 +22087,20 @@ div.v-layout.v-horizontal.v-widget {
 :root .dracidoupe .v-radiobutton > input ~ label:before {
 	height: 18.5px;
 	padding: 0 9px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	padding: 0;
 	height: 19px;
 }
@@ -22128,7 +22115,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-radiobutton > input:active ~ label:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 :root .dracidoupe .v-radiobutton > input:checked ~ label:after {
@@ -22237,11 +22224,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-select-optiongroup-small .v-checkbox > input:focus ~ label:before {
-	border-color: #197de1;
+	border: 1px solid #327596;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
-	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
 :root .dracidoupe .v-select-optiongroup-small .v-checkbox > input ~ label:before, :root .dracidoupe .v-select-optiongroup-small .v-checkbox > input ~ label:after {
@@ -22261,20 +22248,20 @@ div.v-layout.v-horizontal.v-widget {
 :root .dracidoupe .v-select-optiongroup-small .v-checkbox > input ~ label:before {
 	height: 15.5px;
 	padding: 0 7px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	padding: 0;
 	height: 16px;
 }
@@ -22289,7 +22276,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-select-optiongroup-small .v-checkbox > input:active ~ label:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 :root .dracidoupe .v-select-optiongroup-small .v-checkbox > input:checked ~ label:after {
@@ -22364,11 +22351,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-select-optiongroup-small .v-radiobutton > input:focus ~ label:before {
-	border-color: #197de1;
+	border: 1px solid #327596;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
-	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
 :root .dracidoupe .v-select-optiongroup-small .v-radiobutton > input ~ label:before, :root .dracidoupe .v-select-optiongroup-small .v-radiobutton > input ~ label:after {
@@ -22388,20 +22375,20 @@ div.v-layout.v-horizontal.v-widget {
 :root .dracidoupe .v-select-optiongroup-small .v-radiobutton > input ~ label:before {
 	height: 15.5px;
 	padding: 0 7px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	padding: 0;
 	height: 16px;
 }
@@ -22416,7 +22403,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-select-optiongroup-small .v-radiobutton > input:active ~ label:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 :root .dracidoupe .v-select-optiongroup-small .v-radiobutton > input:checked ~ label:after {
@@ -22525,11 +22512,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-select-optiongroup-large .v-checkbox > input:focus ~ label:before {
-	border-color: #197de1;
+	border: 1px solid #327596;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
-	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
 :root .dracidoupe .v-select-optiongroup-large .v-checkbox > input ~ label:before, :root .dracidoupe .v-select-optiongroup-large .v-checkbox > input ~ label:after {
@@ -22549,20 +22536,20 @@ div.v-layout.v-horizontal.v-widget {
 :root .dracidoupe .v-select-optiongroup-large .v-checkbox > input ~ label:before {
 	height: 22px;
 	padding: 0 10px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	padding: 0;
 	height: 22px;
 }
@@ -22577,7 +22564,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-select-optiongroup-large .v-checkbox > input:active ~ label:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 :root .dracidoupe .v-select-optiongroup-large .v-checkbox > input:checked ~ label:after {
@@ -22652,11 +22639,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-select-optiongroup-large .v-radiobutton > input:focus ~ label:before {
-	border-color: #197de1;
+	border: 1px solid #327596;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
-	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5), inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
 :root .dracidoupe .v-select-optiongroup-large .v-radiobutton > input ~ label:before, :root .dracidoupe .v-select-optiongroup-large .v-radiobutton > input ~ label:after {
@@ -22676,20 +22663,20 @@ div.v-layout.v-horizontal.v-widget {
 :root .dracidoupe .v-select-optiongroup-large .v-radiobutton > input ~ label:before {
 	height: 22px;
 	padding: 0 10px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	padding: 0;
 	height: 22px;
 }
@@ -22704,7 +22691,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .dracidoupe .v-select-optiongroup-large .v-radiobutton > input:active ~ label:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 :root .dracidoupe .v-select-optiongroup-large .v-radiobutton > input:checked ~ label:after {
@@ -22944,8 +22931,8 @@ div.v-layout.v-horizontal.v-widget {
 	right: 0;
 	left: 0;
 	height: 0;
-	border-top: 1px solid #dfdfdf;
-	border-color: rgba(197, 197, 197, 0.5);
+	border-top: 1px solid #3985aa;
+	border-color: rgba(50, 117, 150, 0.5);
 }
 
 .dracidoupe .v-window-header {
@@ -23134,7 +23121,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-window-contents  > .v-scrollable .v-panel-captionwrap:after {
-	border-color: #dfdfdf;
+	border-color: #3985aa;
 }
 
 .dracidoupe .v-window-contents  > .v-scrollable .v-panel-content:before {
@@ -23177,9 +23164,9 @@ div.v-layout.v-horizontal.v-widget {
 	padding: 7px 12px;
 	position: relative;
 	z-index: 2;
-	border-top: 1px solid #dfdfdf;
-	border-bottom: 1px solid #dfdfdf;
-	background-color: #fafafa;
+	border-top: 1px solid #3985aa;
+	border-bottom: 1px solid #3985aa;
+	background-color: #4095bf;
 }
 
 .dracidoupe .v-window-top-toolbar.v-menubar {
@@ -23194,10 +23181,10 @@ div.v-layout.v-horizontal.v-widget {
 
 .dracidoupe .v-window-bottom-toolbar.v-layout {
 	padding: 7px 12px;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #f0f0f0 0, #fafafa 4px);
-	background-image: linear-gradient(to bottom,#f0f0f0 0, #fafafa 4px);
-	border-top: 1px solid #dfdfdf;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #3b89b0 0, #4095bf 4px);
+	background-image: linear-gradient(to bottom,#3b89b0 0, #4095bf 4px);
+	border-top: 1px solid #3985aa;
 	border-radius: 0 0 4px 4px;
 }
 
@@ -23349,7 +23336,7 @@ div.v-layout.v-horizontal.v-widget {
 	line-height: 2px;
 	color: #197de1;
 	text-indent: -4px;
-	text-shadow: 0 0 1px #fafafa, 0 0 1px #fafafa;
+	text-shadow: 0 0 1px #4095bf, 0 0 1px #4095bf;
 	opacity: 1;
 	visibility: visible;
 }
@@ -23977,7 +23964,7 @@ div.v-layout.v-horizontal.v-widget {
 	-moz-user-select: text;
 	-ms-user-select: text;
 	user-select: text;
-	background-color: #fafafa;
+	background-color: #4095bf;
 }
 
 .dracidoupe .v-tree8.v-disabled {
@@ -24085,8 +24072,8 @@ div.v-layout.v-horizontal.v-widget {
 	border: none;
 	border-radius: 0;
 	background: transparent;
-	-webkit-box-shadow: inset 0 1px 0 #f2f2f2;
-	box-shadow: inset 0 1px 0 #f2f2f2;
+	-webkit-box-shadow: inset 0 1px 0 #408fb6;
+	box-shadow: inset 0 1px 0 #408fb6;
 }
 
 .dracidoupe .v-tree8-editor-cells > div input[type="text"].v-datefield-textfield {
@@ -25123,7 +25110,7 @@ div.v-layout.v-horizontal.v-widget {
 	-moz-user-select: text;
 	-ms-user-select: text;
 	user-select: text;
-	background-color: #fafafa;
+	background-color: #4095bf;
 }
 
 .dracidoupe .v-treegrid.v-disabled {
@@ -25231,8 +25218,8 @@ div.v-layout.v-horizontal.v-widget {
 	border: none;
 	border-radius: 0;
 	background: transparent;
-	-webkit-box-shadow: inset 0 1px 0 #f2f2f2;
-	box-shadow: inset 0 1px 0 #f2f2f2;
+	-webkit-box-shadow: inset 0 1px 0 #408fb6;
+	box-shadow: inset 0 1px 0 #408fb6;
 }
 
 .dracidoupe .v-treegrid-editor-cells > div input[type="text"].v-datefield-textfield {
@@ -25597,21 +25584,21 @@ div.v-layout.v-horizontal.v-widget {
 
 .dracidoupe .v-table {
 	position: relative;
-	background: #fafafa;
-	color: #464646;
+	background: #4095bf;
+	color: #d0dfe7;
 	overflow: hidden;
 }
 
 .dracidoupe .v-table-header table, .dracidoupe .v-table-footer table, .dracidoupe .v-table-table {
-	-webkit-box-shadow: 0 0 0 1px #d4d4d4;
-	box-shadow: 0 0 0 1px #d4d4d4;
+	-webkit-box-shadow: 0 0 0 1px #327699;
+	box-shadow: 0 0 0 1px #327699;
 }
 
 .dracidoupe .v-table-header-wrap, .dracidoupe .v-table-footer-wrap, .dracidoupe .v-table-header-drag {
-	border: 1px solid #d4d4d4;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
+	border: 1px solid #327699;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
 	white-space: nowrap;
 	font-size: 14px;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
@@ -25627,7 +25614,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-table-footer td {
-	border-left: 1px solid #d4d4d4;
+	border-left: 1px solid #327699;
 }
 
 .dracidoupe .v-table-footer-container, .dracidoupe .v-table-caption-container {
@@ -25648,7 +25635,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .dracidoupe .v-table-caption-container, .dracidoupe .v-table-header-drag {
 	padding: 12px 12px 11px;
-	border-left: 1px solid #d4d4d4;
+	border-left: 1px solid #327699;
 }
 
 .dracidoupe .v-table-caption-container-align-right {
@@ -25667,7 +25654,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-table-cell-content {
-	border-left: 1px solid #d4d4d4;
+	border-left: 1px solid #327699;
 	overflow: hidden;
 	height: 37px;
 	vertical-align: middle;
@@ -25703,7 +25690,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-table-body {
-	border: 1px solid #d4d4d4;
+	border: 1px solid #327699;
 	-webkit-user-select: text;
 	-moz-user-select: text;
 	-ms-user-select: text;
@@ -25711,12 +25698,12 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-table-table {
-	background-color: white;
+	background-color: #3d8fb8;
 	white-space: nowrap;
 }
 
 .dracidoupe .v-table-table td {
-	border-top: 1px solid #d4d4d4;
+	border-top: 1px solid #327699;
 }
 
 .dracidoupe .v-table-table tr:first-child > td {
@@ -25724,12 +25711,12 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-table-row {
-	background-color: white;
+	background-color: #3d8fb8;
 	cursor: pointer;
 }
 
 .dracidoupe .v-table-row-odd {
-	background-color: #f5f5f5;
+	background-color: #3b89b0;
 	cursor: pointer;
 }
 
@@ -25827,20 +25814,20 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-table-column-selector {
 	height: 37px;
 	padding: 0 16px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7;
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9;
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	position: absolute;
 	z-index: 2;
 	top: 0;
@@ -25870,17 +25857,17 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-table-column-selector:hover:after {
-	background-color: rgba(186, 186, 186, 0.1);
+	background-color: rgba(121, 181, 210, 0.1);
 }
 
 .dracidoupe .v-table-column-selector:focus:after {
-	border-color: #197de1;
+	border: inherit;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 }
 
 .dracidoupe .v-table-column-selector:active:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 .dracidoupe .v-table-column-selector:after {
@@ -25894,7 +25881,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-table-column-selector:active:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 .dracidoupe .v-table-column-selector:before {
@@ -25950,7 +25937,7 @@ div.v-layout.v-horizontal.v-widget {
 	overflow: hidden;
 	opacity: 0.5;
 	filter: alpha(opacity=50) ;
-	background: white;
+	background: #3d8fb8;
 }
 
 .dracidoupe .v-table-body {
@@ -25975,7 +25962,6 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-table-drag .v-table-body {
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
-	border-color: #197de1;
 }
 
 .dracidoupe .v-table-drag .v-table-body .v-table-focus {
@@ -25983,8 +25969,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-table-row-drag-middle .v-table-cell-content {
-	background-color: #d1e5f9;
-	color: #214060;
+	background-color: #358bc0;
+	color: #ccdde7;
 }
 
 .dracidoupe .v-table-row-drag-bottom td.v-table-cell-content {
@@ -26036,11 +26022,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-table-borderless .v-table-header-wrap {
-	border-bottom: 1px solid #d9d9d9;
+	border-bottom: 1px solid #34799c;
 }
 
 .dracidoupe .v-table-borderless .v-table-footer-wrap {
-	border-top: 1px solid #d9d9d9;
+	border-top: 1px solid #34799c;
 }
 
 .dracidoupe .v-table-compact .v-table-header-wrap, .dracidoupe .v-table-compact .v-table-footer-wrap, .dracidoupe .v-table-compact .v-table-header-drag, .dracidoupe .v-table-small .v-table-header-wrap, .dracidoupe .v-table-small .v-table-footer-wrap, .dracidoupe .v-table-small .v-table-header-drag {
@@ -26195,26 +26181,26 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-splitpanel-horizontal  > div > .v-splitpanel-hsplitter div:before {
 	height: 37px;
 	padding: 0 16px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, none;
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, none;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, none;
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, none;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	height: auto;
 	padding: 0;
 	border-radius: 0;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(left, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to right,#fafafa 2%, #efefef 98%);
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(left, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to right,#459dc4 2%, #3786b1 98%);
 }
 
 .dracidoupe .v-splitpanel-horizontal  > div > .v-splitpanel-hsplitter div:before:after {
@@ -26226,17 +26212,17 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-splitpanel-horizontal  > div > .v-splitpanel-hsplitter div:before:hover:after {
-	background-color: rgba(186, 186, 186, 0.1);
+	background-color: rgba(121, 181, 210, 0.1);
 }
 
 .dracidoupe .v-splitpanel-horizontal  > div > .v-splitpanel-hsplitter div:before:focus:after {
-	border-color: #197de1;
+	border: inherit;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 }
 
 .dracidoupe .v-splitpanel-horizontal  > div > .v-splitpanel-hsplitter div:before:active:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 .dracidoupe .v-splitpanel-horizontal  > div > .v-splitpanel-second-container {
@@ -26255,20 +26241,20 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-splitpanel-vertical  > div > .v-splitpanel-vsplitter div:before {
 	height: 37px;
 	padding: 0 16px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, none;
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, none;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, none;
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, none;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	height: auto;
 	padding: 0;
 	border-radius: 0;
@@ -26283,17 +26269,17 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-splitpanel-vertical  > div > .v-splitpanel-vsplitter div:before:hover:after {
-	background-color: rgba(186, 186, 186, 0.1);
+	background-color: rgba(121, 181, 210, 0.1);
 }
 
 .dracidoupe .v-splitpanel-vertical  > div > .v-splitpanel-vsplitter div:before:focus:after {
-	border-color: #197de1;
+	border: inherit;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 }
 
 .dracidoupe .v-splitpanel-vertical  > div > .v-splitpanel-vsplitter div:before:active:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 .dracidoupe .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter {
@@ -26308,26 +26294,26 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter div:before {
 	height: 37px;
 	padding: 0 16px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, none;
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, none;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, none;
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, none;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	height: auto;
 	padding: 0;
 	border-radius: 0;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(left, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to right,#fafafa 2%, #efefef 98%);
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(left, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to right,#459dc4 2%, #3786b1 98%);
 }
 
 .dracidoupe .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter div:before:after {
@@ -26339,24 +26325,24 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter div:before:hover:after {
-	background-color: rgba(186, 186, 186, 0.1);
+	background-color: rgba(121, 181, 210, 0.1);
 }
 
 .dracidoupe .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter div:before:focus:after {
-	border-color: #197de1;
+	border: inherit;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 }
 
 .dracidoupe .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter div:before:active:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 .dracidoupe .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter div:after {
 	content: "";
-	border: 1px solid #dadada;
-	border-top-color: #bababa;
-	border-left-color: #bababa;
+	border: 1px solid #3782a6;
+	border-top-color: #2f6f8e;
+	border-left-color: #2f6f8e;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -26382,20 +26368,20 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-splitpanel-vertical.large  > div > .v-splitpanel-vsplitter div:before {
 	height: 37px;
 	padding: 0 16px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, none;
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, none;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, none;
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, none;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	height: auto;
 	padding: 0;
 	border-radius: 0;
@@ -26410,24 +26396,24 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-splitpanel-vertical.large  > div > .v-splitpanel-vsplitter div:before:hover:after {
-	background-color: rgba(186, 186, 186, 0.1);
+	background-color: rgba(121, 181, 210, 0.1);
 }
 
 .dracidoupe .v-splitpanel-vertical.large  > div > .v-splitpanel-vsplitter div:before:focus:after {
-	border-color: #197de1;
+	border: inherit;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 }
 
 .dracidoupe .v-splitpanel-vertical.large  > div > .v-splitpanel-vsplitter div:before:active:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 .dracidoupe .v-splitpanel-vertical.large  > div > .v-splitpanel-vsplitter div:after {
 	content: "";
-	border: 1px solid #dadada;
-	border-top-color: #bababa;
-	border-left-color: #bababa;
+	border: 1px solid #3782a6;
+	border-top-color: #2f6f8e;
+	border-left-color: #2f6f8e;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -26440,9 +26426,9 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-progressbar-wrapper {
 	border-radius: 4px;
 	height: 9px;
-	background-color: #d4d4d4;
-	background-image: -webkit-linear-gradient(bottom, #d7d7d7 2%, #c7c7c7 98%);
-	background-image: linear-gradient(to top,#d7d7d7 2%, #c7c7c7 98%);
+	background-color: #3e7c9a;
+	background-image: -webkit-linear-gradient(bottom, #4285a2 2%, #366d8b 98%);
+	background-image: linear-gradient(to top,#4285a2 2%, #366d8b 98%);
 	box-sizing: border-box;
 	min-width: 74px;
 }
@@ -26528,9 +26514,9 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-slider-base {
 	border-radius: 4px;
 	height: 9px;
-	background-color: #d4d4d4;
-	background-image: -webkit-linear-gradient(bottom, #d7d7d7 2%, #c7c7c7 98%);
-	background-image: linear-gradient(to top,#d7d7d7 2%, #c7c7c7 98%);
+	background-color: #3e7c9a;
+	background-image: -webkit-linear-gradient(bottom, #4285a2 2%, #366d8b 98%);
+	background-image: linear-gradient(to top,#4285a2 2%, #366d8b 98%);
 	box-sizing: border-box;
 	min-width: 74px;
 	height: 6px;
@@ -26583,20 +26569,20 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-slider-handle:before {
 	height: 37px;
 	padding: 0 16px;
-	color: #191919;
+	color: #eff3f6;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
-	border-top-color: #c5c5c5;
-	border-bottom-color: #bcbcbc;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border: 1px solid #327596;
+	border-top-color: #367c9a;
+	border-bottom-color: #2b698b;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9, 0 2px 3px rgba(0, 0, 0, 0.05);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 }
 
 .dracidoupe .v-slider-handle:before:after {
@@ -26608,22 +26594,22 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-slider-handle:before:hover:after {
-	background-color: rgba(186, 186, 186, 0.1);
+	background-color: rgba(121, 181, 210, 0.1);
 }
 
 .dracidoupe .v-slider-handle:before:focus:after {
-	border-color: #197de1;
+	border: inherit;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 }
 
 .dracidoupe .v-slider-handle:before:active:after {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 .dracidoupe .v-slider-handle:after {
-	border: 1px solid #c5c5c5;
-	border-color: #197de1;
+	border: 1px solid #327596;
+	border: 1px solid #327596;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	opacity: 0;
@@ -26663,9 +26649,9 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-slider-vertical .v-slider-base {
-	background-color: #d4d4d4;
-	background-image: -webkit-linear-gradient(right, #d7d7d7 2%, #c7c7c7 98%);
-	background-image: linear-gradient(to left,#d7d7d7 2%, #c7c7c7 98%);
+	background-color: #3e7c9a;
+	background-image: -webkit-linear-gradient(right, #4285a2 2%, #366d8b 98%);
+	background-image: linear-gradient(to left,#4285a2 2%, #366d8b 98%);
 	width: 6px;
 	height: 100% !important;
 	min-width: 0;
@@ -26839,8 +26825,8 @@ div.v-layout.v-horizontal.v-widget {
 	bottom: 0;
 	padding-left: 19px;
 	background-color: transparent;
-	background-image: -webkit-linear-gradient(right, #fafafa 70%, rgba(250, 250, 250, 0) 100%);
-	background-image: linear-gradient(to left,#fafafa 70%, rgba(250, 250, 250, 0) 100%);
+	background-image: -webkit-linear-gradient(right, #4095bf 70%, rgba(64, 149, 191, 0) 100%);
+	background-image: linear-gradient(to left,#4095bf 70%, rgba(64, 149, 191, 0) 100%);
 	pointer-events: none;
 }
 
@@ -26853,8 +26839,8 @@ div.v-layout.v-horizontal.v-widget {
 	right: 0;
 	display: block;
 	background-color: transparent;
-	background-image: -webkit-linear-gradient(right, #dfdfdf 70%, rgba(223, 223, 223, 0) 100%);
-	background-image: linear-gradient(to left,#dfdfdf 70%, rgba(223, 223, 223, 0) 100%);
+	background-image: -webkit-linear-gradient(right, #3985aa 70%, rgba(57, 133, 170, 0) 100%);
+	background-image: linear-gradient(to left,#3985aa 70%, rgba(57, 133, 170, 0) 100%);
 }
 
 .dracidoupe .v-tabsheet-scroller button {
@@ -27027,7 +27013,7 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-tabsheet-framed.padded-tabbar  > .v-tabsheet-tabcontainer {
 	border: 1px solid #dfdfdf;
 	border-bottom: none;
-	background: #fafafa;
+	background: #4095bf;
 	padding-top: 6px;
 }
 
@@ -27171,8 +27157,8 @@ div.v-layout.v-horizontal.v-widget {
 .dracidoupe .v-colorpicker-popup .v-horizontallayout {
 	height: auto !important;
 	padding: 9px 0;
-	background-color: #fafafa;
-	border-top: 1px solid #ededed;
+	background-color: #4095bf;
+	border-top: 1px solid #3d8db6;
 }
 
 .dracidoupe .v-colorpicker-popup .v-horizontallayout .v-expand {
@@ -27229,16 +27215,16 @@ div.v-layout.v-horizontal.v-widget {
 	box-sizing: border-box;
 	padding: 0 12px;
 	line-height: 36px;
-	border-bottom: 1px solid #d5d5d5;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #f6f6f6 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #f6f6f6 98%);
-	color: #464646;
+	border-bottom: 1px solid #367fa2;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #4197c0 2%, #3d90bb 98%);
+	background-image: linear-gradient(to bottom,#4197c0 2%, #3d90bb 98%);
+	color: #d0dfe7;
 	font-weight: 400;
 	font-size: 14px;
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #eeeeee;
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #eeeeee;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	-webkit-box-shadow: inset 0 1px 0 #6ea1c5, inset 0 -1px 0 #3d8ab2;
+	box-shadow: inset 0 1px 0 #6ea1c5, inset 0 -1px 0 #3d8ab2;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	border-radius: 3px 3px 0 0;
 }
 
@@ -27284,12 +27270,12 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-panel-well {
-	background: #f5f5f5;
-	color: #454545;
+	background: #3e8eb7;
+	color: #cedee6;
 	-webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05), inset 0 2px 3px rgba(0, 0, 0, 0.05);
 	box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05), inset 0 2px 3px rgba(0, 0, 0, 0.05);
 	border-radius: 4px;
-	border: 1px solid #c5c5c5;
+	border: 1px solid #327596;
 }
 
 .dracidoupe .v-panel-well  > div > [class*="-caption"] {
@@ -27345,9 +27331,9 @@ div.v-layout.v-horizontal.v-widget {
 	border: 1px solid #d5d5d5;
 	-webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #f4f4f4 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #f4f4f4 98%);
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #4299c1 2%, #3b8db8 98%);
+	background-image: linear-gradient(to bottom,#4299c1 2%, #3b8db8 98%);
 	overflow: hidden;
 }
 
@@ -27390,16 +27376,16 @@ div.v-layout.v-horizontal.v-widget {
 	box-sizing: border-box;
 	padding: 0 12px;
 	line-height: 36px;
-	border-bottom: 1px solid #d5d5d5;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #f6f6f6 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #f6f6f6 98%);
-	color: #464646;
+	border-bottom: 1px solid #367fa2;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #4197c0 2%, #3d90bb 98%);
+	background-image: linear-gradient(to bottom,#4197c0 2%, #3d90bb 98%);
+	color: #d0dfe7;
 	font-weight: 400;
 	font-size: 14px;
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #eeeeee;
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #eeeeee;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	-webkit-box-shadow: inset 0 1px 0 #6ea1c5, inset 0 -1px 0 #3d8ab2;
+	box-shadow: inset 0 1px 0 #6ea1c5, inset 0 -1px 0 #3d8ab2;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	display: block;
 	background: transparent;
 	border-bottom-color: #c9c9c9;
@@ -27419,12 +27405,12 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-accordion-item-caption  > .v-caption:hover:before {
-	background-color: rgba(186, 186, 186, 0.1);
+	background-color: rgba(121, 181, 210, 0.1);
 	border: none;
 }
 
 .dracidoupe .v-accordion-item-caption  > .v-caption:active:before {
-	background-color: rgba(125, 125, 125, 0.2);
+	background-color: rgba(16, 80, 112, 0.2);
 }
 
 .dracidoupe .v-accordion-item-content {
@@ -27466,11 +27452,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-select-twincol select {
-	border: 1px solid #c5c5c5;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	color: #464646;
+	border: 1px solid #327596;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	color: #d0dfe7;
 }
 
 .dracidoupe .v-select-twincol select:focus {
@@ -27584,11 +27570,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-select select {
-	border: 1px solid #c5c5c5;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	color: #464646;
+	border: 1px solid #327596;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	color: #d0dfe7;
 }
 
 .dracidoupe .v-select select:focus {
@@ -27714,7 +27700,7 @@ div.v-layout.v-horizontal.v-widget {
 	text-align: right;
 	margin: 0 5px;
 	white-space: nowrap;
-	border-top: 1px solid #f2f2f2;
+	border-top: 1px solid #3c8cb4;
 	cursor: pointer;
 }
 
@@ -27723,7 +27709,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-calendar-month-day-today {
-	background: #eef3f8;
+	background: #3e93c0;
 }
 
 .dracidoupe .v-calendar-month-day-today .v-calendar-day-number {
@@ -27736,7 +27722,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-calendar-month-day-selected {
-	background-color: #e3edf7;
+	background-color: #3c92c2;
 }
 
 .dracidoupe .v-calendar-month-day-dragemphasis {
@@ -27749,7 +27735,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .dracidoupe .v-calendar-weekly-longevents {
 	margin-left: 50px;
-	border-bottom: 3px solid #e0e0e0;
+	border-bottom: 3px solid #337799;
 }
 
 .dracidoupe .v-calendar-weekly-longevents .v-calendar-event-all-day {
@@ -27950,8 +27936,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-calendar-event-all-day {
-	background-color: #c8eaf4;
-	background-color: rgba(200, 234, 244, 0.8);
+	background-color: #3399c5;
+	background-color: rgba(51, 153, 197, 0.8);
 	color: #00ace0;
 }
 
@@ -27960,8 +27946,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-calendar-week-wrapper .v-calendar-event .v-calendar-event-content {
-	background-color: #c8eaf4;
-	background-color: rgba(200, 234, 244, 0.8);
+	background-color: #3399c5;
+	background-color: rgba(51, 153, 197, 0.8);
 }
 
 .dracidoupe .v-calendar-event-month[class*="color2"]:before {
@@ -27969,8 +27955,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-calendar-event-all-day[class*="color2"] {
-	background-color: #d1e7cd;
-	background-color: rgba(209, 231, 205, 0.8);
+	background-color: #3c979d;
+	background-color: rgba(60, 151, 157, 0.8);
 	color: #2d9f19;
 }
 
@@ -27979,8 +27965,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-calendar-week-wrapper .v-calendar-event[class*="color2"] .v-calendar-event-content {
-	background-color: #d1e7cd;
-	background-color: rgba(209, 231, 205, 0.8);
+	background-color: #3c979d;
+	background-color: rgba(60, 151, 157, 0.8);
 }
 
 .dracidoupe .v-calendar-event-month[class*="color3"]:before {
@@ -27988,8 +27974,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-calendar-event-all-day[class*="color3"] {
-	background-color: #f1e1c8;
-	background-color: rgba(241, 225, 200, 0.8);
+	background-color: #5d9198;
+	background-color: rgba(93, 145, 152, 0.8);
 	color: #d18100;
 }
 
@@ -27998,8 +27984,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-calendar-week-wrapper .v-calendar-event[class*="color3"] .v-calendar-event-content {
-	background-color: #f1e1c8;
-	background-color: rgba(241, 225, 200, 0.8);
+	background-color: #5d9198;
+	background-color: rgba(93, 145, 152, 0.8);
 }
 
 .dracidoupe .v-calendar-event-month[class*="color4"]:before {
@@ -28007,8 +27993,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-calendar-event-all-day[class*="color4"] {
-	background-color: #f1d3cb;
-	background-color: rgba(241, 211, 203, 0.8);
+	background-color: #5c829c;
+	background-color: rgba(92, 130, 156, 0.8);
 	color: #ce3812;
 }
 
@@ -28017,8 +28003,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-calendar-week-wrapper .v-calendar-event[class*="color4"] .v-calendar-event-content {
-	background-color: #f1d3cb;
-	background-color: rgba(241, 211, 203, 0.8);
+	background-color: #5c829c;
+	background-color: rgba(92, 130, 156, 0.8);
 }
 
 .dracidoupe .v-calendar-event-month[class*="color5"]:before {
@@ -28026,8 +28012,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-calendar-event-all-day[class*="color5"] {
-	background-color: #d1d9f1;
-	background-color: rgba(209, 217, 241, 0.8);
+	background-color: #3c88c1;
+	background-color: rgba(60, 136, 193, 0.8);
 	color: #2d55cd;
 }
 
@@ -28036,8 +28022,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-calendar-week-wrapper .v-calendar-event[class*="color5"] .v-calendar-event-content {
-	background-color: #d1d9f1;
-	background-color: rgba(209, 217, 241, 0.8);
+	background-color: #3c88c1;
+	background-color: rgba(60, 136, 193, 0.8);
 }
 
 .dracidoupe .v-calendar.v-disabled * {
@@ -28303,11 +28289,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-select select {
-	border: 1px solid #c5c5c5;
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	color: #464646;
+	border: 1px solid #327596;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	color: #d0dfe7;
 }
 
 .dracidoupe .v-select select:focus {
@@ -28446,13 +28432,13 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-richtextarea .gwt-RichTextToolbar {
-	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
-	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7;
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7;
-	border-bottom: 1px solid #c5c5c5;
-	color: #464646;
+	background-color: #4095bf;
+	background-image: -webkit-linear-gradient(top, #459dc4 2%, #3786b1 98%);
+	background-image: linear-gradient(to bottom,#459dc4 2%, #3786b1 98%);
+	-webkit-box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9;
+	box-shadow: inset 0 1px 0 #72a6c8, inset 0 -1px 0 #3781a9;
+	border-bottom: 1px solid #327596;
+	color: #d0dfe7;
 }
 
 .dracidoupe .v-richtextarea .gwt-ToggleButton, .dracidoupe .v-richtextarea .gwt-PushButton {
@@ -28464,13 +28450,13 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-richtextarea .gwt-ToggleButton:hover, .dracidoupe .v-richtextarea .gwt-PushButton:hover {
-	color: black;
+	color: white;
 }
 
 .dracidoupe .v-richtextarea .gwt-ToggleButton-down, .dracidoupe .v-richtextarea .gwt-ToggleButton-down-hovering {
-	background-color: #e0e0e0;
-	background-image: -webkit-linear-gradient(bottom, #e0e0e0 2%, #dcdcdc 98%);
-	background-image: linear-gradient(to top,#e0e0e0 2%, #dcdcdc 98%);
+	background-color: #337799;
+	background-image: -webkit-linear-gradient(bottom, #34799b 2%, #307294 98%);
+	background-image: linear-gradient(to top,#34799b 2%, #307294 98%);
 }
 
 .dracidoupe .v-richtextarea .gwt-RichTextToolbar-top img {
@@ -29169,7 +29155,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .dracidoupe .v-menubar-user-menu .v-menubar-menuitem-checked, .dracidoupe .v-menubar-user-menu .v-menubar-menuitem-checked:first-child {
-	border: 1px solid #c5c5c5;
+	border: 1px solid #327596;
 	color: #197de1;
 }
 
@@ -29205,7 +29191,7 @@ div.v-layout.v-horizontal.v-widget {
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
 	display: block;
 	margin: 0 auto 0.3em;
-	border: 1px solid #c5c5c5;
+	border: 1px solid #327596;
 }
 
 .dracidoupe .v-menubar-user-menu  > .v-menubar-menuitem:after {
@@ -29625,4 +29611,12 @@ div.v-layout.v-horizontal.v-widget {
 	display: inline-block;
 	width: 19px;
 	overflow: hidden;
+}
+
+.dracidoupe .main-bar {
+	background-color: dark-blue;
+}
+
+.dracidoupe .error {
+	font-color: red;
 }

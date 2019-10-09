@@ -1,9 +1,8 @@
 package cz.deznekcz.games.panjeskyne.data;
 
-import java.io.File;
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -11,44 +10,59 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
-import com.google.common.collect.Maps;
-
-import cz.deznekcz.games.panjeskyne.i18n.I18N;
+import cz.deznekcz.games.panjeskyne.model.xml.Skill;
 import cz.deznekcz.games.panjeskyne.model.xml.XmlSerialized;
 import cz.deznekcz.games.panjeskyne.service.CharacterService;
+import cz.deznekcz.games.panjeskyne.service.SkillService;
 
 @XmlRootElement(name = "World")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class WorldData implements XmlSerialized, Named, Descripted {
+public class WorldData implements XmlSerialized {
 	
 	private static final long serialVersionUID = -2782239646790420463L;
+
+	public static final WorldData NONE = new WorldData();
+	static {
+		NONE.init("none");
+	}
 
 	@XmlAttribute(name = "id", required = true)
 	private String id;
 	
-	@XmlJavaTypeAdapter(value = LangDataMapAdapter.class)
-	@XmlElement(name = "name", required = true)
-	private HashMap<String, LangData> name;
+	@XmlAttribute(name = "name", required = true)
+	private String name;
 	
-	@XmlJavaTypeAdapter(value = LangDataMapAdapter.class)
 	@XmlElement(name = "description", required = true)
-	private HashMap<String, LangData> description;
+	private String description;
 	
 	@XmlElement(name = "editors")
-	private StringList editors;
+	private List<String> editors;
+	
+	@XmlElement(name = "characters")
+	private List<String> characters;
+	
+	@XmlElement(name = "skills")
+	private List<String> skills;
+	
+	@XmlElement(name = "races")
+	private List<String> races;
 	
 	@XmlTransient
 	private Exception error;
+	
+	public WorldData() {
+		this.name = "---";
+		this.description = "";
+	}
 	
 	public String getId() {
 		return id;
 	}
 	
-	public StringList getEditors() {
+	public synchronized List<String> getEditors() {
 		if (editors == null) {
-			editors = new StringList();
+			editors = new ArrayList<>();
 		}
 		return editors;
 	}
@@ -63,23 +77,27 @@ public class WorldData implements XmlSerialized, Named, Descripted {
 
 	public void init(String id) {
 		this.id = id;
-		this.name = Maps.newHashMap();
-		this.name.put(I18N.LOCALE, new LangData());
-		this.description = Maps.newHashMap();
-		this.description.put(I18N.LOCALE, new LangData());
 	}
 	
-	public List<Character> getCharacters() {
-		return CharacterService.getWorldCharacters(this.id);
+	public synchronized List<String> getCharacters() {
+		if (characters == null) {
+			characters = new ArrayList<>();
+		}
+		return characters;
 	}
-
-	@Override
-	public Map<String, LangData> getDescriptionMap() {
+	
+	public synchronized List<String> getSkills() {
+		if (skills == null) {
+			skills = new ArrayList<>();
+		}
+		return skills;
+	}
+	
+	public String getDescription() {
 		return description;
 	}
-
-	@Override
-	public Map<String, LangData> getNameMap() {
+	
+	public String getName() {
 		return name;
 	}
 }
