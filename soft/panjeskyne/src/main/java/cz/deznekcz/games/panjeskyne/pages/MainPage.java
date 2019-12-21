@@ -31,7 +31,7 @@ import cz.deznekcz.games.panjeskyne.user.User;
 import cz.deznekcz.games.panjeskyne.utils.Out;
 
 
-public class MainPage extends VerticalLayout implements Supplier<Boolean>, RootComponent {
+public class MainPage extends VerticalLayout implements ClickListener, RootComponent {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -59,10 +59,16 @@ public class MainPage extends VerticalLayout implements Supplier<Boolean>, RootC
 		MenuItem characters = menuBar.get().addItem("Postavy");
 		characters.addItem("Vytvořit...").setCommand(Commands.newCharacter());
 		characters.addItem("Zobrazit...").setCommand(Commands.viewCharacter());
+		
+		MenuItem skills = menuBar.get().addItem("Dovednosti");
+		skills.addItem("Zobrazit ...").setCommand(Commands.listSkills());
+		if (user.isAdmin("skill")) {
+			skills.addItem("Vytvořit ...").setCommand(Commands.newSkills());
+		}
 	}
 
 	@Override
-	public Boolean get() {
-		return true;
+	public void buttonClick(ClickEvent event) {
+		MainBar.logout(event.getButton().getUI().getSession(), false);
 	}
 }

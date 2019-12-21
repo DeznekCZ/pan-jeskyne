@@ -16,7 +16,7 @@ import cz.deznekcz.games.panjeskyne.model.xml.Description;
 import cz.deznekcz.games.panjeskyne.model.xml.XmlSerialized;
 
 @XmlRootElement(name="Character")
-@XmlAccessorType(XmlAccessType.FIELD)
+@XmlAccessorType(XmlAccessType.NONE)
 public class Character implements XmlSerialized {
 
 	private static final long serialVersionUID = 4619283962362366059L;
@@ -122,8 +122,7 @@ public class Character implements XmlSerialized {
 	}
 	
 	public CharacterType getType() {
-//		return type == null ? CharacterType.PC : type;
-		return CharacterType.PC;
+		return type == null ? CharacterType.PC : type;
 	}
 
 	public String getWorldId() {

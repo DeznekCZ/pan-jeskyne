@@ -37,7 +37,7 @@ import cz.deznekcz.games.panjeskyne.utils.Out;
  */
 @Theme("dracidoupe")
 @Push
-public class CharacterPage extends VerticalLayout implements RootComponent {
+public class CharacterPage extends VerticalLayout implements RootComponent, ClickListener {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -65,52 +65,44 @@ public class CharacterPage extends VerticalLayout implements RootComponent {
 		
 		Out<MenuBar> menuBar = Out.init();
 		
-		Component mainBar = MainBar.get(this::logout, menuBar, "Tvorba postavy");
+		Component mainBar = MainBar.get(this, menuBar, "Tvorba postavy");
 		addComponent(mainBar);
 		
 		MenuItem characters = menuBar.get().addItem("Postavy");
 		characters.addItem("Vytvořit...").setCommand(Commands.newCharacter());
 		characters.addItem("Zobrazit...").setCommand(Commands.viewCharacter());
 		characters.addSeparator();
+		
 		MenuItem saveItem = characters.addItem("Uložit");
 		saveItem.setCommand(Commands.saveCharacter(this));
 		
 		characterName = new TextField();
 	}
 
-	public boolean logout() {
-		if (saved) {
-			return true;
-		} else {
-			return true;
-		}
-	}
-
 	private String getCharacterName() {
 		return characterName.getValue();
-	}
-	
-	@Override
-	public void detach() {
-		if (!saved) {
-			Dialogs.ask(Dialogs.Type.YES_NO_CANCEL)
-			.message(Messages.saveCharacter(getCharacterName()))
-			.onOk(this::saveCharacterAndClose)
-			.onNo(super::detach)
-			.show();
-		} else {
-			super.detach();
-		}
 	}
 	
 	public void saveCharacter() {
 		saved = true;
 	}
 	
-	private void saveCharacterAndClose() {
+	private void saveCharacterLogout(Dialogs dialog) {
 		saveCharacter();
-		
-		if (saved) super.detach();
-		else Errors.Notify.characterUnsaved(getCharacterName());
+		MainBar.logout(dialog.getClickEvent().getButton().getUI().getSession(), false);
+	}
+
+	@Override
+	public void buttonClick(ClickEvent event) {
+		if (saved) {
+			MainBar.logout(event.getButton().getUI().getSession(), false);
+		} else {
+			Dialogs.ask(Dialogs.Type.YES_NO_CANCEL)
+			.clickEvent(event)
+			.message(Messages.saveCharacter(getCharacterName()))
+			.onOk(this::saveCharacterLogout)
+			.onNo(super::detach)
+			.show();
+		}
 	}
 }

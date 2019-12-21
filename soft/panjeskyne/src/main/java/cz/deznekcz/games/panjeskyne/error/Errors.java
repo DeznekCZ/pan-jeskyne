@@ -5,17 +5,18 @@ import com.vaadin.shared.ui.ErrorLevel;
 import com.vaadin.ui.Notification;
 
 import cz.deznekcz.games.panjeskyne.model.enums.Gender;
+import cz.deznekcz.games.panjeskyne.pages.Dialogs;
 
 public class Errors {
 
 	public static class Notify {
 
 		public static void closeOtherTabs() {
-			Notification.show("Zavři nejdříve ostatní okna!");
+			Dialogs.info("Odhlášení neúspěšné!", "Zavři nejdříve ostatní okna!");
 		}
 
 		public static void characterUnsaved(String characterName) {
-			Notification.show(String.format("Postava \"%s\" <font color=\"red\">NENÍ</font> uložena", characterName));
+			Dialogs.info("Upozornění", String.format("Postava \"%s\" <font color=\"red\">NENÍ</font> uložena", characterName));
 		}
 		
 	}

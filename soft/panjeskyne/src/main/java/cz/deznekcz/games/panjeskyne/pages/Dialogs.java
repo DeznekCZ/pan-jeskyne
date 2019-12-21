@@ -6,6 +6,7 @@ import java.util.function.Consumer;
 import com.vaadin.server.Resource;
 import com.vaadin.server.Sizeable.Unit;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.HorizontalLayout;
@@ -42,6 +43,8 @@ public class Dialogs {
 	private UI ui;
 
 	private Window window;
+
+	private ClickEvent clickEvent;
 	
 	public Dialogs() {
 		type = Type.OK;
@@ -175,6 +178,7 @@ public class Dialogs {
 		default:
 			break;
 		}
+		//cancel
 		switch (type) {
 		case YES_NO_CANCEL:
 		case OK_CANCEL:
@@ -213,5 +217,18 @@ public class Dialogs {
 
 	private String text(String text, HashMap<Type, String> texts) {
 		return text == null ? texts.get(type) : text;
+	}
+
+	public static void info(String title, String message) {
+		new Dialogs().type(Type.OK).title(title).message(message).show();
+	}
+
+	public Dialogs clickEvent(ClickEvent clickEvent) {
+		this.clickEvent = clickEvent;
+		return this;
+	}
+	
+	public ClickEvent getClickEvent() {
+		return clickEvent;
 	}
 }

@@ -47,6 +47,12 @@ public class LoginPage extends VerticalLayout implements ClickListener, Serializ
 	private PasswordField password;
 	private Button login;
 	private Label error;
+	
+	private String redirection = "/";
+	public LoginPage redirection(String redirection) {
+		this.redirection = redirection;
+		return this;
+	}
 
 	@Override
 	public void init(VaadinRequest vaadinRequest) {
@@ -54,7 +60,7 @@ public class LoginPage extends VerticalLayout implements ClickListener, Serializ
 		if (user == null) {
 			showPage();
 		} else {
-			Redirection.toMain();
+			Redirection.redirect(redirection);
 		}
     }
 
@@ -119,7 +125,7 @@ public class LoginPage extends VerticalLayout implements ClickListener, Serializ
 		if (user.exists()) {
 			if (user.matchPassword(password)) {
 				getSession().setAttribute(User.class, user);
-				Redirection.toMain();
+				Redirection.redirect(redirection.replaceFirst("^/login", ""));
 				return;
 			} else {
 				setError(this.password, Errors.wrongPassword());

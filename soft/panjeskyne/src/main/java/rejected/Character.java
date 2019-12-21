@@ -13,7 +13,6 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import com.google.common.collect.Maps;
 
-import cz.deznekcz.games.panjeskyne.data.CharacterRulesData;
 import cz.deznekcz.games.panjeskyne.data.CharacterType;
 import cz.deznekcz.games.panjeskyne.data.Descripted;
 import cz.deznekcz.games.panjeskyne.data.LangData;

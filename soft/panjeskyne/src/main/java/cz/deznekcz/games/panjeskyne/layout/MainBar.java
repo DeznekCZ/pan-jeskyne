@@ -3,6 +3,7 @@ package cz.deznekcz.games.panjeskyne.layout;
 import java.util.function.Supplier;
 
 import com.vaadin.server.Sizeable.Unit;
+import com.vaadin.server.SerializableConsumer;
 import com.vaadin.server.VaadinSession;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
@@ -13,6 +14,8 @@ import com.vaadin.ui.MenuBar;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.themes.ValoTheme;
 
 import cz.deznekcz.games.panjeskyne.error.Errors;
@@ -21,11 +24,11 @@ import cz.deznekcz.games.panjeskyne.utils.Out;
 public class MainBar {
 
 
-	public static Component get(Supplier<Boolean> logoutMethod, Out<MenuBar> out) {
+	public static Component get(ClickListener logoutMethod, Out<MenuBar> out) {
 		return get(logoutMethod, out, "Webový simlátor pro nadšence drčího doupěte + v novém kabátku");
 	}
 	
-	public static Component get(Supplier<Boolean> logoutMethod, Out<MenuBar> out, String subName) {
+	public static Component get(ClickListener logoutMethod, Out<MenuBar> out, String subName) {
 		HorizontalLayout mainBar = new HorizontalLayout();
 		mainBar.setWidth(100, Unit.PERCENTAGE);
 		mainBar.addStyleName("main-bar");
@@ -44,9 +47,8 @@ public class MainBar {
 		Button logout = new Button();
 		logout.setCaption("Odhlásit se");
 		logout.addStyleName(ValoTheme.BUTTON_BORDERLESS_COLORED);
-		logout.addClickListener((event) -> {
-			logout(event.getButton().getUI().getSession(), logoutMethod.get());
-		});
+		//TODO tuna to padá
+		logout.addClickListener((ClickListener) logoutMethod);
 		mainBar.addComponent(logout);
 		
 		VerticalLayout v = new VerticalLayout();
@@ -70,7 +72,7 @@ public class MainBar {
 		return v;
 	}
 
-	private static void logout(VaadinSession session, boolean force) {
+	public static void logout(VaadinSession session, boolean force) {
 		if (session.getUIs().size() > 1) {
 			Errors.Notify.closeOtherTabs();
 			if (force) {
@@ -79,9 +81,5 @@ public class MainBar {
 		} else if (force) {
 			session.close();
 		}
-	}
-
-	public static void forceLogout(VaadinSession session) {
-		logout(session, true);
 	}
 }

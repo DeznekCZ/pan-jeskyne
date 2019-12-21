@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.vaadin.data.provider.ListDataProvider;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.MenuBar.Command;
 import com.vaadin.ui.MenuBar.MenuItem;
@@ -40,7 +41,6 @@ public class ViewCharacterCommand implements Command, Serialized, CharacterFilte
 	public void menuSelected(MenuItem selectedItem) {
 		user = selectedItem.getMenuBar().getUI().getSession().getAttribute(User.class);
 		List<Character> characters = CharacterService.getInstance().getAll(this);
-		user = null;
 		
 		Grid<Quartet<String, String, String, String>> content = new Grid<>();
 		content.addColumn(Quartet::getB).setCaption("Postava");
@@ -52,6 +52,8 @@ public class ViewCharacterCommand implements Command, Serialized, CharacterFilte
 			if (character.getEditors().contains(user.getUserName()))
 				data.add(new Quartet<>(character.getId(), character.getName(), character.getId(), WorldService.getInstance().getWorld(character.getWorldId()).getName()));
 		}
+		
+		content.setDataProvider(new ListDataProvider<>(data));
 		
 		Dialogs.ask(Type.OK_CANCEL)
 			.content(content)

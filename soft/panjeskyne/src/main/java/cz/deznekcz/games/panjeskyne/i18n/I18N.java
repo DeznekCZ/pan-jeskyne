@@ -28,7 +28,7 @@ public enum I18N implements I18NA {
 	RULES_TAB("tabs.rules"), 
 	;
 	
-	public static String LOCALE = "csCZ";
+	public static String LOCALE = "cs_CZ";
 	
 	private String codename;
 

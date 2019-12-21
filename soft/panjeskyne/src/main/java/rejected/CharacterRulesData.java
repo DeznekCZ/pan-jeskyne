@@ -1,4 +1,4 @@
-package cz.deznekcz.games.panjeskyne.data;
+package rejected;
 
 import java.util.HashMap;
 import java.util.List;

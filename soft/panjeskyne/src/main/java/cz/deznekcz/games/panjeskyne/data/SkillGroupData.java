@@ -12,9 +12,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 import cz.deznekcz.games.i18n.I18NText;
 import cz.deznekcz.games.panjeskyne.i18n.I18NContainer;
 
-@XmlRootElement(name = "skill")
+@XmlRootElement(name = "skillgroup")
 @XmlAccessorType(XmlAccessType.NONE)
-public class SkillData implements I18NContainer {
+public class SkillGroupData implements I18NContainer {
 
 	@XmlAttribute(name = "id")
 	private String id;

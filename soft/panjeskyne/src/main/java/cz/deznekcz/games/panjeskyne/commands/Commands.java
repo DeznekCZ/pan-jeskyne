@@ -18,4 +18,12 @@ public class Commands {
 		return new SaveCharacterCommand(page);
 	}
 
+	public static Command listSkills() {
+		return new SkillListCommand();
+	}
+
+	public static Command newSkills() {
+		return new NewListCommand();
+	}
+
 }

@@ -14,10 +14,10 @@ public interface Descripted {
 		} else {
 			if (data.containsKey(I18N.LOCALE)) {
 				return data.get(I18N.LOCALE).getStringValue();
-			} else if (data.containsKey("enUS")) {
-				return data.get("enUS").getStringValue();
-			} else if (data.containsKey("csCZ")) {
-				return data.get("csCZ").getStringValue();
+			} else if (data.containsKey("en_US")) {
+				return data.get("en_US").getStringValue();
+			} else if (data.containsKey("cs_CZ")) {
+				return data.get("cs_CZ").getStringValue();
 			}
 			
 			return I18N.DATA_NOT_FOUND.getString(getId() + ".description");

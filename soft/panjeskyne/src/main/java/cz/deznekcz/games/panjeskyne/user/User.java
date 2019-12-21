@@ -21,6 +21,8 @@ public class User implements Serializable {
 
 	private static final String PASS = "pass"; 
 	public static final String USERS = "/home/users/";
+
+	private static final String ADMIN = "admin";
 	
 	private Properties properties;
 
@@ -84,5 +86,10 @@ public class User implements Serializable {
 
 	public boolean exists() {
 		return file.exists();
+	}
+
+	public boolean isAdmin(String dataType) {
+		return properties.containsKey(ADMIN) 
+				&& ((String) properties.get(ADMIN)).matches("(.*,|^)" + dataType + "($|,.*)");
 	}
 }
