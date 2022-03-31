@@ -10,7 +10,7 @@
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<spring.version>5.1.0.RELEASE</spring.version>
+		<spring.version>5.3.18</spring.version>
 		<jstl.version>1.2</jstl.version>
 		<servletapi.version>2.5</servletapi.version>
 		<hibernate.version>5.3.6.Final</hibernate.version>
